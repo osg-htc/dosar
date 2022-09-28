@@ -6,8 +6,8 @@ theme: readthedocs
 nav:
 - Home: 'index.md'
 - Current or Upcoming Events:
-  - 'ASP 2022 Schedule': 'ASP2022/ASP2022_Schedule.md'
-  - 'ASP 2022 Materials': 'ASP2022/ASP2022_Materials.md'
+  - 'ASP 2022 Schedule': 'ASP2022/ASP2018_Schedule.md'
+  - 'ASP 2022 Materials': 'ASP2022/ASP2018_Materials.md'
 - Past Events:
   - 'Data Trieste 2019 Schedule': 'DataTrieste2019/School.md'
   - 'Data Trieste 2019 Materials': 'DataTrieste2019/Materials.md'
