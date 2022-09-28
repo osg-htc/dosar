@@ -1,9 +1,9 @@
 site_name: DOSAR Outreach Materials
-site_url: https://opensciencegrid.github.io/dosar
-repo_url: https://github.com/opensciencegrid/dosar
+site_url: https://osg-htc.org/dosar
+repo_url: https://github.com/osg-htc/dosar
 theme: readthedocs
 
-pages:
+nav:
 - Home: 'index.md'
 - Current or Upcoming Events:
   - 'Data Trieste 2019 Schedule': 'DataTrieste2019/School.md'
@@ -18,7 +18,7 @@ pages:
   - 'ASP 2018 Schedule': 'ASP2018/ASP2018_Schedule.md'
   - 'ASP 2018 Material': 'ASP2018/ASP2018_Materials.md'
   - 'Data Sao Paulo Schedule': 'Materials/DSP_DT2017.md'
-  - 'Data Sao Paulo Materials': 'Materials/DSP_Materials.md' 
+  - 'Data Sao Paulo Materials': 'Materials/DSP_Materials.md'
   - 'Polar Hackathon Schedule': 'Materials/PH_DT2017.md'
   - 'Polar Hackathon Materials': 'Materials/PH_Materials.md'
 - DOSAR Video Meetings:
@@ -28,4 +28,3 @@ pages:
 
 markdown_extensions:
   - admonition
-  - osg_markdown.colors
