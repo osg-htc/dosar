@@ -1,0 +1,790 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://osg-htc.org/dosar/DataKigali2018/11-HandlingFailure/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>Handling a DAG that fails - DOSAR Outreach Materials</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#handling-a-dag-that-fails" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DOSAR Outreach Materials" class="md-header__button md-logo" aria-label="DOSAR Outreach Materials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DOSAR Outreach Materials
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Handling a DAG that fails
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/osg-htc/dosar/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DOSAR Outreach Materials" class="md-nav__button md-logo" aria-label="DOSAR Outreach Materials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DOSAR Outreach Materials
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/osg-htc/dosar/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Current or Upcoming Events
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Current or Upcoming Events" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Current or Upcoming Events
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataTrieste2019/School/" class="md-nav__link">
+        Data Trieste 2019 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataTrieste2019/Materials/" class="md-nav__link">
+        Data Trieste 2019 Materials
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Past Events
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Past Events" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Past Events
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataSaoPaulo2018/School/" class="md-nav__link">
+        Data Sao Paulo 2018 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataSaoPaulo2018/Materials/" class="md-nav__link">
+        Data Sao Paulo 2018 Materials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../School/" class="md-nav__link">
+        Data Kigali 2018 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Materials/" class="md-nav__link">
+        Data Kigali 2018 Materials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataTrieste2018/School/" class="md-nav__link">
+        Data Trieste 2018 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataTrieste2018/Materials/" class="md-nav__link">
+        Data Trieste 2018 Materials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ASP2018/ASP2018_Schedule/" class="md-nav__link">
+        ASP 2018 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ASP2018/ASP2018_Materials/" class="md-nav__link">
+        ASP 2018 Material
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Materials/DSP_DT2017/" class="md-nav__link">
+        Data Sao Paulo Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Materials/DSP_Materials/" class="md-nav__link">
+        Data Sao Paulo Materials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Materials/PH_DT2017/" class="md-nav__link">
+        Polar Hackathon Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Materials/PH_Materials/" class="md-nav__link">
+        Polar Hackathon Materials
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        DOSAR Video Meetings
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="DOSAR Video Meetings" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          DOSAR Video Meetings
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Meetings/24October2018/" class="md-nav__link">
+        October 24, 2018
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Meetings/12March2019/" class="md-nav__link">
+        March 12, 2019
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    Objective
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenge" class="md-nav__link">
+    Challenge
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/osg-htc/dosar/edit/master/docs/DataKigali2018/11-HandlingFailure.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="handling-a-dag-that-fails">Handling a DAG that fails</h1>
+<h3 id="objective">Objective</h3>
+<p>The objective of this exercise is to help you learn how DAGMan deals with job failures. DAGMan is built to help you recover from such failures.</p>
+<p>DAGMan can handle a situation where some of the nodes in a DAG fails. DAGMan will run as many nodes as possible, then create a "rescue DAG".  A rescue DAG allows you to fix the problem and then resume your job where it left off.</p>
+<p>Recall that DAGMan decides that a jobs fails if its exit code is non-zero. Let's modify our montage job so that it fails. Work in the same directory where you did the last DAG. Edit montage.sub to add a <code>-h</code> to the arguments. It will look like this (the change is bolded):</p>
+<pre><code>universe                = vanilla
+executable              = wrapper_montage.sh
+arguments               = -h tile_0_0.ppm tile_0_1.ppm tile_1_0.ppm tile_1_1.ppm -mode Concatenate -tile 2x2 mandle.jpg
+should_transfer_files   = YES
+when_to_transfer_output = ONEXIT
+transfer_input_files    = tile_0_0.ppm,tile_0_1.ppm,tile_1_0.ppm,tile_1_1.ppm
+transfer_executable     = true
+output                  = montage.out
+error                   = montage.err
+log                     = goat.log
+requirements = (HAS_MODULES =?= true) &amp;&amp; (OSGVO_OS_STRING == &quot;RHEL 6&quot;) &amp;&amp; (OpSys == &quot;LINUX&quot;)
+queue
+</code></pre>
+<p>Submit the DAG again: </p>
+<pre><code>$ condor_submit_dag goatbrot.dag
+-----------------------------------------------------------------------
+File for submitting this DAG to Condor           : goatbrot.dag.condor.sub
+Log of DAGMan debugging messages                 : goatbrot.dag.dagman.out
+Log of Condor library output                     : goatbrot.dag.lib.out
+Log of Condor library error messages             : goatbrot.dag.lib.err
+Log of the life of condor_dagman itself          : goatbrot.dag.dagman.log
+
+Submitting job(s).
+1 job(s) submitted to cluster 77.
+-----------------------------------------------------------------------
+</code></pre>
+<p>Use <code>watch</code> to watch the jobs until they finish.</p>
+<p>In a separate window, use <code>tail --lines=500 -f goatbrot.dag.dagman.out</code> to watch what DAGMan does. </p>
+<pre><code>06/22/12 17:57:41 Setting maximum accepts per cycle 8.
+06/22/12 17:57:41 ******************************************************
+06/22/12 17:57:41 ** condor_scheduniv_exec.77.0 (CONDOR_DAGMAN) STARTING UP
+06/22/12 17:57:41 ** /usr/bin/condor_dagman
+06/22/12 17:57:41 ** SubsystemInfo: name=DAGMAN type=DAGMAN(10) class=DAEMON(1)
+06/22/12 17:57:41 ** Configuration: subsystem:DAGMAN local:&lt;NONE&gt; class:DAEMON
+06/22/12 17:57:41 ** $CondorVersion: 7.7.6 Apr 16 2012 BuildID: 34175 PRE-RELEASE-UWCS $
+06/22/12 17:57:41 ** $CondorPlatform: x86_64_rhap_5.7 $
+06/22/12 17:57:41 ** PID = 26867
+06/22/12 17:57:41 ** Log last touched time unavailable (No such file or directory)
+06/22/12 17:57:41 ******************************************************
+06/22/12 17:57:41 Using config source: /etc/condor/condor_config
+06/22/12 17:57:41 Using local config sources: 
+06/22/12 17:57:41    /etc/condor/config.d/00-chtc-global.conf
+06/22/12 17:57:41    /etc/condor/config.d/01-chtc-submit.conf
+06/22/12 17:57:41    /etc/condor/config.d/02-chtc-flocking.conf
+06/22/12 17:57:41    /etc/condor/config.d/03-chtc-jobrouter.conf
+06/22/12 17:57:41    /etc/condor/config.d/04-chtc-blacklist.conf
+06/22/12 17:57:41    /etc/condor/config.d/99-osg-ss-group.conf
+06/22/12 17:57:41    /etc/condor/config.d/99-roy-extras.conf
+06/22/12 17:57:41    /etc/condor/condor_config.local
+
+... output trimmed ...
+
+06/22/12 18:08:42 Event: ULOG_EXECUTE for Condor Node montage (82.0.0)
+06/22/12 18:08:42 Number of idle job procs: 0
+06/22/12 18:08:42 Event: ULOG_IMAGE_SIZE for Condor Node montage (82.0.0)
+06/22/12 18:08:42 Event: ULOG_JOB_TERMINATED for Condor Node montage (82.0.0)
+06/22/12 18:08:42 Node montage job proc (82.0.0) failed with status 1.
+06/22/12 18:08:42 Number of idle job procs: 0
+06/22/12 18:08:42 Of 5 nodes total:
+06/22/12 18:08:42  Done     Pre   Queued    Post   Ready   Un-Ready   Failed
+06/22/12 18:08:42   ===     ===      ===     ===     ===        ===      ===
+06/22/12 18:08:42     4       0        0       0       0          0        1
+06/22/12 18:08:42 0 job proc(s) currently held
+06/22/12 18:08:42 Aborting DAG...
+06/22/12 18:08:42 Writing Rescue DAG to goatbrot.dag.rescue001...
+06/22/12 18:08:42 Note: 0 total job deferrals because of -MaxJobs limit (0)
+06/22/12 18:08:42 Note: 0 total job deferrals because of -MaxIdle limit (0)
+06/22/12 18:08:42 Note: 0 total job deferrals because of node category throttles
+06/22/12 18:08:42 Note: 0 total PRE script deferrals because of -MaxPre limit (0)
+06/22/12 18:08:42 Note: 0 total POST script deferrals because of -MaxPost limit (0)
+06/22/12 18:08:42 **** condor_scheduniv_exec.77.0 (condor_DAGMAN) pid 26867 EXITING WITH STATUS 1
+</code></pre>
+<p>DAGMan notices that one of the jobs failed because it's exit code was non-zero. DAGMan ran as much of the DAG as possible and logged enough information to continue the run when the situation is resolved. Do you see the part where it wrote the resuce DAG?</p>
+<p>Look at the rescue DAG. It's called a partial DAG: it indicates what part of the DAG has already been completed. When you re-submit the original DAG, DAGMan will notice the rescue DAG and use it in combination with the original DAG. (The rescue DAG used to be the full DAG with nodes marked as done and you would ask DAGMan to run the new rescue DAG. For your simplicity DAGMan lets you resubmit the original DAG and it reads both files.)</p>
+<pre><code>$ cat goatbrot.dag.rescue001
+# Rescue DAG file, created after running
+#   the goatbrot.dag DAG file
+# Created 6/22/2012 23:08:42 UTC
+# Rescue DAG version: 2.0.1 (partial)
+#
+# Total number of Nodes: 5
+# Nodes premarked DONE: 4
+# Nodes that failed: 1
+#   montage,&lt;ENDLIST&gt;
+
+DONE g1
+DONE g2
+DONE g3
+DONE g4
+</code></pre>
+<p>From the comment near the top, we know that the montage node failed. Let's fix it by getting rid of the offending <code>-h</code> argument. Change <code>montage.sub</code> to look like:</p>
+<pre><code>universe                = vanilla
+executable              = wrapper_montage.sh
+arguments               = tile_0_0.ppm tile_0_1.ppm tile_1_0.ppm tile_1_1.ppm -mode Concatenate -tile 2x2 mandle.jpg
+should_transfer_files   = YES
+when_to_transfer_output = ONEXIT
+transfer_input_files    = tile_0_0.ppm,tile_0_1.ppm,tile_1_0.ppm,tile_1_1.ppm
+transfer_executable     = true
+output                  = montage.out
+error                   = montage.err
+log                     = goat.log
+requirements = (HAS_MODULES =?= true) &amp;&amp; (OSGVO_OS_STRING == &quot;RHEL 6&quot;) &amp;&amp; (OpSys == &quot;LINUX&quot;)
+queue
+</code></pre>
+<p>Now we can re-submit our original DAG and DAGMan will pick up where it left off. It will automatically notice the rescue DAG If you didn't fix the problem, DAGMan would generate another rescue DAG.</p>
+<pre><code>$ condor_submit_dag goatbrot.dag
+Running rescue DAG 1
+-----------------------------------------------------------------------
+File for submitting this DAG to Condor           : goatbrot.dag.condor.sub
+Log of DAGMan debugging messages                 : goatbrot.dag.dagman.out
+Log of Condor library output                     : goatbrot.dag.lib.out
+Log of Condor library error messages             : goatbrot.dag.lib.err
+Log of the life of condor_dagman itself          : goatbrot.dag.dagman.log
+
+Submitting job(s).
+1 job(s) submitted to cluster 83.
+-----------------------------------------------------------------------
+
+$ tail -f goatbrot.dag.dagman.out
+06/23/12 11:30:53 ******************************************************
+06/23/12 11:30:53 ** condor_scheduniv_exec.83.0 (CONDOR_DAGMAN) STARTING UP
+06/23/12 11:30:53 ** /usr/bin/condor_dagman
+06/23/12 11:30:53 ** SubsystemInfo: name=DAGMAN type=DAGMAN(10) class=DAEMON(1)
+06/23/12 11:30:53 ** Configuration: subsystem:DAGMAN local:&lt;NONE&gt; class:DAEMON
+06/23/12 11:30:53 ** $CondorVersion: 7.7.6 Apr 16 2012 BuildID: 34175 PRE-RELEASE-UWCS $
+06/23/12 11:30:53 ** $CondorPlatform: x86_64_rhap_5.7 $
+06/23/12 11:30:53 ** PID = 28576
+06/23/12 11:30:53 ** Log last touched 6/22 18:08:42
+06/23/12 11:30:53 ******************************************************
+06/23/12 11:30:53 Using config source: /etc/condor/condor_config
+...
+</code></pre>
+<p>Here is where DAGMAN notices that there is a rescue DAG:</p>
+<pre><code>06/23/12 11:30:53 Parsing 1 dagfiles
+06/23/12 11:30:53 Parsing goatbrot.dag ...
+06/23/12 11:30:53 Found rescue DAG number 1; running goatbrot.dag.rescue001 in combination with normal DAG file
+06/23/12 11:30:53 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+06/23/12 11:30:53 USING RESCUE DAG goatbrot.dag.rescue001
+06/23/12 11:30:53 Dag contains 5 total jobs
+</code></pre>
+<p>Shortly thereafter it sees that four jobs have already finished:</p>
+<pre><code>06/23/12 11:31:05 Bootstrapping...
+06/23/12 11:31:05 Number of pre-completed nodes: 4
+06/23/12 11:31:05 Registering condor_event_timer...
+06/23/12 11:31:06 Sleeping for one second for log file consistency
+06/23/12 11:31:07 MultiLogFiles: truncating log file /home/roy/condor/goatbrot/montage.log
+</code></pre>
+<p>Here is where DAGMan resubmits the montage job and waits for it to complete:</p>
+<pre><code>06/23/12 11:31:07 Submitting Condor Node montage job(s)...
+06/23/12 11:31:07 submitting: condor_submit 
+      -a dag_node_name' '=' 'montage 
+      -a +DAGManJobId' '=' '83 
+      -a DAGManJobId' '=' '83 
+      -a submit_event_notes' '=' 'DAG' 'Node:' 'montage 
+      -a DAG_STATUS' '=' '0 
+      -a FAILED_COUNT' '=' '0 
+      -a +DAGParentNodeNames' '=' '&quot;g1,g2,g3,g4&quot; 
+      montage.sub
+06/23/12 11:31:07 From submit: Submitting job(s).
+06/23/12 11:31:07 From submit: 1 job(s) submitted to cluster 84.
+06/23/12 11:31:07   assigned Condor ID (84.0.0)
+06/23/12 11:31:07 Just submitted 1 job this cycle...
+06/23/12 11:31:07 Currently monitoring 1 Condor log file(s)
+06/23/12 11:31:07 Event: ULOG_SUBMIT for Condor Node montage (84.0.0)
+06/23/12 11:31:07 Number of idle job procs: 1
+06/23/12 11:31:07 Of 5 nodes total:
+06/23/12 11:31:07  Done     Pre   Queued    Post   Ready   Un-Ready   Failed
+06/23/12 11:31:07   ===     ===      ===     ===     ===        ===      ===
+06/23/12 11:31:07     4       0        1       0       0          0        0
+06/23/12 11:31:07 0 job proc(s) currently held
+06/23/12 11:40:22 Currently monitoring 1 Condor log file(s)
+06/23/12 11:40:22 Event: ULOG_EXECUTE for Condor Node montage (84.0.0)
+06/23/12 11:40:22 Number of idle job procs: 0
+06/23/12 11:40:22 Event: ULOG_IMAGE_SIZE for Condor Node montage (84.0.0)
+06/23/12 11:40:22 Event: ULOG_JOB_TERMINATED for Condor Node montage (84.0.0)
+</code></pre>
+<p>This is where the montage finished:</p>
+<pre><code>06/23/12 11:40:22 Node montage job proc (84.0.0) completed successfully.
+06/23/12 11:40:22 Node montage job completed
+06/23/12 11:40:22 Number of idle job procs: 0
+06/23/12 11:40:22 Of 5 nodes total:
+06/23/12 11:40:22  Done     Pre   Queued    Post   Ready   Un-Ready   Failed
+06/23/12 11:40:22   ===     ===      ===     ===     ===        ===      ===
+06/23/12 11:40:22     5       0        0       0       0          0        0
+06/23/12 11:40:22 0 job proc(s) currently held
+</code></pre>
+<p>And here DAGMan decides that the work is all done:</p>
+<pre><code>06/23/12 11:40:22 All jobs Completed!
+06/23/12 11:40:22 Note: 0 total job deferrals because of -MaxJobs limit (0)
+06/23/12 11:40:22 Note: 0 total job deferrals because of -MaxIdle limit (0)
+06/23/12 11:40:22 Note: 0 total job deferrals because of node category throttles
+06/23/12 11:40:22 Note: 0 total PRE script deferrals because of -MaxPre limit (0)
+06/23/12 11:40:22 Note: 0 total POST script deferrals because of -MaxPost limit (0)
+06/23/12 11:40:22 **** condor_scheduniv_exec.83.0 (condor_DAGMAN) pid 28576 EXITING WITH STATUS 0&lt;/pre&gt;
+</code></pre>
+<p>Success! Now go ahead and clean up. </p>
+<h2 id="challenge">Challenge</h2>
+<p>If you have time, add an extra node to the DAG. Copy our original <code>simple</code> program, but make it exit with a 1 instead of a 0. DAGMan would consider this a failure, but you'll tell DAGMan that it's really a success. This is reasonable--many real world programs use a variety of return codes, and you might need to help DAGMan distinguish success from failure.</p>
+<p>Write a POST script that checks the return value. Check <a href="http://www.cs.wisc.edu/condor/manual/v8.4/2_10DAGMan_Applications.html#dagman:SCRIPT">the Condor manual</a> to see how to describe your post script. </p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>

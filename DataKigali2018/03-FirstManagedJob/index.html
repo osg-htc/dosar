@@ -1,0 +1,879 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://osg-htc.org/dosar/DataKigali2018/03-FirstManagedJob/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>Submitting your first Condor job - DOSAR Outreach Materials</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#submitting-your-first-condor-job" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DOSAR Outreach Materials" class="md-header__button md-logo" aria-label="DOSAR Outreach Materials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DOSAR Outreach Materials
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Submitting your first Condor job
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/osg-htc/dosar/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DOSAR Outreach Materials" class="md-nav__button md-logo" aria-label="DOSAR Outreach Materials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DOSAR Outreach Materials
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/osg-htc/dosar/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Current or Upcoming Events
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Current or Upcoming Events" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Current or Upcoming Events
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataTrieste2019/School/" class="md-nav__link">
+        Data Trieste 2019 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataTrieste2019/Materials/" class="md-nav__link">
+        Data Trieste 2019 Materials
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Past Events
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Past Events" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Past Events
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataSaoPaulo2018/School/" class="md-nav__link">
+        Data Sao Paulo 2018 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataSaoPaulo2018/Materials/" class="md-nav__link">
+        Data Sao Paulo 2018 Materials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../School/" class="md-nav__link">
+        Data Kigali 2018 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Materials/" class="md-nav__link">
+        Data Kigali 2018 Materials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataTrieste2018/School/" class="md-nav__link">
+        Data Trieste 2018 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataTrieste2018/Materials/" class="md-nav__link">
+        Data Trieste 2018 Materials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ASP2018/ASP2018_Schedule/" class="md-nav__link">
+        ASP 2018 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ASP2018/ASP2018_Materials/" class="md-nav__link">
+        ASP 2018 Material
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Materials/DSP_DT2017/" class="md-nav__link">
+        Data Sao Paulo Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Materials/DSP_Materials/" class="md-nav__link">
+        Data Sao Paulo Materials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Materials/PH_DT2017/" class="md-nav__link">
+        Polar Hackathon Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Materials/PH_Materials/" class="md-nav__link">
+        Polar Hackathon Materials
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        DOSAR Video Meetings
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="DOSAR Video Meetings" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          DOSAR Video Meetings
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Meetings/24October2018/" class="md-nav__link">
+        October 24, 2018
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Meetings/12March2019/" class="md-nav__link">
+        March 12, 2019
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    Objective
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-you-need-a-job" class="md-nav__link">
+    First you need a job
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submitting-your-job" class="md-nav__link">
+    Submitting your job
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#doing-a-parameter-sweep" class="md-nav__link">
+    Doing a parameter sweep
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-your-own" class="md-nav__link">
+    On your own
+  </a>
+  
+    <nav class="md-nav" aria-label="On your own">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#just-one-log-file" class="md-nav__link">
+    Just one log file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-outputs-for-each-run" class="md-nav__link">
+    New outputs for each run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lots-of-jobs" class="md-nav__link">
+    Lots of jobs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenges" class="md-nav__link">
+    Challenges
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/osg-htc/dosar/edit/master/docs/DataKigali2018/03-FirstManagedJob.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="submitting-your-first-condor-job">Submitting your first Condor job</h1>
+<h3 id="objective">Objective</h3>
+<p>The objective of this exercise to have you run and understand your first Condor job, as well as run small sets of jobs in a parameter sweep. This is an important exercise because it is the basis for everything that follows. If there is <em>anything</em> you don't understand in this exercise, <em>please ask</em> before you continue on.</p>
+<p>Because this is an important foundation, please seriously consider doing the &ldquo;On Your Own&rdquo; section.</p>
+<h2 id="first-you-need-a-job">First you need a job</h2>
+<p>Before you can submit a job to Condor, you need a job. We will quickly write a small program in C. If you aren't an expert C programmer, fear not. We will hold your hand throughout this process.</p>
+<p>First, because we're going to be compiling some C code, we'll need a compiler.  Sometimes this is already loaded onto a system, but in our case, we need to type the following:</p>
+<pre><code>$ module load gcc
+</code></pre>
+<p>Next, create a file called simple.c using your favorite editor. Put it anywhere you like in your home directory. In that file, put the following text. Copy and paste is a good choice: </p>
+<pre><code>$ mkdir -p ~/condor-test
+$ cd ~/condor-test
+</code></pre>
+<p>Use your preferred text editor to create this C program. (Shown below with nano.)</p>
+<pre><code>$ nano simple.c
+</code></pre>
+<p>Paste in the following C code. </p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main(int argc, char **argv)
+{
+    int sleep_time;
+    int input;
+    int failure;
+
+    if (argc != 3) {
+        printf(&quot;Usage: simple &amp;lt;sleep-time&amp;gt; &amp;lt;integer&amp;gt;\n&quot;);
+        failure = 1;
+    } else {
+        sleep_time = atoi(argv[1]);
+        input      = atoi(argv[2]);
+
+        printf(&quot;Thinking really hard for %d seconds...\n&quot;, sleep_time);
+        sleep(sleep_time);
+        printf(&quot;We calculated: %d\n&quot;, input * 2);
+        failure = 0;
+    }
+    return failure;
+}
+</code></pre>
+<p>Now compile that program:</p>
+<pre><code>$ gcc -o simple simple.c
+$ ls -lh simple
+-rwxrwxr-x 1 roy roy 595K Jun 20 11:12 simple
+</code></pre>
+<p>Finally, run the program and tell it to sleep for four seconds and calculate 10 * 2: </p>
+<pre><code>$ ./simple 4 10
+Thinking really hard for 4 seconds...
+We calculated: 20
+</code></pre>
+<p>Great! You just had a job run locally on the machine you are logged into (user-training.osgconnect.net). The next step is to run this job on a remote computer - and this is a job you can tell Condor to run! Although it clearly isn't an interesting job, it models some of the aspects of a real scientific program: it takes a while to run and it does a calculation. </p>
+<p>Think back to the lecture. I said that our first step was to have a job to run. Now we'll work on running it in Condor, and eventually running lots of copies of it.</p>
+<h2 id="submitting-your-job">Submitting your job</h2>
+<p>Now that you have a job, you just have to tell Condor to run it. Put the following text into a file called <code>submit</code>:</p>
+<pre><code>Universe   = vanilla
+Executable = simple
+Arguments  = 4 10
++ProjectName = &quot;ConnectTrain&quot;
+Log        = simple.log
+Output     = simple.out
+Error      = simple.error
+requirements = (HAS_MODULES =?= true) &amp;&amp; (OSGVO_OS_STRING == &quot;RHEL 6&quot;) &amp;&amp; (OpSys == &quot;LINUX&quot;)
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+Queue
+</code></pre>
+<p>Let's examine each of these lines:</p>
+<ul>
+<li><em>Universe:</em> The vanilla universe means a plain old job. Later on, we'll encounter some special universes.</li>
+<li><em>Executable:</em> The name of your program</li>
+<li><em>Arguments:</em> These are the arguments you want. They will be the same arguments we typed above.</li>
+<li><em>Log:</em> This is the name of a file where Condor will record information about your job's execution. While it's not required, it is a really good idea to have a log. If something goes wrong you can refer to this log to help figure out the problem.</li>
+<li><em>Output:</em> Where Condor should put the standard output from your job.</li>
+<li><em>Error:</em> Where Condor should put the standard error from your job. Our job isn't likely to have any, but we'll put it there to be safe.</li>
+<li><em>should_transfer_files:</em> Tell Condor that it should transfer files, instead of relying on a shared filesystem. While your home directories (on the glite-tutor computers) are mounted on NFS, you do not have user accounts on the worker nodes, so your jobs cannot access files on NFS. In addition, NFS isn't available between the local UI computers and the remote worker nodes. Therefore we will have Condor transfer files to the remote computer.</li>
+<li><em>when_to_transfer_output:</em> A technical detail about when files should be transported back to the computer from which you submitted your job. Don't worry about the details for now. If you're really curious, you can read <a href="http://www.cs.wisc.edu/condor/manual/v7.6/2_5Submitting_Job.html#sec:file-transfer">all the details in the Condor manual</a>.</li>
+</ul>
+<p>Next, tell Condor to run your job: </p>
+<pre><code>$ condor_submit submit
+Submitting job(s).
+1 job(s) submitted to cluster 16.
+</code></pre>
+<p>Now, watch your job run (insert your username in the command below instead of <code>USER</code>.  If you forgot your username use the <code>whoami</code> command.  Note that most of your output will be different than the example, the important column to watch is the <code>ST</code> column - the job state):</p>
+<pre><code># Note the job state of 'I' means the job is idle - not yet running
+$ condor_q YOUR_USER_ID -nobatch
+
+-- Schedd: user-training.osgconnect.net : &lt;192.170.227.119:9618?... @ 07/19/17 03:41:08
+ ID      OWNER            SUBMITTED     RUN_TIME ST PRI SIZE CMD
+2056.0   osguser99       7/19 03:40   0+00:00:00 I  0    0.0 simple 4 10
+
+Total for query: 1 jobs; 0 completed, 0 removed, 1 idle, 0 running, 0 held, 0 suspended 
+Total for all users: 1 jobs; 0 completed, 0 removed, 1 idle, 0 running, 0 held, 0 suspended
+
+1 jobs; 0 completed, 0 removed, 1 idle, 0 running, 0 held, 0 suspended
+
+# After some time your job will enter the 'R' state which means it is currently running
+$ condor_q YOUR_USER_ID -nobatch
+
+-- Schedd: user-training.osgconnect.net : &lt;192.170.227.119:9618?... @ 07/19/17 03:41:14
+ ID      OWNER            SUBMITTED     RUN_TIME ST PRI SIZE CMD
+2056.0   osguser99       7/19 03:40   0+00:00:02 R  0    0.0 simple 4 10
+
+Total for query: 1 jobs; 0 completed, 0 removed, 0 idle, 1 running, 0 held, 0 suspended 
+Total for all users: 1 jobs; 0 completed, 0 removed, 0 idle, 1 running, 0 held, 0 suspended
+
+1 jobs; 0 completed, 0 removed, 1 idle, 0 running, 0 held, 0 suspended
+
+# When your job disappears from the queue that means it completed.
+$ condor_q YOUR_USER_ID -nobatch
+
+-- Schedd: user-training.osgconnect.net : &lt;192.170.227.119:9618?... @ 07/19/17 03:41:21
+ ID      OWNER            SUBMITTED     RUN_TIME ST PRI SIZE CMD
+
+Total for query: 0 jobs; 0 completed, 0 removed, 0 idle, 0 running, 0 held, 0 suspended 
+Total for all users: 0 jobs; 0 completed, 0 removed, 0 idle, 0 running, 0 held, 0 suspended
+</code></pre>
+<p><em>Tip</em>: While you are waiting for your job to run and complete you can check out <a href="https://twiki.grid.iu.edu/bin/view/Operations/HTCReviewCondorTips">"A few tips and tricks"</a> to learn how to user <code>condor_q</code> more effectively.</p>
+<p>When my job was done, it was no longer listed. Because I told Condor to log information about my job, I can see what happened: </p>
+<pre><code>$ cat simple.log
+000 (032.000.000) 08/18 15:18:13 Job submitted from host: &lt;10.0.0.252:9645&gt;
+...
+001 (032.000.000) 08/18 15:18:32 Job executing on host: &lt;172.16.200.1:9250&gt;
+...
+006 (032.000.000) 08/18 15:18:32 Image size of job updated: 7
+    0  -  MemoryUsage of job (MB)
+    0  -  ResidentSetSize of job (KB)
+...
+005 (032.000.000) 08/18 15:18:33 Job terminated.
+    (1) Normal termination (return value 0)
+        Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
+        Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+        Usr 0 00:00:00, Sys 0 00:00:00  -  Total Remote Usage
+        Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+    56  -  Run Bytes Sent By Job
+    7059  -  Run Bytes Received By Job
+    56  -  Total Bytes Sent By Job
+    7059  -  Total Bytes Received By Job
+    Partitionable Resources :    Usage  Request Allocated
+       Cpus                 :                 1         1
+       Disk (KB)            :       15        7  17605109
+       Memory (MB)          :        0        1      1900
+</code></pre>
+<p>That looks good: the job started up quickly, though you will often see slightly slower startups. Condor doesn't optimize for fast job startup, but for high throughput, The job ran for four seconds.</p>
+<p>Now take a look at the job's output:</p>
+<pre><code>$ cat simple.out
+Thinking really hard for 4 seconds...
+We calculated: 20
+</code></pre>
+<p>Excellent! We ran our sophisticated scientific job on a Condor pool! We've only run one job though. Can we run more?</p>
+<h2 id="doing-a-parameter-sweep">Doing a parameter sweep</h2>
+<p>If you only ever had to run a single job, you probably wouldn't need Condor. But we would like to have our program calculate a whole set of values for different inputs. How can we do that? Let's change our <code>submit</code> file to look like this: </p>
+<pre><code>Universe   = vanilla
+Executable = simple
++ProjectName = &quot;ConnectTrain&quot;
+Arguments  = 4 10
+Log        = simple.$(Process).log
+Output     = simple.$(Process).out
+Error      = simple.$(Process).error
+requirements = (HAS_MODULES =?= true) &amp;&amp; (OSGVO_OS_STRING == &quot;RHEL 6&quot;) &amp;&amp; (OpSys == &quot;LINUX&quot;)
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+Queue
+
+Arguments = 4 11
+Queue
+
+Arguments = 4 12
+Queue
+</code></pre>
+<p>There are two important differences to notice here. First, the Log, Output and Error lines have the <code>$(Process)</code> macro in them. This means that the output and error files will be named according to the process number of the job. You'll see what this looks like in a moment. Second, we told Condor to run the same job an extra two times by adding extra <code>Arguments</code> and <code>Queue</code> statements. We are doing a parameter sweep on the values 10, 11, and 12. Let's see what happens: </p>
+<pre><code>$ condor_submit submit
+Submitting job(s)...
+3 job(s) submitted to cluster 18.
+
+$ condor_q USER
+-- Submitter: frontal.cci.ucad.sn : &lt;10.0.0.252:9645&gt; : frontal.cci.ucad.sn
+ ID      OWNER            SUBMITTED     RUN_TIME ST PRI SIZE CMD               
+
+  34.0   kagross         8/18 15:28   0+00:00:00 I  0   0.0  simple 0 34       
+  34.1   kagross         8/18 15:28   0+00:00:00 I  0   0.0  simple 1 34       
+  34.2   kagross         8/18 15:28   0+00:00:00 I  0   0.0  simple 2 34        
+
+3 jobs; 0 completed, 0 removed, 4 idle, 0 running, 0 held, 0 suspended
+
+$ condor_q USER
+-- Submitter: frontal.cci.ucad.sn : &lt;10.0.0.252:9645&gt; : frontal.cci.ucad.sn
+ ID      OWNER            SUBMITTED     RUN_TIME ST PRI SIZE CMD               
+
+  34.0   kagross         8/18 15:28   0+00:00:00 R  0   0.0  simple 0 34       
+  34.1   kagross         8/18 15:28   0+00:00:00 R  0   0.0  simple 1 34       
+  34.2   kagross         8/18 15:28   0+00:00:00 R  0   0.0  simple 2 34     
+
+3 jobs; 0 completed, 0 removed, 0 idle, 4 running, 0 held, 0 suspended
+
+$ condor_q USER
+-- Submitter: frontal.cci.ucad.sn : &lt;10.0.0.252:9645&gt; : frontal.cci.ucad.sn
+ ID      OWNER            SUBMITTED     RUN_TIME ST PRI SIZE CMD               
+
+0 jobs; 0 completed, 0 removed, 0 idle, 0 running, 0 held, 0 suspended
+
+$ ls simple*out
+simple.0.out  simple.1.out  simple.2.out  simple.out
+
+$ cat simple.0.out
+Thinking really hard for 4 seconds...
+We calculated: 20
+
+$ cat simple.1.out
+Thinking really hard for 4 seconds...
+We calculated: 22
+
+$ cat simple.2.out
+Thinking really hard for 4 seconds...
+We calculated: 24
+</code></pre>
+<p>Notice that we had three jobs with the same cluster number, but different process numbers. They have the same cluster number because they were all submitted from the same submit file. When the jobs ran, they created three different output files, each with the desired output.</p>
+<p>You are now ready to submit lots of jobs! Although this example was simple, Condor has many, many options so you can get a wide variety of behaviors. You can find many of these if you look at <a href="http://www.cs.wisc.edu/condor/manual/v8.6/condor_submit.html">the documentation for condor_submit</a>.</p>
+<h2 id="on-your-own">On your own</h2>
+<p>Now that you've gotten your feet wet, try a few things on your own.</p>
+<h3 id="just-one-log-file">Just one log file</h3>
+<p>There's no reason to have a separate log file for each job. Change your submit file so that it uses a single log file. Does it all still work?</p>
+<h3 id="new-outputs-for-each-run">New outputs for each run</h3>
+<p>You might have noticed that the output files were over-written when you re-ran the jobs. (That is, <code>simple.1.out</code> was just re-written.) That was okay for a simple exercise, but it might be very bad if you had wanted to keep around the results. Maybe you changed a parameter or rebuilt your program, and you want to compare the outputs.</p>
+<p>Just like you used <code>$(Process)</code>, you can also use <code>$(Cluster)</code>. This will be a number from your job ID. For example, it would be 34 from the above example. Change your submit file to use <code>$(Cluster)</code> and <code>$(Process)</code>. If you do two job submissions, will you have separate output files?</p>
+<h3 id="lots-of-jobs">Lots of jobs</h3>
+<p>Instead of specifying the Arguments multiple times with multiple <code>queue</code> statements, try this:</p>
+<pre><code>Arguments = $(Process) $(Cluster)
+queue 10
+</code></pre>
+<p>What does it mean? What happens? Does it work as you expect?</p>
+<p>(An aside: you might wish to be able to do math, something like <code>$(Process)+1</code>. Unfortunately, you can't do that.)</p>
+<h2 id="challenges">Challenges</h2>
+<p>If you have time and feel comfortable with the technical background, try these extra challenges. You'll need to peruse the Condor manual (particularly the <a href="http://www.cs.wisc.edu/condor/manual/v8.4/condor_submit.html">manual page for condor_submit</a>) to find answers. Feel free to ask Rob--he'd love to give you hints!</p>
+<ul>
+<li>Make another scientific program (probably just modify simple.c) that takes its input from a file. Now submit 3 copies of this program where each input file is in a separate directory. Use the initialdir option <a href="http://www.cs.wisc.edu/condor/manual/v8.4/condor_submit.html">described in the manual</a>. This will let you specify a directory for the input to the program. You can run specify the initialdir with <code>$(Process)</code>. You can specify extra files to copy with <code>transfer_input_files</code>. Now you're really learning the basics of running something like a real scientific job!</li>
+<li>Condor can send you email when a job finishes. How can you control this? </li>
+<li>You know that your job should never run for more than four hours. If it does, then the job should be killed because there is a problem. How can you tell Condor to do this for you? </li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,722 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://osg-htc.org/dosar/ASP2018/06-RJob/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>Running a job with R - DOSAR Outreach Materials</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#running-a-job-with-r" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DOSAR Outreach Materials" class="md-header__button md-logo" aria-label="DOSAR Outreach Materials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DOSAR Outreach Materials
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Running a job with R
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/osg-htc/dosar/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DOSAR Outreach Materials" class="md-nav__button md-logo" aria-label="DOSAR Outreach Materials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DOSAR Outreach Materials
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/osg-htc/dosar/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Current or Upcoming Events
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Current or Upcoming Events" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Current or Upcoming Events
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataTrieste2019/School/" class="md-nav__link">
+        Data Trieste 2019 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataTrieste2019/Materials/" class="md-nav__link">
+        Data Trieste 2019 Materials
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Past Events
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Past Events" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Past Events
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataSaoPaulo2018/School/" class="md-nav__link">
+        Data Sao Paulo 2018 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataSaoPaulo2018/Materials/" class="md-nav__link">
+        Data Sao Paulo 2018 Materials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataKigali2018/School/" class="md-nav__link">
+        Data Kigali 2018 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataKigali2018/Materials/" class="md-nav__link">
+        Data Kigali 2018 Materials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataTrieste2018/School/" class="md-nav__link">
+        Data Trieste 2018 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataTrieste2018/Materials/" class="md-nav__link">
+        Data Trieste 2018 Materials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ASP2018_Schedule/" class="md-nav__link">
+        ASP 2018 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ASP2018_Materials/" class="md-nav__link">
+        ASP 2018 Material
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Materials/DSP_DT2017/" class="md-nav__link">
+        Data Sao Paulo Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Materials/DSP_Materials/" class="md-nav__link">
+        Data Sao Paulo Materials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Materials/PH_DT2017/" class="md-nav__link">
+        Polar Hackathon Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Materials/PH_Materials/" class="md-nav__link">
+        Polar Hackathon Materials
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        DOSAR Video Meetings
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="DOSAR Video Meetings" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          DOSAR Video Meetings
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Meetings/24October2018/" class="md-nav__link">
+        October 24, 2018
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Meetings/12March2019/" class="md-nav__link">
+        March 12, 2019
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    Objective
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    The Problem
+  </a>
+  
+    <nav class="md-nav" aria-label="The Problem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pros-and-cons-of-having-your-system-administrator-do-it-for-you" class="md-nav__link">
+    Pros and cons of having your system administrator do it for you
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pros-and-cons-of-bringing-it-along" class="md-nav__link">
+    Pros and cons of bringing it along
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-your-own" class="md-nav__link">
+    On your own
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-answer" class="md-nav__link">
+    The answer
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/osg-htc/dosar/edit/master/docs/ASP2018/06-RJob.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="running-a-job-with-r">Running a job with R</h1>
+<h3 id="objective">Objective</h3>
+<p>The objective of this exercise is to learn how to run a program that depends on a larger run-time environment that isn't already available on your cluster.  The run-time environment refers to all the hardware and software resources available on the machine where your job is running.  We will focus on the available software in this exercise.</p>
+<h2 id="the-problem">The Problem</h2>
+<p>Sometimes you want to run a program that depends on a larger run-time environment. For example, perhaps you wrote your program in Perl, but there is no Perl installed on the cluster. (That's an unlikely example, intended just to give you feel for what I mean by "run-time environment".) This is a common problem distributed computing users encounter. For example, many people like to use <a href="http://www.mathworks.com/">Matlab</a> (or its open-source cousin, <a href="http://www.gnu.org/software/octave/">Octave</a>) or <a href="http://www.r-project.org/">R</a> for doing calculations. These require a fair amount of run-time environment to run the programs you write. What do you do if they aren't installed?</p>
+<p>There are at least two possibilities:</p>
+<ol>
+<li>Ask your kindly system administrator to install it for you on all of the computers you might run on.</li>
+<li>Bring the environment (Such as Octave or R) along with your job. </li>
+</ol>
+<p>Before you read any further, please stop for a moment, and think about the tradeoffs between these two methodologies. They both have benefits and drawbacks. Why would you choose each of them? Why not? </p>
+<p>Here are some of my answers...</p>
+<h3 id="pros-and-cons-of-having-your-system-administrator-do-it-for-you">Pros and cons of having your system administrator do it for you</h3>
+<ul>
+<li>PRO - It's a lot easier for you.</li>
+<li>PRO - You have to transfer less data with each job.</li>
+<li>CON - You have to wait for the system administrator to install them.</li>
+<li>CON - If you want upgrades (or downgrades), you have to ask again and wait for them.</li>
+</ul>
+<h3 id="pros-and-cons-of-bringing-it-along">Pros and cons of bringing it along</h3>
+<ul>
+<li>CON - It's more complex for you.</li>
+<li>CON - You have to transfer the application and data with each job (or have a job that pre-stages it for you.)</li>
+<li>PRO - You are in complete control: when you need a tweak, an upgrade, or a downgrade, you can make it happen.</li>
+</ul>
+<p>Clearly, there is a choice here. I'd like to enable you to be able to bring along your run-time environment with you. In my experience, if you are capable of bringing it with you, you can take advantage of more computers: you don't have to wait for someone to build and install the environment for you. </p>
+<p>We'd like to demonstrate how to install one run-time environment called <a href="http://www.r-project.org/">R</a>. Don't worry if you have no experience with it: neither do I. It's a package for doing math and statistics and it lets you write programs in the R language. (Actually, it's the S language. Who chose names like this that are hard to Google?) We've built a minimal version of R that won't do graphical output, which makes it much less interesting, but it's good enough for our purposes.</p>
+<h2 id="setup">Setup</h2>
+<p>OSG's implementation of CVMFS is called OASIS and we will be using this to gain access to R. </p>
+<pre><code>$ source /cvmfs/oasis.opensciencegrid.org/osg/modules/lmod/5.6.2/init/bash
+</code></pre>
+<p>Let's look at what software is available:</p>
+<pre><code>$ module avail
+</code></pre>
+<p>And then we load the R module:</p>
+<pre><code>$ module load R 
+</code></pre>
+<p>You'll need an R program. After hours of <strike>combing the internet</strike> coding, I present to you my first R program. Save it in a file called <code>demo.r</code> using nano or your favorite editor:</p>
+<pre><code>len &lt;- 100
+fibvals &lt;- numeric(len)
+fibvals[1] &lt;- 1
+fibvals[2] &lt;- 1
+for (i in 3:len) { 
+   fibvals[i] &lt;- fibvals[i-1]+fibvals[i-2]
+} 
+print(&quot;First 100 Fibonacci numbers:&quot;)
+for (i in 1:len) { 
+    print(fibvals[i], digits = 21)
+}
+print(&quot;Number of possible combinations of cards in a 52 card deck:&quot;)
+comb &lt;- factorial(52)
+print(comb, digits = 21)
+</code></pre>
+<p>This program prints the first 100 <a href="http://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci numbers</a>. These are the numbers that show up in the weirdest places, like pineapples and sunflowers. It's a sequence of numbers beginning with 0, 1, 1, 2, 3, 5, 8... where each successive number is the sum of the previous two numbers. It also prints 52 factorial, which is the number of possible combinations of a standard 52-card deck (not including the jokers, of course). </p>
+<p>R is a bit fussy about where it's been installed on disk, so I had to write a wrapper program so it will happily run wherever it lands in our cluster. I could make you work it out, but that seems unfair. Save this program in <code>run-r.sh</code>. If you're curious about exactly why it's needed, ask us. There are two important parts to it, and you should know what they are, at least conceptually because this is the magic you would need to do for any run-time environment you want to bring along.</p>
+<ol>
+<li>Load the R environment using <code>module</code>. In general you might have to do more work. </li>
+<li>Invoke R, using whatever magic is needed. In our case, I set up some environment variables and invoke the right executable.</li>
+</ol>
+<pre><code>#!/bin/sh -x
+
+if [ $# -ne 1 ]; then
+    echo &quot;Usage: run-r &quot;
+    exit 1
+fi
+
+# Step 1: Set up our environment, the R module.
+source /cvmfs/oasis.opensciencegrid.org/osg/modules/lmod/current/init/bash
+module load R
+module load libgfortran
+
+# Step 2, Invoke R with the proper environment
+R --slave --vanilla &lt; $1
+</code></pre>
+<p>You could easily execute this on OSG Connect locally by making the shell script executable and executing it.</p>
+<pre><code>$ chmod 755 run-r.sh
+$ ./run-r.sh demo.r
+</code></pre>
+<h2 id="on-your-own">On your own</h2>
+<p>Write a Condor submit file that will use R to run the <code>demo.r</code> program. You will need to include the following line in your submit file (before the "queue" statement) to make sure that Condor looks for a resource that uses OASIS:</p>
+<pre><code>requirements = (HAS_CVMFS_oasis_opensciencegrid_org =?= TRUE)
+</code></pre>
+<p>Make sure you get back the output. Make sure you transfer the program. </p>
+<h2 id="the-answer">The answer</h2>
+<p>This should be easy for you now, but if it's not, here's the answer, just in case.</p>
+<pre><code>universe = vanilla
+executable = run-r.sh
+arguments = demo.r
+transfer_input_files = demo.r
+log = R.log.$(Cluster).$(Process)
+error = R.err.$(Cluster).$(Process)
+output = R.out.$(Cluster).$(Process)
+requirements = (HAS_CVMFS_oasis_opensciencegrid_org =?= TRUE)
+queue  
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,794 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://osg-htc.org/dosar/ASP2022/02-OurJobManager/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>Our Condor Installation - DOSAR Outreach Materials</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#our-condor-installation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DOSAR Outreach Materials" class="md-header__button md-logo" aria-label="DOSAR Outreach Materials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DOSAR Outreach Materials
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Our Condor Installation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/osg-htc/dosar/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DOSAR Outreach Materials" class="md-nav__button md-logo" aria-label="DOSAR Outreach Materials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DOSAR Outreach Materials
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/osg-htc/dosar/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Current or Upcoming Events
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Current or Upcoming Events" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Current or Upcoming Events
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataTrieste2019/School/" class="md-nav__link">
+        Data Trieste 2019 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataTrieste2019/Materials/" class="md-nav__link">
+        Data Trieste 2019 Materials
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Past Events
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Past Events" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Past Events
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataSaoPaulo2018/School/" class="md-nav__link">
+        Data Sao Paulo 2018 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataSaoPaulo2018/Materials/" class="md-nav__link">
+        Data Sao Paulo 2018 Materials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataKigali2018/School/" class="md-nav__link">
+        Data Kigali 2018 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataKigali2018/Materials/" class="md-nav__link">
+        Data Kigali 2018 Materials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataTrieste2018/School/" class="md-nav__link">
+        Data Trieste 2018 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataTrieste2018/Materials/" class="md-nav__link">
+        Data Trieste 2018 Materials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ASP2018/ASP2018_Schedule/" class="md-nav__link">
+        ASP 2018 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ASP2018/ASP2018_Materials/" class="md-nav__link">
+        ASP 2018 Material
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Materials/DSP_DT2017/" class="md-nav__link">
+        Data Sao Paulo Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Materials/DSP_Materials/" class="md-nav__link">
+        Data Sao Paulo Materials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Materials/PH_DT2017/" class="md-nav__link">
+        Polar Hackathon Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Materials/PH_Materials/" class="md-nav__link">
+        Polar Hackathon Materials
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        DOSAR Video Meetings
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="DOSAR Video Meetings" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          DOSAR Video Meetings
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Meetings/24October2018/" class="md-nav__link">
+        October 24, 2018
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Meetings/12March2019/" class="md-nav__link">
+        March 12, 2019
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    Objective
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#login-to-the-condor-submit-computer" class="md-nav__link">
+    Login to the Condor submit computer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#looking-at-our-condor-installation" class="md-nav__link">
+    Looking at our Condor installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Looking at our Condor installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extra-tip-the-os-version" class="md-nav__link">
+    Extra Tip: The OS version
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#condor_q" class="md-nav__link">
+    condor_q
+  </a>
+  
+    <nav class="md-nav" aria-label="condor_q">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extra-tip" class="md-nav__link">
+    Extra Tip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#double-bonus-points" class="md-nav__link">
+    Double bonus points
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#condor_status" class="md-nav__link">
+    condor_status
+  </a>
+  
+    <nav class="md-nav" aria-label="condor_status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extra-credit" class="md-nav__link">
+    Extra credit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/osg-htc/dosar/edit/master/docs/ASP2022/02-OurJobManager.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="our-condor-installation">Our Condor Installation</h1>
+<h2 id="objective">Objective</h2>
+<p>This exercise should help you understand the basics of how Condor is installed, what Condor processes (a.k.a. daemons) are running, and what they do.</p>
+<h2 id="login-to-the-condor-submit-computer">Login to the Condor submit computer</h2>
+<p>Before you start, make sure you are logged into <code>user-training.osgconnect.net</code></p>
+<pre><code>$ hostname
+user-training.osgconnect.net
+</code></pre>
+<p>You should have been given your name and password previously. If you don't know them, talk to us.</p>
+<h2 id="looking-at-our-condor-installation">Looking at our Condor installation</h2>
+<p>How do you know what version of Condor you are using? Try <code>condor_version</code>: </p>
+<pre><code>$ condor_version
+$CondorVersion: 8.6.11 May 14 2018 $
+$CondorPlatform: X86_64-CentOS_6.9 $
+</code></pre>
+<p>Note that the "CondorPlatform" reports the type of computer we built it on, <em>not</em> the computer we're running on. It was built on CentOS_6.8, but you might notice that we're running on Scientific Linux 6.8, which is a free clone of Red Hat Enterprise Linux.</p>
+<h3 id="extra-tip-the-os-version">Extra Tip: The OS version</h3>
+<p>Do you know how to find the OS version? You can usually look in /etc/issue to find out:</p>
+<pre><code>$ cat /etc/issue
+Scientific Linux release 6.9 (Carbon)
+Kernel \r on an \m
+</code></pre>
+<p>Or you can run:</p>
+<pre><code>$ lsb_release -a
+LSB Version:    :base-4.0-amd64:base-4.0-noarch:core-4.0-amd64:core-4.0-noarch
+Distributor ID: Scientific
+Description:    Scientific Linux release 6.9 (Carbon)
+Release:    6.9
+Codename:   Carbon
+</code></pre>
+<p>Where is Condor installed? </p>
+<pre><code># Show the location of the condor_q binary
+$ which condor_q
+/usr/bin/condor_q
+
+# Show which RPM installed Condor
+$ rpm -q condor
+condor-8.6.11-1.osg34.el6.x86_64
+</code></pre>
+<p>Condor has some configuration files that it needs to find. They are in the standard location, <code>/etc/condor</code></p>
+<pre><code>$ ls /etc/condor
+condor_config        condor_ssh_to_job_sshd_config_template  ganglia.d
+condor_config.local  config.d
+</code></pre>
+<p>Condor has some directories that it keeps records of jobs in. Remember that each submission computer keeps track of all jobs submitted to it. That's in the local directory: </p>
+<pre><code>$ condor_config_val -v LOCAL_DIR
+LOCAL_DIR = /var
+ # at: /etc/condor/condor_config, line 26
+ # raw: LOCAL_DIR = /var
+
+$ ls -CF /var/lib/condor
+dead.letter  execute/  spool/
+</code></pre>
+<p>The spool directory is where Condor keeps the jobs you submit, while the execute directory is where Condor keeps running jobs. Since this is a submission-only computer, it should be empty.</p>
+<p>Check if Condor is running.  Your output will differ slightly, but you should see <code>condor_master</code> with the other Condor daemons listed under it:</p>
+<pre><code>$ ps auwx --forest | grep condor_ | grep -v grep
+condor   2299245  0.0  0.1  50972  7348 ?        Ss   Jul10   0:08 condor_master -pidfile /var/run/condor/condor_master.pid
+root     2299287  0.0  0.1  25924  5072 ?        S    Jul10   1:54  \_ condor_procd -A /var/run/condor/procd_pipe -L /var/log/condor/ProcLog -R 1000000 -S 60 -C 499
+condor   2299288  0.0  0.1  50596  7796 ?        Ss   Jul10   0:16  \_ condor_shared_port -f
+condor   2299289  0.0  0.2  70020  9100 ?        Ss   Jul10   0:13  \_ condor_collector -f
+condor   2299290  0.0  0.5 116132 23872 ?        Ss   Jul10   6:19  \_ condor_schedd -f
+condor   2299291  0.0  0.1  51056  7956 ?        Ss   Jul10   0:59  \_ condor_negotiator -f
+</code></pre>
+<p>For this version of Condor there are four processes running: the condor_master, the condor_schedd, the condor_procd, and condor_collector. In general, you might see many different Condor processes. Here's a list of the processes:</p>
+<ul>
+<li><em>condor_master</em>: This program runs constantly and ensures that all other parts of Condor are running. If they hang or crash, it restarts them.</li>
+<li><em>condor_schedd</em>: If this program is running, it allows jobs to be submitted from this computer--that is, your computer is a "submit machine". This will advertise jobs to the central manager so that it knows about them. It will contact a condor_startd on other execute machines for each job that needs to be started.</li>
+<li><em>condor_procd:</em> This process helps Condor track process (from jobs) that it creates</li>
+<li><em>condor_collector:</em> This program is part of the Condor central manager. It collects information about all computers in the pool as well as which users want to run jobs. It is what normally responds to the condor_status command. At the school, it is running on a different computer, and you can figure out which one: </li>
+</ul>
+<p>Other daemons include:</p>
+<ul>
+<li><em>condor_negotiator:</em> This program is part of the Condor central manager. It decides what jobs should be run where. It is run on the same computer as the collector.</li>
+<li><em>condor_startd:</em> If this program is running, it allows jobs to be started up on this computer--that is, your computer is an "execute machine". This advertises your computer to the central manager so that it knows about this computer. It will start up the jobs that run.</li>
+<li><em>condor_shadow:</em> For each job that has been submitted from this computer, there is one condor_shadow running. It will watch over the job as it runs remotely. In some cases it will provide some assistance (see the standard universe later.) You may or may not see any condor_shadow processes running, depending on what is happening on the computer when you try it out. </li>
+<li><em>condor_shared_port:</em> Used to assist Condor with networking by allowing multiple Condor processes to share a single network port. </li>
+</ul>
+<h2 id="condor_q">condor_q</h2>
+<p>You can find out what jobs have been submitted on your computer with the condor_q command: </p>
+<pre><code>$ condor_q -nobatch
+-- Schedd: user-training.osgconnect.net : &lt;192.170.227.119:9618?... @ 07/19/17 03:26:20
+ ID      OWNER            SUBMITTED     RUN_TIME ST PRI SIZE CMD
+
+0 jobs; 0 completed, 0 removed, 0 idle, 0 running, 0 held, 0 suspended 
+</code></pre>
+<p>The output that you see will be different depending on what jobs are running. Notice what we can see from this:</p>
+<ul>
+<li><em>ID</em>: We can see each jobs cluster and process number. For the first job, the cluster is 60256 and the process is 0.</li>
+<li><em>OWNER</em>: We can see who owns the job.</li>
+<li><em>SUBMITTED</em>: We can see when the job was submitted</li>
+<li><em>RUN_TIME</em>: We can see how long the job has been running.</li>
+<li><em>ST</em>: We can see what the current state of the job is. I is idle, R is running.</li>
+<li><em>PRI</em>: We can see the priority of the job.</li>
+<li><em>SIZE</em>: We can see the memory consumption of the job.</li>
+<li><em>CMD</em>: We can see the program that is being executed. </li>
+</ul>
+<h3 id="extra-tip">Extra Tip</h3>
+<p>What else can you find out with condor_q? Try any one of:</p>
+<ul>
+<li><code>man condor_q</code></li>
+<li><code>condor_q -help</code></li>
+<li><a href="http://www.cs.wisc.edu/condor/manual/v8.6/condor_q.html">condor_q from the online manual</a></li>
+</ul>
+<h3 id="double-bonus-points">Double bonus points</h3>
+<p>How do you use the <code>-constraint</code> or <code>-format</code> options to <code>condor_q</code>? When would you want them? When would you use the -l option? This might be an easier exercise to try once you submit some jobs.</p>
+<h2 id="condor_status">condor_status</h2>
+<p>You can find out what computers are in your Condor pool. (A pool is similar to a cluster, but it doesn't have the connotation that all computers are dedicated full-time to computation: some may be desktop computers owned by users.) To look, use condor_status:</p>
+<pre><code>$ condor_status -pool flock.opensciencegrid.org
+Name                             OpSys      Arch   State     Activity LoadAv Mem    ActvtyTime
+
+slot1@amundsen.grid.uchicago.edu LINUX      X86_64 Owner     Idle      0.000 32768  1+02:46:31
+slot2@amundsen.grid.uchicago.edu LINUX      X86_64 Owner     Idle      0.000 32768  5+01:05:58
+slot1@c2                         LINUX      X86_64 Unclaimed Idle      0.000 48289  3+10:04:49
+slot1@dhcp-10-1-202-3            LINUX      X86_64 Unclaimed Idle      0.000  3251  0+08:10:13
+slot1_1@dhcp-10-1-202-3          LINUX      X86_64 Claimed   Busy      0.990  6144  0+01:09:46
+slot1_2@dhcp-10-1-202-3          LINUX      X86_64 Claimed   Busy      0.990  6144  0+00:46:46
+slot1_3@dhcp-10-1-202-3          LINUX      X86_64 Claimed   Busy      0.990  2048  0+00:53:08
+slot1_4@dhcp-10-1-202-3          LINUX      X86_64 Claimed   Busy      0.990  1024  0+05:48:14
+slot1_5@dhcp-10-1-202-3          LINUX      X86_64 Claimed   Busy      0.000  6144  0+00:16:48
+slot1_6@dhcp-10-1-202-3          LINUX      X86_64 Claimed   Busy      0.990  2816  0+13:16:34
+...
+</code></pre>
+<p>Let's look at exactly what you can see:</p>
+<ul>
+<li><em>Name</em>: The name of the computer. Sometimes this gets chopped off, like above.</li>
+<li><em>OpSys</em>: The operating system, though not at the granularity you may wish: It says "Linux" instead of which distribution and version of Linux.</li>
+<li><em>Arch</em>: The architecture, such as INTEL or PPC.</li>
+<li><em>State</em>: The state is often Claimed (when it is running a Condor job) or Unclaimed (when it is not running a Condor job). It can be in a few other states as well, such as Matched.</li>
+<li><em>Activity</em>: This is usually something like Busy or Idle. Sometimes you may see a computer that is Claimed, but no job has yet begun on the computer. Then it is Claimed/Idle. Hopefully this doesn't last very long.</li>
+<li><em>LoadAv</em>: The load average on the computer.</li>
+<li><em>Mem</em>: The computers memory in megabytes.</li>
+<li><em>ActvtyTime</em>: How long the computer has been doing what it's been doing. </li>
+</ul>
+<h3 id="extra-credit">Extra credit</h3>
+<p>What else can you find out with condor_status? Try any one of:</p>
+<ul>
+<li><code>man condor_status</code></li>
+<li><code>condor_status -help</code></li>
+<li><a href="http://www.cs.wisc.edu/condor/manual/v8.6/condor_status.html">condor_status from the online manual</a></li>
+</ul>
+<p>Note in particular the options like <code>-master</code> and <code>-schedd</code>. When would these be useful? When would the <code>-l</code> option be useful? </p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>
