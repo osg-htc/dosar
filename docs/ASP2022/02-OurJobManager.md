@@ -5,14 +5,12 @@
 This exercise should help you understand the basics of how Condor is installed, what Condor processes (a.k.a. daemons) are running, and what they do.
 
 ## Login to the Condor submit computer
-Before you start, make sure you are logged into `user-training.osgconnect.net`
+Before you start, make sure you are logged into `https://notebook.ospool.osg-htc.org/hub/login` with your Gmail or GitHub account.
 
 ```
 $ hostname
-user-training.osgconnect.net
+jupyter-...-40gmail-2ecom
 ```
-
-You should have been given your name and password previously. If you don't know them, talk to us.
 
 ## Looking at our Condor installation
 
@@ -20,11 +18,11 @@ How do you know what version of Condor you are using? Try <code>condor_version</
 
 ```
 $ condor_version
-$CondorVersion: 8.6.11 May 14 2018 $
-$CondorPlatform: X86_64-CentOS_6.9 $
+$CondorVersion: 9.11.0 2022-08-25 BuildID: 602587 PackageID: 9.11.0-1.1 $
+$CondorPlatform: X86_64-Ubuntu_20.04 $
 ```
 
-Note that the "CondorPlatform" reports the type of computer we built it on, _not_ the computer we're running on. It was built on CentOS_6.8, but you might notice that we're running on Scientific Linux 6.8, which is a free clone of Red Hat Enterprise Linux.
+Note that the "CondorPlatform" reports the type of computer we built it on, _not necessarily_ the computer we're running on. It was built on Ubuntu 20.04, but you might notice that we're running on Ubuntu 20.04.5, which is a slightly newer version.
 
 ### Extra Tip: The OS version
 
@@ -32,19 +30,18 @@ Do you know how to find the OS version? You can usually look in /etc/issue to fi
 
 ```
 $ cat /etc/issue
-Scientific Linux release 6.9 (Carbon)
-Kernel \r on an \m
+Ubuntu 20.04.5 LTS \n \l
 ```
 
 Or you can run:
 
 ```
 $ lsb_release -a
-LSB Version:	:base-4.0-amd64:base-4.0-noarch:core-4.0-amd64:core-4.0-noarch
-Distributor ID:	Scientific
-Description:	Scientific Linux release 6.9 (Carbon)
-Release:	6.9
-Codename:	Carbon
+o LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 20.04.5 LTS
+Release:        20.04
+Codename:       focal
 ```
 
 Where is Condor installed? 
