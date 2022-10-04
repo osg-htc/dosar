@@ -10,7 +10,7 @@ You will need your Gmail or GitHub credentials for this session.
 ## Which Condor?
 We will be using Condor 9.11.0, which is a recent version of Condor.
 
-Condor has two coexisting types of releases at any given time: Feature (development) and Long Term Support (stable). Condor 9.11.0 is considered a development release, while 9.0.17 is considered a stable release. You can know 9.0.17 is stable because the second digit (a 0 in this cases) is an even number, while in the development version 9.11.0 it is an odd number (11 in this case). In a given stable series, all versions have the same features (for example 9.0.16 and 9.0.17 have the same set of features) and differ only in bug fixes.
+Condor has two coexisting types of releases at any given time: Feature (development) and Long Term Support (stable). Condor 9.11.0 is considered a development release, while 9.0.17 is considered a stable release. You can know 9.0.17 is stable because the second digit (a 0 in this case) is an even number, while in the development version 9.11.0 it is an odd number (11 in this case). In a given stable series, all versions have the same features (for example 9.0.16 and 9.0.17 have the same set of features) and differ only in bug fixes.
 
 ## Where you will work
 
