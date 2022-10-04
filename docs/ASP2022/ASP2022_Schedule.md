@@ -2,30 +2,30 @@
 
 ## High-Level Curriculum Overview
 
-### Tuesday AM Session
+### Wednesday AM Session
 
    * Welcome and Background
    * The Landscape of Research Computing
    
-### Tuesday PM Session
+### Wednesday PM Session
 
    * Profiling your application and choosing appropriate computing resources
    * Introduction to High Throughput Computing (HTC)
    * Workflows and distributed environments
    * Workflows with Directed Acyclic Graphs (DAGs)
    
-### Wednesday AM Session
+### Thursday AM Session
 
    * Brief Introduction to clouds and containers
    * ATLAS Analysis Example
    
-### Wednesday PM Session
+### Thursday PM Session
 
    * Close out and resources for further collaboration
    
 ## Detailed Schedule
 
-### Tuesday 10-July 2018
+### Wednesday 7-December 2022
 
 | Time  | Description                                                         | Instructor       |
 |-------|---------------------------------------------------------------------|------------------|
@@ -38,7 +38,7 @@
 | 15:30 | Workflows and distributed environments                              | Horst Severini   |
 | 16:15 | Exercise - DAGMan                                                   | All              |
 
-### Wednesday 11-July 2018
+### Thursday 8-December 2022
 
 | Time  | Description                                                         | Instructor       |
 |-------|---------------------------------------------------------------------|------------------|
