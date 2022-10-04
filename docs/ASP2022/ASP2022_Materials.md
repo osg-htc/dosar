@@ -5,45 +5,45 @@ We will be using OSG Connect for this set of sessions. Please visit [http://www.
 ## Wednesday Morning - Computational Infrastructures - Session 1
 
    * Welcome and Introduction - The Landscape of Academic Research Computing
-   * Lecture 1 - [Slides](https://github.com/osg-htc/dosar/blob/master/docs/ASP2022/Lecture1-ASP2018.pdf)
-   * [Introduction](https://github.com/osg-htc/dosar/blob/master/docs/ASP2022/01-Introduction.md) 
-   * [Our Job Manager (HTCondor)](https://github.com/osg-htc/dosar/blob/master/docs/ASP2022/02-OurJobManager.md)
-   * [Your First Managed Job](https://github.com/osg-htc/dosar/blob/master/docs/ASP2022/03-FirstManagedJob.md)
-   * [A few tips and tricks](https://github.com/osg-htc/dosar/blob/master/docs/ASP2022/04-TipsandTricks.md)
+   * Lecture 1 - [Slides](/dosar/ASP2022/Lecture1-ASP2018.pdf)
+   * [Introduction](/dosar/ASP2022/01-Introduction) 
+   * [Our Job Manager (HTCondor)](/dosar/ASP2022/02-OurJobManager)
+   * [Your First Managed Job](/dosar/ASP2022/03-FirstManagedJob)
+   * [A few tips and tricks](/dosar/ASP2022/04-TipsandTricks)
    
 ## Wednesday Afternoon - Computational Infrastructures - Session 2
 
-   * Lecture 2 - [Slides](https://github.com/osg-htc/dosar/blob/master/docs/ASP2022/Lecture2-ASP2018.pdf)
-   * [A scripting job](https://github.com/osg-htc/dosar/blob/master/docs/ASP2022/05-ScriptingJob.md)
-   * [An R Job](https://github.com/osg-htc/dosar/blob/master/docs/ASP2022/06-RJob.md)
-   * [Working with file I/O](https://github.com/osg-htc/dosar/blob/master/docs/ASP2022/07-WorkingwithFiles.md)
+   * Lecture 2 - [Slides](/dosar/ASP2022/Lecture2-ASP2018.pdf)
+   * [A scripting job](/dosar/ASP2022/05-ScriptingJob)
+   * [An R Job](/dosar/ASP2022/06-RJob)
+   * [Working with file I/O](/dosar/ASP2022/07-WorkingwithFiles)
    
 ## Wednesday Afternoon - Computational Infrastructures - Session 3
 
-   * Lecture 3 - [Slides](https://github.com/osg-htc/dosar/blob/master/docs/ASP2022/Lecture3-ASP2018.pdf)
-   * [A brief detour through the Mandlebrot set](https://github.com/osg-htc/dosar/blob/master/docs/ASP2022/08-Mandlebrot.md)
-   * [Coordinating sets of jobs: A simple DAG](https://github.com/osg-htc/dosar/blob/master/docs/ASP2022/09-SimpleDAG.md)
-   * [A more complex DAG](https://github.com/osg-htc/dosar/blob/master/docs/ASP2022/10-ComplexDAG.md)
+   * Lecture 3 - [Slides](/dosar/ASP2022/Lecture3-ASP2018.pdf)
+   * [A brief detour through the Mandlebrot set](/dosar/ASP2022/08-Mandlebrot)
+   * [Coordinating sets of jobs: A simple DAG](/dosar/ASP2022/09-SimpleDAG)
+   * [A more complex DAG](/dosar/ASP2022/10-ComplexDAG)
    
 ### Challenge Exercises on DAGs
 
-   * [Handling jobs that fail](https://github.com/osg-htc/dosar/blob/master/docs/ASP2022/11-HandlingFailure.md)
-   * [Variable Substitution](https://github.com/osg-htc/dosar/blob/master/docs/ASP2022/12-VariableSubstitution.md)
+   * [Handling jobs that fail](/dosar/ASP2022/11-HandlingFailure)
+   * [Variable Substitution](/dosar/ASP2022/12-VariableSubstitution)
    
 ## Thursday Morning - Computational Infrastructures - Session 4
 
-   * Lecture 4 - [Slides](https://github.com/osg-htc/dosar/blob/master/docs/ASP2022/Lecture4-ASP2018_final.pdf)
-   * [Discipline specific tutorials](https://github.com/osg-htc/dosar/blob/master/docs/ASP2022/13-DisciplineTutorials.md)
-   * [Containers with Singularity](https://github.com/osg-htc/dosar/blob/master/docs/ASP2022/14-Containers.md)
+   * Lecture 4 - [Slides](/dosar/ASP2022/Lecture4-ASP2018_final.pdf)
+   * [Discipline specific tutorials](/dosar/ASP2022/13-DisciplineTutorials)
+   * [Containers with Singularity](/dosar/ASP2022/14-Containers)
    
 ## Thursday Morning - Computational Infrastructures - Session 5
 
-   * [ATLAS Analysis Example Lecture](https://github.com/osg-htc/dosar/blob/master/docs/ASP2022/Intro_Anal_Ex-ASP2018.pdf)
-   * [ATLAS Analysis Example Exercise](https://github.com/osg-htc/dosar/blob/master/docs/ASP2022/AnalysisExample.md)
+   * [ATLAS Analysis Example Lecture](/dosar/ASP2022/Intro_Anal_Ex-ASP2018.pdf)
+   * [ATLAS Analysis Example Exercise](/dosar/ASP2022/AnalysisExample)
    
 ## Thursday Afternoon - Computational Infrastructures - Session 6
 
-   * Computational Infrastructures Wrap Up - [Slides](https://github.com/osg-htc/dosar/blob/master/docs/ASP2022/Lecture5-ASP2018_final.pdf)
+   * Computational Infrastructures Wrap Up - [Slides](/dosar/ASP2022/Lecture5-ASP2018_final.pdf)
    
 ## Contact information
 
