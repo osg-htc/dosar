@@ -18,7 +18,7 @@ Today you will log into https://notebook.ospool.osg-htc.org/hub/login for all of
 
 Login on submission node using a web browser:
 
-https://notebook.ospool.osg-htc.org/hub/login
+<a href="https://notebook.ospool.osg-htc.org/hub/login" target="_blank">https://notebook.ospool.osg-htc.org/hub/login</a>
 
 Click on 'Sign in with CILogon'.
 Select the Identity Provider Google (or GitHub).
