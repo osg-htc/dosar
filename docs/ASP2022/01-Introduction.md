@@ -22,7 +22,7 @@ https://notebook.ospool.osg-htc.org/hub/login
 
 Click on 'Sign in with CILogon'.
 Select the Identity Provider Google (or GitHub).
-Click 'Login'.
+Click 'Log On'.
 Log into your Google account (or GitHub).
 Click the 'Server Option' 'Data Science'.
 Click 'Start'. This will take some time.
