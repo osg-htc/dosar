@@ -2,27 +2,31 @@
 
 ## Preliminaries
 
-You will receive login credentials at the beginning of this session. 
+You will need your Gmail or GitHub credentials for this session. 
 
-   * You might want to refer to the [online Condor 8.6 manual](http://research.cs.wisc.edu/htcondor/manual/v8.6/).<br>
+   * You might want to refer to the [online Condor 8.6 manual](https://htcondor.org/documentation/htcondor.html).<br>
    * You may enjoy browsing the [Condor web page](http://www.cs.wisc.edu/condor/).<br>
 
 ## Which Condor?
-We will be using Condor 8.6.11, which is a recent production version of Condor.
+We will be using Condor 9.0.17, which is a recent production version of Condor.
 
-Condor has two coexisting types of releases at any given time: stable and development. Condor 8.2.X and 7.8.x are considered stable releases, and you can know they are stable because the second digits (a 2 or a 8 in these cases) are  even numbers. In a given stable series, all versions have the same features (for example 7.8.0 and 7.8.1 have the same set of features) and differ only in bug fixes.
+Condor has two coexisting types of releases at any given time: Feature (development) and Long Term Support (stable). Condor 9.0.17 is considered a stable release, and you can know it is stable because the second digit (a 0 in this cases) is an even number. In a given stable series, all versions have the same features (for example 9.0.16 and 9.0.17 have the same set of features) and differ only in bug fixes.
 
 ## Where you will work
 
-Today you will log into user-training.osgconnect.net for all of your exercises:
+Today you will log into https://notebook.ospool.osg-htc.org/hub/login for all of your exercises:
 
-Login on submission node using:
+Login on submission node using a web browser:
 
-<pre><code>
-$ <b>ssh -XY YOUR_USER_ID@user-training.osgconnect.net</b>
-</code></pre>
+https://notebook.ospool.osg-htc.org/hub/login
 
-You may get a message asking you to establish the authenticity of this connection. Answer "yes". 
+Click on 'Sign in with CILogon'.
+Select the Identity Provider Google (or GitHub).
+Click 'Login'.
+Log into your Google account.
+Click the 'Server Option' 'Data Science'.
+Click 'Start'. This will take some time.
+In the 'Launcher' window, click on 'Terminal' (bottom left).
 
 When you login to the machine you will be in your "home directory".  We recommend that you work in this directory as nobody else can modify the files here.
 
