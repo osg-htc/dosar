@@ -50,10 +50,6 @@ Where is Condor installed?
 # Show the location of the condor_q binary
 $ which condor_q
 /usr/bin/condor_q
-
-# Show which RPM installed Condor
-$ rpm -q condor
-condor-8.6.11-1.osg34.el6.x86_64
 ```
 
 Condor has some configuration files that it needs to find. They are in the standard location, `/etc/condor`
