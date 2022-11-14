@@ -35,25 +35,6 @@ We'd like to demonstrate how to install one run-time environment called [R](http
 
 ## Setup
 
-OSG's implementation of CVMFS is called OASIS and we will be using this to gain access to R. 
-
-```
-$ source /cvmfs/oasis.opensciencegrid.org/osg/modules/lmod/5.6.2/init/bash
-```
-
-Let's look at what software is available:
-
-```
-$ module avail
-```
-
-And then we load the R module:
-
-```
-$ module load R 
-```
-
-
 You'll need an R program. After hours of <strike>combing the internet</strike> coding, I present to you my first R program. Save it in a file called `demo.r` using nano or your favorite editor:
 
 ```
