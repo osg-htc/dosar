@@ -634,15 +634,6 @@
 <p>Clearly, there is a choice here. I'd like to enable you to be able to bring along your run-time environment with you. In my experience, if you are capable of bringing it with you, you can take advantage of more computers: you don't have to wait for someone to build and install the environment for you. </p>
 <p>We'd like to demonstrate how to install one run-time environment called <a href="http://www.r-project.org/">R</a>. Don't worry if you have no experience with it: neither do I. It's a package for doing math and statistics and it lets you write programs in the R language. (Actually, it's the S language. Who chose names like this that are hard to Google?) We've built a minimal version of R that won't do graphical output, which makes it much less interesting, but it's good enough for our purposes.</p>
 <h2 id="setup">Setup</h2>
-<p>OSG's implementation of CVMFS is called OASIS and we will be using this to gain access to R. </p>
-<pre><code>$ source /cvmfs/oasis.opensciencegrid.org/osg/modules/lmod/5.6.2/init/bash
-</code></pre>
-<p>Let's look at what software is available:</p>
-<pre><code>$ module avail
-</code></pre>
-<p>And then we load the R module:</p>
-<pre><code>$ module load R 
-</code></pre>
 <p>You'll need an R program. After hours of <strike>combing the internet</strike> coding, I present to you my first R program. Save it in a file called <code>demo.r</code> using nano or your favorite editor:</p>
 <pre><code>len &lt;- 100
 fibvals &lt;- numeric(len)
