@@ -9,12 +9,6 @@ Because this is an important foundation, please seriously consider doing the &ld
 
 Before you can submit a job to Condor, you need a job. We will quickly write a small program in C. If you aren't an expert C programmer, fear not. We will hold your hand throughout this process.
 
-First, because we're going to be compiling some C code, we'll need a compiler.  Sometimes this is already loaded onto a system, but in our case, we need to type the following:
-
-```
-$ module load gcc
-```
-
 Let's create a directory to perform the condor tests. Execute the following two commands in your Linux shell:
 ```
 $ mkdir -p ~/condor-test
@@ -54,6 +48,9 @@ int main(int argc, char **argv)
     return failure;
 }
 ```
+To copy and paste code into nano on ospool, it is convenient to use key
+strokes: CTRL-c (windows), command-c (mac) to copy; and CTRL-v (windows), command-v (mac) to paste. 
+To save your file and exit nano, type: CTRL-x, y, return.
 
 Now compile that program:
 
