@@ -667,10 +667,8 @@ fi
 $ ./run-r.sh demo.r
 </code></pre>
 <h2 id="on-your-own">On your own</h2>
-<p>Write a Condor submit file that will use R to run the <code>demo.r</code> program. You will need to include the following line in your submit file (before the "queue" statement) to make sure that Condor looks for a resource that uses OASIS:</p>
-<pre><code>requirements = (HAS_CVMFS_oasis_opensciencegrid_org =?= TRUE)
-</code></pre>
-<p>Make sure you get back the output. Make sure you transfer the program. </p>
+<p>Write a Condor submit file that will use R to run the <code>demo.r</code> program. 
+Make sure you get back the output. Make sure you transfer the program. </p>
 <h2 id="the-answer">The answer</h2>
 <p>This should be easy for you now, but if it's not, here's the answer, just in case.</p>
 <pre><code>universe = vanilla
@@ -680,7 +678,6 @@ transfer_input_files = demo.r
 log = R.log.$(Cluster).$(Process)
 error = R.err.$(Cluster).$(Process)
 output = R.out.$(Cluster).$(Process)
-requirements = (HAS_CVMFS_oasis_opensciencegrid_org =?= TRUE)
 queue  
 </code></pre>
                 
