@@ -69,13 +69,8 @@ if [ $# -ne 1 ]; then
     exit 1
 fi
 
-# Step 1: Set up our environment, the R module.
-source /cvmfs/oasis.opensciencegrid.org/osg/modules/lmod/current/init/bash
-module load R
-module load libgfortran
-
-# Step 2, Invoke R with the proper environment
-R --slave --vanilla < $1
+# Invoke R with the proper environment
+/opt/conda/bin/R --slave --vanilla < $1
 ```
 
 You could easily execute this on OSG Connect locally by making the shell script executable and executing it.
