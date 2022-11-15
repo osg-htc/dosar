@@ -18,7 +18,7 @@ How do you know what version of Condor you are using? Try <code>condor_version</
 
 ```
 $ condor_version
-$CondorVersion: 9.11.0 2022-08-25 BuildID: 602587 PackageID: 9.11.0-1.1 $
+$CondorVersion: 9.12.0 2022-10-05 BuildID: 608474 PackageID: 9.12.0-1.1 $
 $CondorPlatform: X86_64-Ubuntu_20.04 $
 ```
 
