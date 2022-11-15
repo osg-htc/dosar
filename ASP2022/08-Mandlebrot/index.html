@@ -535,6 +535,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#downloading-the-needed-executables" class="md-nav__link">
+    Downloading the needed executables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#a-simple-invocation-of-goatbrot" class="md-nav__link">
     A simple invocation of goatbrot
   </a>
@@ -576,26 +583,33 @@
 <p>Before we dive into a more complicated DAG, let's get a more interesting job. I'm tired of this lazy, sleepy job that only does trivial mathematics. Let's make pretty pictures!</p>
 <p>We have a small program that draws pictures of the Mandlebrot set. You can <a href="https://secure.wikimedia.org/wikipedia/en/wiki/Mandelbrot_set">read about the Mandlebrot set on Wikipedia</a>, or you can simply appreciate the pretty pictures. It's a fractal. </p>
 <p>We have a simple program that can draw the Mandlebrot set. It's called <code>goatbrot</code>.</p>
+<h2 id="downloading-the-needed-executables">Downloading the needed executables</h2>
+<p>Since your training VMs don't have all the required executables for this exercise, we will need to download them first. Execute the following commands to do this:</p>
+<pre><code>$ mkdir bin
+$ cd bin
+$ wget https://www.nhn.ou.edu/~hs/tmp/goatbrot https://www.nhn.ou.edu/~hs/tmp/convert https://www.nhn.ou.edu/~hs/tmp/montage
+$ chmod +x goatbrot convert montage
+$ cd ..
+</code></pre>
 <h2 id="a-simple-invocation-of-goatbrot">A simple invocation of goatbrot</h2>
 <p>You can generate the Mandlebrot set with two simple commands. </p>
 <ol>
 <li>Generate a PPM image of the Mandlebrot set:</li>
 </ol>
-<pre><code>$ /stash/user/rquick/public/goatbrot-master/goatbrot -i 1000 -o tile_000000_000000.ppm -c 0,0 -w 3 -s 1000,1000
-</code></pre>
-<ol>
-<li>Add the Fast Fourier Transform and ImageMagick packages:</li>
-</ol>
-<pre><code>$ module load fftw
-$ module load imagemagick
+<pre><code>$ ~/bin/goatbrot -i 1000 -o tile_000000_000000.ppm -c 0,0 -w 3 -s 1000,1000
 </code></pre>
 <ol>
 <li>Convert it to a JPEG image and write into your home directory:</li>
 </ol>
-<pre><code>$ convert tile_000000_000000.ppm ~/mandle.gif
+<pre><code>$ ~/bin/convert tile_000000_000000.ppm ~/mandle.gif
 </code></pre>
 <ol>
-<li>Open a new terminal window and move the file to local machine for viewing (substitute your username in place of <code>YOUR_USER_ID</code>):</li>
+<li>
+<p>We need to download the GIF file from your training VM to your local desktop.  <strong><em> FIX HERE </em></strong></p>
+</li>
+<li>
+<p>Open a new terminal window and move the file to local machine for viewing (substitute your username in place of <code>YOUR_USER_ID</code>):</p>
+</li>
 </ol>
 <pre><code>$ scp YOUR_USER_ID@user-training.osgconnect.net:/home/USER/mandle.gif ./
 </code></pre>
