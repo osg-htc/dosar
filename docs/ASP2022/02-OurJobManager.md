@@ -130,7 +130,7 @@ What else can you find out with condor_q? Try any one of:
 
    * `man condor_q`  (Will not work on this ospool training machine.)
    * `condor_q -help`
-   * [condor_q from the online manual](https://htcondor.org/documentation/htcondor.html)
+   * [condor_q from the online manual](https://htcondor.readthedocs.io/en/v10_0/man-pages/condor_q.html)
 
 ### Double bonus points
 
@@ -174,7 +174,7 @@ What else can you find out with condor_status? Try any one of:
 
    * `man condor_status`
    * `condor_status -help`
-   * [condor_status from the online manual](https://htcondor.org/documentation/htcondor.html)
+   * [condor_status from the online manual](https://htcondor.readthedocs.io/en/v10_0/man-pages/condor_status.html)
 
 Note in particular the options like `-master` and `-schedd`. When would these be useful? When would the `-l` option be useful? 
 
