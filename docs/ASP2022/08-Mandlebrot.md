@@ -6,6 +6,18 @@ We have a small program that draws pictures of the Mandlebrot set. You can [read
 
 We have a simple program that can draw the Mandlebrot set. It's called `goatbrot`.
 
+## Downloading the needed executables
+
+Since your training VMs don't have all the required executables for this exercise, we will need to download them first. Execute the following commands to do this:
+
+```
+$ mkdir bin
+$ cd bin
+$ wget https://www.nhn.ou.edu/~hs/tmp/goatbrot https://www.nhn.ou.edu/~hs/tmp/convert https://www.nhn.ou.edu/~hs/tmp/montage
+$ chmod +x goatbrot convert montage
+$ cd ..
+```
+
 ## A simple invocation of goatbrot
 
 You can generate the Mandlebrot set with two simple commands. 
@@ -13,21 +25,16 @@ You can generate the Mandlebrot set with two simple commands.
 1. Generate a PPM image of the Mandlebrot set:
 
 ```
-$ /stash/user/rquick/public/goatbrot-master/goatbrot -i 1000 -o tile_000000_000000.ppm -c 0,0 -w 3 -s 1000,1000
+$ ~/bin/goatbrot -i 1000 -o tile_000000_000000.ppm -c 0,0 -w 3 -s 1000,1000
 ```
 
-2. Add the Fast Fourier Transform and ImageMagick packages:
+2. Convert it to a JPEG image and write into your home directory:
 
 ```
-$ module load fftw
-$ module load imagemagick
+$ ~/bin/convert tile_000000_000000.ppm ~/mandle.gif
 ```
 
-3. Convert it to a JPEG image and write into your home directory:
-
-```
-$ convert tile_000000_000000.ppm ~/mandle.gif
-```
+3. We need to download the GIF file from your training VM to your local desktop.  *** FIX HERE ***
 
 4. Open a new terminal window and move the file to local machine for viewing (substitute your username in place of `YOUR_USER_ID`):
 
