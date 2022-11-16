@@ -1,6 +1,6 @@
 # ASP 2022 Materials
 
-We will be using OSG Connect for this set of sessions. Please visit [http://www.osgconnect.net](http://www.osgconnect.net) for more information.
+We will be using OSG Training Pool for this set of sessions. Please visit [https://notebook.ospool.osg-htc.org/hub/login](https://notebook.ospool.osg-htc.org/hub/login) to log in.
 
 ## Wednesday Morning - Computational Infrastructures - Session 1
 
