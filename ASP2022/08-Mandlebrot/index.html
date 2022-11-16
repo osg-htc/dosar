@@ -605,16 +605,11 @@ $ cd ..
 </code></pre>
 <ol>
 <li>
-<p>We need to download the GIF file from your training VM to your local desktop.  <strong><em> FIX HERE </em></strong></p>
+<p>We need to download the GIF file from your training VM to your local desktop. To do so, find the file mandle.gif in the list of files and directories in the side bar to the left of your terminal window. Right-click on it and select Download, and download it to your local desktop.</p>
 </li>
 <li>
-<p>Open a new terminal window and move the file to local machine for viewing (substitute your username in place of <code>YOUR_USER_ID</code>):</p>
+<p>Point Browser at the file URL:</p>
 </li>
-</ol>
-<pre><code>$ scp YOUR_USER_ID@user-training.osgconnect.net:/home/USER/mandle.gif ./
-</code></pre>
-<ol>
-<li>Point Browser at the file URL:</li>
 </ol>
 <pre><code>firefox ./mandle.gif
 </code></pre>
@@ -631,10 +626,10 @@ $ cd ..
 <ol>
 <li><em>Run goatbroat 4 times</em>: </li>
 </ol>
-<pre><code>$ /stash/user/rquick/public/goatbrot-master/goatbrot -i 1000 -o tile_000000_000000.ppm -c -0.75,0.75 -w 1.5 -s 500,500
-$ /stash/user/rquick/public/goatbrot-master/goatbrot -i 1000 -o tile_000000_000001.ppm -c 0.75,0.75 -w 1.5 -s 500,500
-$ /stash/user/rquick/public/goatbrot-master/goatbrot -i 1000 -o tile_000001_000000.ppm -c -0.75,-0.75 -w 1.5 -s 500,500
-$ /stash/user/rquick/public/goatbrot-master/goatbrot -i 1000 -o tile_000001_000001.ppm -c 0.75,-0.75 -w 1.5 -s 500,500
+<pre><code>$ ~/bin/goatbrot -i 1000 -o tile_000000_000000.ppm -c -0.75,0.75 -w 1.5 -s 500,500
+$ ~/bin/goatbrot -i 1000 -o tile_000000_000001.ppm -c 0.75,0.75 -w 1.5 -s 500,500
+$ ~/bin/goatbrot -i 1000 -o tile_000001_000000.ppm -c -0.75,-0.75 -w 1.5 -s 500,500
+$ ~/bin/goatbrot -i 1000 -o tile_000001_000001.ppm -c 0.75,-0.75 -w 1.5 -s 500,500
 </code></pre>
 <ol>
 <li><em>Stitch them together</em>: </li>
@@ -645,10 +640,8 @@ $ /stash/user/rquick/public/goatbrot-master/goatbrot -i 1000 -o tile_000001_0000
 <h2 id="try-it">Try it!</h2>
 <p>Run the commands above, make sure you can create the Mandlebrot image. When you create the image, you might wonder how you can view it. </p>
 <p>The same way we did above.<br />
-   1. Copy file to your public area: <code>cp mandle.gif ~/public</code>
-   1. This time, rather than copying your file to your local system, point your browser at the stash web server:</p>
-<pre><code>http://stash.osgconnect.net/~YOUR_USER_ID
-</code></pre>
+   1. Find the file mandle.gif in your side bar again.
+   1. Download it and display it in Firefox.</p>
                 
               
               
