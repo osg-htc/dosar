@@ -645,11 +645,11 @@
 <h3 id="objective">Objective</h3>
 <p>The objective of this exercise is to run a real set of jobs with DAGMan.</p>
 <h2 id="make-your-job-submission-files">Make your job submission files</h2>
-<p>We'll run our <code>goatbrot</code> example. If you didn't read about it yet, <a href="https://github.com/opensciencegrid/dosar/blob/master/docs/ASP2018/08-Mandlebrot.md">please do so now</a>. We are going to make a DAG with four simultaneous jobs (<code>goatbrot</code>) and one final node to stitch them together (<code>montage</code>). This means we have five jobs. We're going to run <code>goatbrot</code> with more iterations (100,000) so it will take longer to run. </p>
+<p>We'll run our <code>goatbrot</code> example. If you didn't read about it yet, <a href="/dosar/ASP2022/08-Mandlebrot">please do so now</a>. We are going to make a DAG with four simultaneous jobs (<code>goatbrot</code>) and one final node to stitch them together (<code>montage</code>). This means we have five jobs. We're going to run <code>goatbrot</code> with more iterations (100,000) so it will take longer to run. </p>
 <p>You can create your five jobs. The goatbrot jobs very similar to each other, but they have slightly different parameters (arguments) and output files. </p>
-<p>I have placed the goatbrot executable in my public directory: <code>/stash/user/rquick/public/goatbrot-master/goatbrot</code></p>
+<p>You have placed the goatbrot executable in your bin directory: <code>/~/bin/goatbrot</code></p>
 <h3 id="goatbrot1sub">goatbrot1.sub</h3>
-<pre><code>executable              = /stash/user/rquick/public/goatbrot-master/goatbrot
+<pre><code>executable              = ~/bin/goatbrot
 arguments               = -i 100000 -c -0.75,0.75 -w 1.5 -s 500,500 -o tile_0_0.ppm
 log                     = goatbrot.log
 output                  = goatbrot.out.0.0
@@ -659,7 +659,7 @@ when_to_transfer_output = ONEXIT
 queue
 </code></pre>
 <h3 id="goatbrot2sub">goatbrot2.sub</h3>
-<pre><code>executable              = /stash/user/rquick/public/goatbrot-master/goatbrot
+<pre><code>executable              = ~/bin/goatbrot
 arguments               = -i 100000 -c 0.75,0.75 -w 1.5 -s 500,500 -o tile_0_1.ppm
 log                     = goatbrot.log
 output                  = goatbrot.out.0.1
@@ -669,7 +669,7 @@ when_to_transfer_output = ONEXIT
 queue
 </code></pre>
 <h3 id="goatbrot3sub">goatbrot3.sub</h3>
-<pre><code>executable              = /stash/user/rquick/public/goatbrot-master/goatbrot
+<pre><code>executable              = ~/bin/goatbrot
 arguments               = -i 100000 -c -0.75,-0.75 -w 1.5 -s 500,500 -o tile_1_0.ppm
 log                     = goatbrot.log
 output                  = goatbrot.out.1.0
@@ -679,7 +679,7 @@ when_to_transfer_output = ONEXIT
 queue
 </code></pre>
 <h3 id="goatbrot4sub">goatbrot4.sub</h3>
-<pre><code>executable              = /stash/user/rquick/public/goatbrot-master/goatbrot
+<pre><code>executable              = ~/bin/goatbrot
 arguments               = -i 100000 -c 0.75,-0.75 -w 1.5 -s 500,500 -o tile_1_1.ppm
 log                     = goatbrot.log
 output                  = goatbrot.out.1.1
@@ -825,10 +825,7 @@ Goatbrot:
 Completed: 100.0%  
 </code></pre>
 <p>Examine your log files (<code>goatbrot.log</code> and <code>montage.log</code>) and DAGMan output file (<code>goatbrot.dag.dagman.out</code>). Do they look as you expect? Can you see the progress of the DAG in the DAGMan output file?</p>
-<p>Does your final Mandlebrot image (<code>mandle.gif</code>) look correct? To view it we can use Stash.</p>
-<pre><code>$ cp mandle.gif ~/stash/public/
-</code></pre>
-<p>And now you can go to http://stash.osgconnect.net/~YOUR_USER_ID . You will see mandle.gif listed.  You can click on it to view it.</p>
+<p>Does your final Mandlebrot image (<code>mandle.gif</code>) look correct? To view it we can download it again from the left side bar, and then display it with Firefox.</p>
 <p>Clean up your results. Be careful about deleting the goatbrot.dag.<em> files, you do not want to delete the goatbrot.dag file, just goatbrot.dag.</em> . </p>
 <pre><code>$ rm goatbrot.dag.*
 $ rm goatbrot.out.*
