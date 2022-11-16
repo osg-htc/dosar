@@ -27,7 +27,9 @@ Queue
 
 Make sure you've built the `simple` program. If you need to, go back to [the instructions for your first job](/dosar/ASP2022/03-FirstManagedJob) to do it again.
 
-We are going to get a bit more sophisticated in submitting our jobs now. Let's have three windows open. In one window you'll submit the job. In the second you will watch the queue.  And in the third you will watch what DAGMan does.
+We are going to get a bit more sophisticated in submitting our jobs now. Let's have three windows open. Click the + sign just to the right of the title 'Terminal 1' -- NOT the x! -- in order to open additional terminals.
+
+In one window you'll submit the job. In the second you will watch the queue.  And in the third you will watch what DAGMan does.
 
 First we will create the most minimal DAG that can be created: a DAG with just one node. Put the text below into a file named `simple.dag`.
 
