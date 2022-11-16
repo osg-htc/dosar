@@ -5,17 +5,17 @@ The objective of this exercise is to run a real set of jobs with DAGMan.
 
 ## Make your job submission files
 
-We'll run our `goatbrot` example. If you didn't read about it yet, [please do so now](https://github.com/opensciencegrid/dosar/blob/master/docs/ASP2018/08-Mandlebrot.md). We are going to make a DAG with four simultaneous jobs (`goatbrot`) and one final node to stitch them together (`montage`). This means we have five jobs. We're going to run `goatbrot` with more iterations (100,000) so it will take longer to run. 
+We'll run our `goatbrot` example. If you didn't read about it yet, [please do so now](/dosar/ASP2022/08-Mandlebrot). We are going to make a DAG with four simultaneous jobs (`goatbrot`) and one final node to stitch them together (`montage`). This means we have five jobs. We're going to run `goatbrot` with more iterations (100,000) so it will take longer to run. 
 
 You can create your five jobs. The goatbrot jobs very similar to each other, but they have slightly different parameters (arguments) and output files. 
 
-I have placed the goatbrot executable in my public directory: `/stash/user/rquick/public/goatbrot-master/goatbrot`
+You have placed the goatbrot executable in your bin directory: `/~/bin/goatbrot`
 
 
 ### goatbrot1.sub
 
 ```
-executable              = /stash/user/rquick/public/goatbrot-master/goatbrot
+executable              = ~/bin/goatbrot
 arguments               = -i 100000 -c -0.75,0.75 -w 1.5 -s 500,500 -o tile_0_0.ppm
 log                     = goatbrot.log
 output                  = goatbrot.out.0.0
@@ -28,7 +28,7 @@ queue
 ### goatbrot2.sub
 
 ```
-executable              = /stash/user/rquick/public/goatbrot-master/goatbrot
+executable              = ~/bin/goatbrot
 arguments               = -i 100000 -c 0.75,0.75 -w 1.5 -s 500,500 -o tile_0_1.ppm
 log                     = goatbrot.log
 output                  = goatbrot.out.0.1
@@ -41,7 +41,7 @@ queue
 ### goatbrot3.sub
 
 ```
-executable              = /stash/user/rquick/public/goatbrot-master/goatbrot
+executable              = ~/bin/goatbrot
 arguments               = -i 100000 -c -0.75,-0.75 -w 1.5 -s 500,500 -o tile_1_0.ppm
 log                     = goatbrot.log
 output                  = goatbrot.out.1.0
@@ -54,7 +54,7 @@ queue
 ### goatbrot4.sub
 
 ```
-executable              = /stash/user/rquick/public/goatbrot-master/goatbrot
+executable              = ~/bin/goatbrot
 arguments               = -i 100000 -c 0.75,-0.75 -w 1.5 -s 500,500 -o tile_1_1.ppm
 log                     = goatbrot.log
 output                  = goatbrot.out.1.1
@@ -245,13 +245,7 @@ Completed: 100.0%
 
 Examine your log files (`goatbrot.log` and `montage.log`) and DAGMan output file (`goatbrot.dag.dagman.out`). Do they look as you expect? Can you see the progress of the DAG in the DAGMan output file?
 
-Does your final Mandlebrot image (`mandle.gif`) look correct? To view it we can use Stash.
-
-```
-$ cp mandle.gif ~/stash/public/
-```
-
-And now you can go to http://stash.osgconnect.net/~YOUR_USER_ID . You will see mandle.gif listed.  You can click on it to view it.
+Does your final Mandlebrot image (`mandle.gif`) look correct? To view it we can download it again from the left side bar, and then display it with Firefox.
 
 Clean up your results. Be careful about deleting the goatbrot.dag.* files, you do not want to delete the goatbrot.dag file, just goatbrot.dag.* . 
 
