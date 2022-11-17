@@ -24,7 +24,7 @@ Click on 'Sign in with CILogon'.
 Select the Identity Provider Google (or GitHub).
 Click 'Log On'.
 Log into your Google account (or GitHub).
-Click the 'Server Option' 'Data Science'.
+Click the 'Server Option' 'DOSAR/ASP December 2022'.
 Click 'Start'. This will take some time.
 In the 'Launcher' window, click on 'Terminal' (bottom left).
 
