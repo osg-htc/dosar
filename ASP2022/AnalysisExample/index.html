@@ -564,8 +564,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-analyze-real-data" class="md-nav__link">
-    Step 2: Analyze Real Data
+  <a href="#step-2-analyze-real-data-fix-following" class="md-nav__link">
+    Step 2: Analyze Real Data  Fix Following
   </a>
   
 </li>
@@ -604,11 +604,7 @@
 <p>Root may be run in batch mode on the grid to analyze large data samples. This example creates simulated data in root format using trees and performs analysis on the simulated data by means of processing on the grid. This example is based on a demo developed by OU programmer Chris Walker.</p>
 <h2 id="prerequisite">Prerequisite</h2>
 <ul>
-<li>Login on submission node</li>
-</ul>
-<pre><code>$ ssh -XY YOUR_USER_ID@user-training.osgconnect.net
-</code></pre>
-<ul>
+<li>Open a new terminal on your local desktop.</li>
 <li>Make a directory for this exercise</li>
 </ul>
 <pre><code>$ mkdir -p analysis_example
@@ -617,11 +613,10 @@ $ cd analysis_example
 <p>Again the <code>$</code> sign at the beginning of the commands to execute is the <code>command prompt</code>, so it should <code>not</code> be entered as part of the command.</p>
 <h2 id="simple-analysis-example">Simple Analysis Example</h2>
 <h3 id="step-1-create-simulated-data-using-the-grid">Step 1: Create simulated data using the grid</h3>
-<p>Now in your test directory on the submission host we will create the three files: <code>run-root.cmd</code>, <code>run-root.sh</code>, and <code>run-root.C</code> with the contents given below. This may require running an editor such as <code>emacs</code> on your local desktop and then copying the created files to the submission host. Or the <code>nano</code> editor can be run directly on the submission host. A typical copy command would be as follows. </p>
-<pre><code>$ scp run-root.* YOUR_USER_ID@user-training.osgconnect.net:analysis_example/
-</code></pre>
-<p>It is probably easier to create all scripts with <code>nano</code> on the submission node, though, and then you won't have to copy (<code>scp</code>) anything at all. So everything below assumes you are logged on to a terminal session on the submission node.</p>
-<p>First, we will utilize a simple command script to submit the grid jobs. It is <code>run-root.cmd</code>:</p>
+<p>Note: Since the new training VMs on OSpool do not support running root, we will run root on the local desktops instead of using condor. So we will not need the condor submit scripts below but we will leave the instructions for them for future reference.</p>
+<p>Now in your test directory we will create the three files: <code>run-root.cmd</code>, <code>run-root.sh</code>, and <code>run-root.C</code> with the contents given below. This may require running an editor such as <code>emacs</code> or nano on your local desktop.</p>
+<p><em>Note: We will not submit grid jobs so the "run-root.cmd" script is not needed for this exercise.</em>
+First, we will utilize a simple command script to submit the grid jobs. It is <code>run-root.cmd</code>:</p>
 <pre><code>universe=vanilla
 executable=run-root.sh
 transfer_input_files = run-root.C
@@ -636,9 +631,6 @@ queue
 </code></pre>
 <p>Note that the executable script is:  <code>run-root.sh</code> which is as follows:</p>
 <pre><code>#!/bin/bash 
-source /cvmfs/oasis.opensciencegrid.org/osg/modules/lmod/current/init/bash
-module load root
-module load libXpm
 root -b &lt; run-root.C &gt; root.out
 </code></pre>
 <p>This script runs Root in batch mode and executes input macro <code>run-root.C</code> and produces output that is routed to file <code>root.out</code>.
@@ -674,7 +666,9 @@ It has to be made executable, by use of the <code>chmod</code> Linux command (pr
 } 
 .q 
 </code></pre>
-<p>The grid job can be submitted using:</p>
+<p><em>We will not submit grid jobs during this exercise. So we will skip to running root.</em>
+<strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_Skip from here</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>______
+The grid job can be submitted using:</p>
 <pre><code>$ condor_submit run-root.cmd
 </code></pre>
 <p>It can be checked with: </p>
@@ -687,7 +681,8 @@ You need to copy these files into your public directory, so that you can downloa
 <p>Now open a different terminal window on your local desktop, and download the root files with:</p>
 <pre><code>$ wget http://stash.osgconnect.net/~YOUR_USER_ID/t00.root  http://stash.osgconnect.net/~YOUR_USER_ID/t01.root
 </code></pre>
-<p>You can then inspect the contents of <code>t00.root</code> and <code>t01.root</code> by running Root in your current directory in the local terminal window in which you just ran the <code>wget</code> command:</p>
+<p><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>skip to here</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>____</p>
+<p>You can then inspect the contents of <code>t00.root</code> and <code>t01.root</code> by running Root in your current directory in the local terminal window:</p>
 <pre><code>$ root t00.root
 </code></pre>
 <p>And then the Root command:  <code>TBrowser b</code></p>
@@ -699,7 +694,7 @@ tc.Add(&quot;t*.root&quot;);
 tc.Draw(&quot;Energy&quot;);
 </code></pre>
 <p>When you are done with this, you can quit <code>root</code> again with the command <code>.q &lt;Return&gt;</code>.</p>
-<h3 id="step-2-analyze-real-data">Step 2: Analyze Real Data</h3>
+<h3 id="step-2-analyze-real-data-fix-following">Step 2: Analyze Real Data  Fix Following</h3>
 <p>Now we want to have a look at a real live ATLAS root file. For this, go back to the remote terminal window on osgconnect. You will need a new condor submit script called <code>run-z.cmd</code>:</p>
 <pre><code>universe=vanilla
 executable=run-z.sh
