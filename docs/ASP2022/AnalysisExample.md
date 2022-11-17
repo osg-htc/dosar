@@ -115,7 +115,7 @@ Now open a different terminal window on your local desktop, and download the roo
 $ wget http://stash.osgconnect.net/~YOUR_USER_ID/t00.root  http://stash.osgconnect.net/~YOUR_USER_ID/t01.root
 ```
 
------------------------------------------------_skip to here_----------------------------------------------------
+-----------------------------------------------_Skip to here_----------------------------------------------------
 
 
 You can then inspect the contents of `t00.root` and `t01.root` by running Root in your current directory in the local terminal window:
