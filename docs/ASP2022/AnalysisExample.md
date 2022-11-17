@@ -87,7 +87,9 @@ The macro  `run-root.C` consists of the following code:
 .q 
 ```
 _We will not submit grid jobs during this exercise. So we will skip to running root._
+
 -----------------------------_Skip from here_-----------------------------------------
+
 The grid job can be submitted using:
 
 ```
@@ -112,7 +114,9 @@ Now open a different terminal window on your local desktop, and download the roo
 ```
 $ wget http://stash.osgconnect.net/~YOUR_USER_ID/t00.root  http://stash.osgconnect.net/~YOUR_USER_ID/t01.root
 ```
+
 -----------------------------------------------_skip to here_----------------------------------------------------
+
 
 You can then inspect the contents of `t00.root` and `t01.root` by running Root in your current directory in the local terminal window:
 
