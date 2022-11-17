@@ -564,8 +564,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-analyze-real-data-fix-following" class="md-nav__link">
-    Step 2: Analyze Real Data  Fix Following
+  <a href="#step-2-analyze-real-data" class="md-nav__link">
+    Step 2: Analyze Real Data
   </a>
   
 </li>
@@ -694,7 +694,10 @@ tc.Add(&quot;t*.root&quot;);
 tc.Draw(&quot;Energy&quot;);
 </code></pre>
 <p>When you are done with this, you can quit <code>root</code> again with the command <code>.q &lt;Return&gt;</code>.</p>
-<h3 id="step-2-analyze-real-data-fix-following">Step 2: Analyze Real Data  Fix Following</h3>
+<h3 id="step-2-analyze-real-data">Step 2: Analyze Real Data</h3>
+<p><em>We will not submit grid jobs during this exercise. So we will skip submit script.</em></p>
+<p>-----------------------------<em>Skip from here</em>-----------------------------------------</p>
+<p>The grid job can be submitted using:</p>
 <p>Now we want to have a look at a real live ATLAS root file. For this, go back to the remote terminal window on osgconnect. You will need a new condor submit script called <code>run-z.cmd</code>:</p>
 <pre><code>universe=vanilla
 executable=run-z.sh
@@ -708,11 +711,9 @@ error=run-z.err.$(Cluster).$(Process)
 notification=Never
 queue 
 </code></pre>
+<p>-----------------------------------------------<em>Skip to here</em>----------------------------------------------------</p>
 <p>The new executable script you need for this job is:  <code>run-z.sh</code> which is as follows:</p>
 <pre><code>#!/bin/bash 
-source /cvmfs/oasis.opensciencegrid.org/osg/modules/lmod/current/init/bash
-module load root
-module load libXpm
 root -b -q readEvents.C+ &gt; root-z.out
 </code></pre>
 <p>This script runs Root in batch mode and executes input macro <code>readEvents.C</code> and produces output that is routed to file <code>root-z.out</code>.
@@ -884,6 +885,8 @@ void readEvents(){
   outFile-&gt;Close();
 }
 </code></pre>
+<p><em>We will not submit grid jobs during this exercise. So we will skip to run root.</em></p>
+<p>-----------------------------<em>Skip from here</em>-----------------------------------------</p>
 <p>The grid job can be submitted using:</p>
 <pre><code>$ condor_submit run-z.cmd
 </code></pre>
@@ -897,15 +900,15 @@ void readEvents(){
 <p>Go back to the local terminal window on your local desktop, and download the root files with:</p>
 <pre><code>$ wget http://stash.osgconnect.net/~YOUR_USER_ID/histograms-z.root
 </code></pre>
+<p>-----------------------------------------------<em>Skip to here</em>----------------------------------------------------</p>
 <p>You can inspect the contents of <code>histograms-z.root</code> by running Root (i.e., <code>root histograms-z.root</code>) in your current directory in your local terminal window:</p>
 <pre><code>$ root histograms-z.root
 </code></pre>
 <p>And then using the Root command:  <code>TBrowser b</code></p>
 <p>With the <code>TBrowser</code> you can plot the variables in the root file. Double click on <code>histograms-z.root</code>, and then on the variables to plot them.</p>
 <h3 id="step-3-make-tselector">Step 3: Make TSelector</h3>
-<p>Now let's go back to the files created in step 1, in the remote terminal window. Start <code>root</code> in your test directory with the following commands:</p>
-<pre><code>$ module load root
-$ root -b
+<p>Now let's go back to the files created in step 1, in the local terminal window. Start <code>root</code> in your test directory with the following commands:</p>
+<pre><code>$ root -b
 </code></pre>
 <p>And then execute the following commands:</p>
 <pre><code>TFile f(&quot;t00.root&quot;);
@@ -913,7 +916,7 @@ t0-&gt;MakeSelector(&quot;s0&quot;,&quot;=legacy&quot;);
 f.Close();
 .q
 </code></pre>
-<p>This will create files <code>s0.C</code> and <code>s0.h</code> in your test directory that contain code corresponding to the definition of the TTree <code>t0</code>. This code can be used to process files containing data is these TTree's.</p>
+<p>This will create files <code>s0.C</code> and <code>s0.h</code> in your test directory that contain code corresponding to the definition of the TTree <code>t0</code>. This code can be used to process files containing data in these TTree's.</p>
 <p>Now we will add a histogram to the TSelector code. Several code lines have to be added to the TSelector code files <code>s0.C</code> and <code>s0.h</code>.</p>
 <p>To <code>s0.h</code> make the following additions:
 after existing include statements add:</p>
@@ -951,6 +954,8 @@ e-&gt;Fill(Energy);
 f.WriteObject(e,&quot;Energy&quot;);
 f.Close();
 </code></pre>
+<p><em>We will not submit grid jobs during this exercise. So we will skip submit script.</em></p>
+<p>-----------------------------<em>Skip from here</em>-----------------------------------------</p>
 <p>Now create the new script files for Step 2:</p>
 <p>create <code>run-root-2.cmd</code>:</p>
 <pre><code>universe=vanilla
@@ -965,11 +970,9 @@ error=run-root-2.err.$(Cluster).$(Process)
 notification=Never 
 queue 
 </code></pre>
+<p>-----------------------------------------------<em>Skip to here</em>----------------------------------------------------</p>
 <p>Create <code>run-root-2.sh</code>:</p>
 <pre><code>#!/bin/bash 
-source /cvmfs/oasis.opensciencegrid.org/osg/modules/lmod/current/init/bash
-module load root
-module load libXpm
 root -b &lt; run-root-2.C &gt; root-2.out 
 </code></pre>
 <p>It has to be made executable, by use of the <code>chmod</code> Linux command:</p>
@@ -988,9 +991,11 @@ root -b &lt; run-root-2.C &gt; root-2.out
 
 } 
 </code></pre>
-<p>We can test the Root job on the osgconnect training machine by issuing command:</p>
+<p>We can test the Root job on the local machine by issuing command:</p>
 <pre><code>root -b &lt; run-root-2.C
 </code></pre>
+<p><em>We will not submit grid jobs during this exercise. So we will skip running condor.</em></p>
+<p>-----------------------------<em>Skip from here</em>-----------------------------------------</p>
 <p>If this works, we can process the data files <code>t00.root</code> and <code>t01.root</code> on the
 Grid with our new command script <code>run-root-2.cmd</code>.</p>
 <p>This can be done with command:</p>
@@ -1002,6 +1007,7 @@ Grid with our new command script <code>run-root-2.cmd</code>.</p>
 <p>Go back to the local terminal window on your local desktop, and download the root files with:</p>
 <pre><code>wget http://stash.osgconnect.net/~YOUR_USER_ID/histograms.root
 </code></pre>
+<p>-----------------------------------------------<em>Skip to here</em>----------------------------------------------------</p>
 <p>You can look at the output histogram file: <code>histograms.root</code>
 with <code>TBrowser b</code> as before, in your local terminal window.</p>
                 
