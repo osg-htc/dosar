@@ -25,7 +25,9 @@ _Note: Since the new training VMs on OSpool do not support running root, we will
 
 Now in your test directory we will create the three files: `run-root.cmd`, `run-root.sh`, and `run-root.C` with the contents given below. This may require running an editor such as `emacs` or nano on your local desktop.
 
+
 _We will not submit grid jobs so the "run-root.cmd" script is not needed for this exercise._
+
 -----------------------------_Skip from here_-----------------------------------------
 
 First, we will utilize a simple command script to submit the grid jobs. It is `run-root.cmd`:
