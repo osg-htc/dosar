@@ -6,12 +6,7 @@ Root may be run in batch mode on the grid to analyze large data samples. This ex
 
 ## Prerequisite 
 
-* Login on submission node
-
-```
-$ ssh -XY YOUR_USER_ID@user-training.osgconnect.net
-```
-
+* Open a new terminal on your local desktop.
 * Make a directory for this exercise
 
 ```
@@ -25,14 +20,11 @@ Again the `$` sign at the beginning of the commands to execute is the `command p
 
 ### Step 1: Create simulated data using the grid
 
-Now in your test directory on the submission host we will create the three files: `run-root.cmd`, `run-root.sh`, and `run-root.C` with the contents given below. This may require running an editor such as `emacs` on your local desktop and then copying the created files to the submission host. Or the `nano` editor can be run directly on the submission host. A typical copy command would be as follows. 
+Note: Since the new training VMs on OSpool do not support running root, we will run root on the local desktops instead of using condor. So we will not need the condor submit scripts below but we will leave the instructions for them for future reference.
 
-```
-$ scp run-root.* YOUR_USER_ID@user-training.osgconnect.net:analysis_example/
-```
+Now in your test directory we will create the three files: `run-root.cmd`, `run-root.sh`, and `run-root.C` with the contents given below. This may require running an editor such as `emacs` or nano on your local desktop.
 
-It is probably easier to create all scripts with `nano` on the submission node, though, and then you won't have to copy (`scp`) anything at all. So everything below assumes you are logged on to a terminal session on the submission node.
-
+_Note: We will not submit grid jobs so the "run-root.cmd" script is not needed for this exercise._
 First, we will utilize a simple command script to submit the grid jobs. It is `run-root.cmd`:
 
 ```
@@ -53,9 +45,6 @@ Note that the executable script is:  `run-root.sh` which is as follows:
 
 ```
 #!/bin/bash 
-source /cvmfs/oasis.opensciencegrid.org/osg/modules/lmod/current/init/bash
-module load root
-module load libXpm
 root -b < run-root.C > root.out
 ```
 
@@ -97,7 +86,8 @@ The macro  `run-root.C` consists of the following code:
 } 
 .q 
 ```
-
+_We will not submit grid jobs during this exercise. So we will skip to running root._
+________________________________Skip from here____________________________________________
 The grid job can be submitted using:
 
 ```
@@ -122,8 +112,9 @@ Now open a different terminal window on your local desktop, and download the roo
 ```
 $ wget http://stash.osgconnect.net/~YOUR_USER_ID/t00.root  http://stash.osgconnect.net/~YOUR_USER_ID/t01.root
 ```
+____________________________________________________skip to here_________________________________________________
 
-You can then inspect the contents of `t00.root` and `t01.root` by running Root in your current directory in the local terminal window in which you just ran the `wget` command:
+You can then inspect the contents of `t00.root` and `t01.root` by running Root in your current directory in the local terminal window:
 
 ```
 $ root t00.root
@@ -145,7 +136,7 @@ tc.Draw("Energy");
 
 When you are done with this, you can quit `root` again with the command `.q <Return>`.
 
-### Step 2: Analyze Real Data
+### Step 2: Analyze Real Data  Fix Following
 
 Now we want to have a look at a real live ATLAS root file. For this, go back to the remote terminal window on osgconnect. You will need a new condor submit script called `run-z.cmd`:
 
