@@ -69,12 +69,11 @@ queue
 You should notice a few things about the montage submission file:
 
    1. The `transfer_input_files` statement refers to the files created by the other jobs. 
-   1. We do *not* transfer the montage program because it is on OASIS.
+   1. We do *not* transfer the montage program because it is on the VM.
 
 ```
 universe                = vanilla
 executable              = wrapper_montage.sh
-+ProjectName = "osg.ConnectTrain"
 arguments               = tile_0_0.ppm tile_0_1.ppm tile_1_0.ppm tile_1_1.ppm -mode Concatenate -tile 2x2 mandle.gif
 should_transfer_files   = YES
 when_to_transfer_output = ONEXIT
@@ -88,11 +87,9 @@ queue
 
 ### wrapper_montage.sh
 
-Because we are using OASIS, we will need to create a wrapper script to load the ImageMagick module so that we can use it to create the montage.  Put the following lines into `wrapper_montage.sh`:
+We will need to create a wrapper script so that we can use it to create the montage.  Put the following lines into `wrapper_montage.sh`:
 
 ```
-source /cvmfs/oasis.opensciencegrid.org/osg/modules/lmod/5.6.2/init/bash
-module load imagemagick
 montage $*
 ```
 
