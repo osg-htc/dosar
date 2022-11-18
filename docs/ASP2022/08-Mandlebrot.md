@@ -28,15 +28,15 @@ You can generate the Mandlebrot set with two simple commands.
 $ ~/bin/goatbrot -i 1000 -o tile_000000_000000.ppm -c 0,0 -w 3 -s 1000,1000
 ```
 
-2. Convert it to a JPEG image and write into your home directory:
+1. Convert it to a JPEG image and write into your home directory:
 
 ```
 $ convert tile_000000_000000.ppm ~/mandle.gif
 ```
 
-3. We need to download the GIF file from your training VM to your local desktop. To do so, find the file mandle.gif in the list of files and directories in the side bar to the left of your terminal window. Right-click on it and select Download, and download it to your local desktop.
+1. We need to download the GIF file from your training VM to your local desktop. To do so, find the file mandle.gif in the list of files and directories in the side bar to the left of your terminal window. Right-click on it and select Download, and download it to your local desktop.
 
-4. Point Browser at the file URL:
+1. Point Browser at the file URL:
 
 ```
 firefox ./mandle.gif
@@ -63,7 +63,7 @@ $ ~/bin/goatbrot -i 1000 -o tile_000001_000000.ppm -c -0.75,-0.75 -w 1.5 -s 500,
 $ ~/bin/goatbrot -i 1000 -o tile_000001_000001.ppm -c 0.75,-0.75 -w 1.5 -s 500,500
 ```
 
-   2. *Stitch them together*: 
+   1. *Stitch them together*: 
 
 ```
 $ montage tile_000000_000000.ppm tile_000000_000001.ppm tile_000001_000000.ppm tile_000001_000001.ppm -mode Concatenate -tile 2x2 ~/mandle.gif
