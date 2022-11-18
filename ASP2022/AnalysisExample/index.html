@@ -684,16 +684,16 @@ You need to copy these files into your public directory, so that you can downloa
 <pre><code>$ wget http://stash.osgconnect.net/~YOUR_USER_ID/t00.root  http://stash.osgconnect.net/~YOUR_USER_ID/t01.root
 </code></pre>
 <p>-----------------------------------------------<em>Skip to here</em>----------------------------------------------------</p>
-<p>Execute the script to run Root:</p>
+<p>Execute the script to run root:</p>
 <pre><code>./run-root.sh
 </code></pre>
-<p>You can then inspect the contents of <code>t00.root</code> and <code>t01.root</code> by running Root in your current directory in the local terminal window:</p>
+<p>You can then inspect the contents of <code>t00.root</code> and <code>t01.root</code> by running root in your current directory in the local terminal window:</p>
 <pre><code>$ root t00.root
 </code></pre>
 <p>And then the Root command:  <code>TBrowser b</code></p>
 <p>With the <code>TBrowser</code> you can plot the simulated data in branch <code>Energy</code> as well as the other branches. Double click on the name of the root files, and then on the variables you would like to plot.</p>
 <p>Each data file contains a TTree named <code>t0</code>. You can plot the contents of all (in this example both) data file TTree's by using the TChain method as follows:</p>
-<p>In Root execute the following commands:</p>
+<p>In root execute the following commands:</p>
 <pre><code>TChain tc(&quot;t0&quot;);
 tc.Add(&quot;t*.root&quot;);
 tc.Draw(&quot;Energy&quot;);
@@ -721,7 +721,7 @@ queue
 <pre><code>#!/bin/bash 
 root -b -q readEvents.C+ &gt; root-z.out
 </code></pre>
-<p>This script runs Root in batch mode and executes input macro <code>readEvents.C</code> and produces output that is routed to file <code>root-z.out</code>.
+<p>This script runs root in batch mode and executes input macro <code>readEvents.C</code> and produces output that is routed to file <code>root-z.out</code>.
 It has to be made executable, by use of the <code>chmod</code> Linux command (protections can be checked with the command <code>ls -l</code>):</p>
 <pre><code>$ chmod +x run-z.sh
 </code></pre>
@@ -1000,7 +1000,7 @@ root -b &lt; run-root-2.C &gt; root-2.out
 
 } 
 </code></pre>
-<p>We can test the Root job on the local machine by executing the script to run Root:</p>
+<p>We can test the root job on the local machine by executing the script to run root:</p>
 <pre><code>./run-root-2.sh
 </code></pre>
 <p><em>We will not submit grid jobs during this exercise. So we will skip running condor.</em></p>
