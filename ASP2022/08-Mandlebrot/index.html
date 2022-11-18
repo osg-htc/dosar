@@ -587,8 +587,8 @@
 <p>Since your training VMs don't have all the required executables for this exercise, we will need to download them first. Execute the following commands to do this:</p>
 <pre><code>$ mkdir bin
 $ cd bin
-$ wget https://www.nhn.ou.edu/~hs/tmp/goatbrot https://www.nhn.ou.edu/~hs/tmp/convert https://www.nhn.ou.edu/~hs/tmp/montage
-$ chmod +x goatbrot convert montage
+$ wget https://www.nhn.ou.edu/~hs/tmp/goatbrot
+$ chmod +x goatbrot
 $ cd ..
 </code></pre>
 <h2 id="a-simple-invocation-of-goatbrot">A simple invocation of goatbrot</h2>
@@ -601,7 +601,7 @@ $ cd ..
 <ol>
 <li>Convert it to a JPEG image and write into your home directory:</li>
 </ol>
-<pre><code>$ ~/bin/convert tile_000000_000000.ppm ~/mandle.gif
+<pre><code>$ convert tile_000000_000000.ppm ~/mandle.gif
 </code></pre>
 <ol>
 <li>
