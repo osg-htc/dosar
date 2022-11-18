@@ -8,7 +8,7 @@ We have a simple program that can draw the Mandlebrot set. It's called `goatbrot
 
 ## Downloading the needed executables
 
-Since your training VMs don't have all the required executables for this exercise, we will need to download them first. Execute the following commands to do this:
+Since your training VMs don't have the goatbrot executable needed for this exercise, we will need to download it first. Execute the following commands to do this:
 
 ```
 $ mkdir bin
