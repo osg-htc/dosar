@@ -125,12 +125,12 @@ $ wget http://stash.osgconnect.net/~YOUR_USER_ID/t00.root  http://stash.osgconne
 
 -----------------------------------------------_Skip to here_----------------------------------------------------
 
-Execute the script to run Root:
+Execute the script to run root:
 ```
 ./run-root.sh
 ```
 
-You can then inspect the contents of `t00.root` and `t01.root` by running Root in your current directory in the local terminal window:
+You can then inspect the contents of `t00.root` and `t01.root` by running root in your current directory in the local terminal window:
 
 ```
 $ root t00.root
@@ -142,7 +142,7 @@ With the `TBrowser` you can plot the simulated data in branch `Energy` as well a
 
 Each data file contains a TTree named `t0`. You can plot the contents of all (in this example both) data file TTree's by using the TChain method as follows:
 
-In Root execute the following commands:
+In root execute the following commands:
 
 ```
 TChain tc("t0");
@@ -184,7 +184,7 @@ The new executable script you need for this job is:  `run-z.sh` which is as foll
 #!/bin/bash 
 root -b -q readEvents.C+ > root-z.out
 ```
-This script runs Root in batch mode and executes input macro `readEvents.C` and produces output that is routed to file `root-z.out`.
+This script runs root in batch mode and executes input macro `readEvents.C` and produces output that is routed to file `root-z.out`.
 It has to be made executable, by use of the `chmod` Linux command (protections can be checked with the command `ls -l`):
 
 ```
@@ -536,7 +536,7 @@ Create `run-root-2.C`
 } 
 ```
 
-We can test the Root job on the local machine by executing the script to run Root:
+We can test the root job on the local machine by executing the script to run root:
 
 ```
 ./run-root-2.sh
