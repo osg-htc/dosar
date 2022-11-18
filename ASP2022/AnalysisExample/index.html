@@ -684,6 +684,9 @@ You need to copy these files into your public directory, so that you can downloa
 <pre><code>$ wget http://stash.osgconnect.net/~YOUR_USER_ID/t00.root  http://stash.osgconnect.net/~YOUR_USER_ID/t01.root
 </code></pre>
 <p>-----------------------------------------------<em>Skip to here</em>----------------------------------------------------</p>
+<p>Execute the script to run Root:</p>
+<pre><code>./run-root.sh
+</code></pre>
 <p>You can then inspect the contents of <code>t00.root</code> and <code>t01.root</code> by running Root in your current directory in the local terminal window:</p>
 <pre><code>$ root t00.root
 </code></pre>
@@ -903,6 +906,10 @@ void readEvents(){
 <pre><code>$ wget http://stash.osgconnect.net/~YOUR_USER_ID/histograms-z.root
 </code></pre>
 <p>-----------------------------------------------<em>Skip to here</em>----------------------------------------------------</p>
+<p>Setup a soft link to the input data file, muons.root, and execute the script to run root:</p>
+<pre><code>ln -s /opt/data/muons.root .
+./run-z.sh
+</code></pre>
 <p>You can inspect the contents of <code>histograms-z.root</code> by running Root (i.e., <code>root histograms-z.root</code>) in your current directory in your local terminal window:</p>
 <pre><code>$ root histograms-z.root
 </code></pre>
@@ -993,8 +1000,8 @@ root -b &lt; run-root-2.C &gt; root-2.out
 
 } 
 </code></pre>
-<p>We can test the Root job on the local machine by issuing command:</p>
-<pre><code>root -b &lt; run-root-2.C
+<p>We can test the Root job on the local machine by executing the script to run Root:</p>
+<pre><code>./run-root-2.sh
 </code></pre>
 <p><em>We will not submit grid jobs during this exercise. So we will skip running condor.</em></p>
 <p>-----------------------------<em>Skip from here</em>-----------------------------------------</p>
