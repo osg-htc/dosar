@@ -37,7 +37,7 @@ Or you can run:
 
 ```
 $ lsb_release -a
-o LSB modules are available.
+o No LSB modules are available.
 Distributor ID: Ubuntu
 Description:    Ubuntu 20.04.5 LTS
 Release:        20.04
