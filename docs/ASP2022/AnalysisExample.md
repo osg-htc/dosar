@@ -125,6 +125,10 @@ $ wget http://stash.osgconnect.net/~YOUR_USER_ID/t00.root  http://stash.osgconne
 
 -----------------------------------------------_Skip to here_----------------------------------------------------
 
+Execute the script to run Root:
+```
+./run-root.sh
+```
 
 You can then inspect the contents of `t00.root` and `t01.root` by running Root in your current directory in the local terminal window:
 
@@ -173,7 +177,6 @@ queue
 ```
 
 -----------------------------------------------_Skip to here_----------------------------------------------------
-
 
 
 The new executable script you need for this job is:  `run-z.sh` which is as follows:
@@ -390,6 +393,13 @@ $ wget http://stash.osgconnect.net/~YOUR_USER_ID/histograms-z.root
 
 -----------------------------------------------_Skip to here_----------------------------------------------------
 
+Setup a soft link to the input data file, muons.root, and execute the script to run root:
+
+```
+ln -s /opt/data/muons.root .
+./run-z.sh
+```
+
 
 You can inspect the contents of `histograms-z.root` by running Root (i.e., `root histograms-z.root`) in your current directory in your local terminal window:
 
@@ -526,10 +536,10 @@ Create `run-root-2.C`
 } 
 ```
 
-We can test the Root job on the local machine by issuing command:
+We can test the Root job on the local machine by executing the script to run Root:
 
 ```
-root -b < run-root-2.C
+./run-root-2.sh
 ```
 
 _We will not submit grid jobs during this exercise. So we will skip running condor._
