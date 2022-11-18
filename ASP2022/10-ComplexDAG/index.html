@@ -692,11 +692,10 @@ queue
 <p>You should notice a few things about the montage submission file:</p>
 <ol>
 <li>The <code>transfer_input_files</code> statement refers to the files created by the other jobs. </li>
-<li>We do <em>not</em> transfer the montage program because it is on OASIS.</li>
+<li>We do <em>not</em> transfer the montage program because it is on the VM.</li>
 </ol>
 <pre><code>universe                = vanilla
 executable              = wrapper_montage.sh
-+ProjectName = &quot;osg.ConnectTrain&quot;
 arguments               = tile_0_0.ppm tile_0_1.ppm tile_1_0.ppm tile_1_1.ppm -mode Concatenate -tile 2x2 mandle.gif
 should_transfer_files   = YES
 when_to_transfer_output = ONEXIT
@@ -708,10 +707,8 @@ log                     = montage.log
 queue
 </code></pre>
 <h3 id="wrapper_montagesh">wrapper_montage.sh</h3>
-<p>Because we are using OASIS, we will need to create a wrapper script to load the ImageMagick module so that we can use it to create the montage.  Put the following lines into <code>wrapper_montage.sh</code>:</p>
-<pre><code>source /cvmfs/oasis.opensciencegrid.org/osg/modules/lmod/5.6.2/init/bash
-module load imagemagick
-montage $*
+<p>We will need to create a wrapper script so that we can use it to create the montage.  Put the following lines into <code>wrapper_montage.sh</code>:</p>
+<pre><code>montage $*
 </code></pre>
 <h2 id="make-your-dag">Make your DAG</h2>
 <p>In a file called <code>goatbrot.dag</code>, you have your DAG specification:</p>
