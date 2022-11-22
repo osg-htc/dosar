@@ -616,7 +616,7 @@ $ cd analysis_example
 <p><em>Note: Since the new training VMs on OSpool do not support running root, we will run root on the local desktops instead of using condor. So we will not need the condor submit scripts below but we will leave the instructions for them for future reference.</em></p>
 <p>Now in your test directory we will create the three files: <code>run-root.cmd</code>, <code>run-root.sh</code>, and <code>run-root.C</code> with the contents given below. This may require running an editor such as <code>emacs</code> or nano on your local desktop.</p>
 <p><em>We will not submit grid jobs so the "run-root.cmd" script is not needed for this exercise.</em></p>
-<p>-----------------------------<em>Skip from here</em>-----------------------------------------</p>
+<p>-----------------------------<em>Skip from here-1</em>-----------------------------------------</p>
 <p>First, we will utilize a simple command script to submit the grid jobs. It is <code>run-root.cmd</code>:</p>
 <pre><code>universe=vanilla
 executable=run-root.sh
@@ -630,7 +630,7 @@ error=run-root.err.$(Cluster).$(Process)
 notification=Never
 queue 
 </code></pre>
-<p>-----------------------------------------------<em>Skip to here</em>----------------------------------------------------</p>
+<p>-----------------------------------------------<em>Skip to here-1</em>----------------------------------------------------</p>
 <p>Note that the executable script is:  <code>run-root.sh</code> which is as follows:</p>
 <pre><code>#!/bin/bash 
 root -b &lt; run-root.C &gt; root.out
@@ -669,7 +669,7 @@ It has to be made executable, by use of the <code>chmod</code> Linux command (pr
 .q 
 </code></pre>
 <p><em>We will not submit grid jobs during this exercise. So we will skip to running root.</em></p>
-<p>-----------------------------<em>Skip from here</em>-----------------------------------------</p>
+<p>-----------------------------<em>Skip from here-2</em>-----------------------------------------</p>
 <p>The grid job can be submitted using:</p>
 <pre><code>$ condor_submit run-root.cmd
 </code></pre>
@@ -683,7 +683,7 @@ You need to copy these files into your public directory, so that you can downloa
 <p>Now open a different terminal window on your local desktop, and download the root files with:</p>
 <pre><code>$ wget http://stash.osgconnect.net/~YOUR_USER_ID/t00.root  http://stash.osgconnect.net/~YOUR_USER_ID/t01.root
 </code></pre>
-<p>-----------------------------------------------<em>Skip to here</em>----------------------------------------------------</p>
+<p>-----------------------------------------------<em>Skip to here-2</em>----------------------------------------------------</p>
 <p>Execute the script to run root:</p>
 <pre><code>./run-root.sh
 </code></pre>
@@ -701,7 +701,7 @@ tc.Draw(&quot;Energy&quot;);
 <p>When you are done with this, you can quit <code>root</code> again with the command <code>.q &lt;Return&gt;</code>.</p>
 <h3 id="step-2-analyze-real-data">Step 2: Analyze Real Data</h3>
 <p><em>We will not submit grid jobs during this exercise. So we will skip submit script.</em></p>
-<p>-----------------------------<em>Skip from here</em>-----------------------------------------</p>
+<p>-----------------------------<em>Skip from here-3</em>-----------------------------------------</p>
 <p>The grid job can be submitted using:</p>
 <p>Now we want to have a look at a real live ATLAS root file. For this, go back to the remote terminal window on osgconnect. You will need a new condor submit script called <code>run-z.cmd</code>:</p>
 <pre><code>universe=vanilla
@@ -716,7 +716,7 @@ error=run-z.err.$(Cluster).$(Process)
 notification=Never
 queue 
 </code></pre>
-<p>-----------------------------------------------<em>Skip to here</em>----------------------------------------------------</p>
+<p>-----------------------------------------------<em>Skip to here-3</em>----------------------------------------------------</p>
 <p>The new executable script you need for this job is:  <code>run-z.sh</code> which is as follows:</p>
 <pre><code>#!/bin/bash 
 root -b -q readEvents.C+ &gt; root-z.out
@@ -891,7 +891,7 @@ void readEvents(){
 }
 </code></pre>
 <p><em>We will not submit grid jobs during this exercise. So we will skip to run root.</em></p>
-<p>-----------------------------<em>Skip from here</em>-----------------------------------------</p>
+<p>-----------------------------<em>Skip from here-4</em>-----------------------------------------</p>
 <p>The grid job can be submitted using:</p>
 <pre><code>$ condor_submit run-z.cmd
 </code></pre>
@@ -905,7 +905,7 @@ void readEvents(){
 <p>Go back to the local terminal window on your local desktop, and download the root files with:</p>
 <pre><code>$ wget http://stash.osgconnect.net/~YOUR_USER_ID/histograms-z.root
 </code></pre>
-<p>-----------------------------------------------<em>Skip to here</em>----------------------------------------------------</p>
+<p>-----------------------------------------------<em>Skip to here-4</em>----------------------------------------------------</p>
 <p>Setup a soft link to the input data file, muons.root, and execute the script to run root:</p>
 <pre><code>ln -s /opt/data/muons.root .
 ./run-z.sh
@@ -964,7 +964,7 @@ f.WriteObject(e,&quot;Energy&quot;);
 f.Close();
 </code></pre>
 <p><em>We will not submit grid jobs during this exercise. So we will skip submit script.</em></p>
-<p>-----------------------------<em>Skip from here</em>-----------------------------------------</p>
+<p>-----------------------------<em>Skip from here-5</em>-----------------------------------------</p>
 <p>Now create the new script files for Step 2:</p>
 <p>create <code>run-root-2.cmd</code>:</p>
 <pre><code>universe=vanilla
@@ -979,7 +979,7 @@ error=run-root-2.err.$(Cluster).$(Process)
 notification=Never 
 queue 
 </code></pre>
-<p>-----------------------------------------------<em>Skip to here</em>----------------------------------------------------</p>
+<p>-----------------------------------------------<em>Skip to here-5</em>----------------------------------------------------</p>
 <p>Create <code>run-root-2.sh</code>:</p>
 <pre><code>#!/bin/bash 
 root -b &lt; run-root-2.C &gt; root-2.out 
@@ -1004,7 +1004,7 @@ root -b &lt; run-root-2.C &gt; root-2.out
 <pre><code>./run-root-2.sh
 </code></pre>
 <p><em>We will not submit grid jobs during this exercise. So we will skip running condor.</em></p>
-<p>-----------------------------<em>Skip from here</em>-----------------------------------------</p>
+<p>-----------------------------<em>Skip from here-6</em>-----------------------------------------</p>
 <p>If this works, we can process the data files <code>t00.root</code> and <code>t01.root</code> on the
 Grid with our new command script <code>run-root-2.cmd</code>.</p>
 <p>This can be done with command:</p>
@@ -1016,7 +1016,7 @@ Grid with our new command script <code>run-root-2.cmd</code>.</p>
 <p>Go back to the local terminal window on your local desktop, and download the root files with:</p>
 <pre><code>wget http://stash.osgconnect.net/~YOUR_USER_ID/histograms.root
 </code></pre>
-<p>-----------------------------------------------<em>Skip to here</em>----------------------------------------------------</p>
+<p>-----------------------------------------------<em>Skip to here-6</em>----------------------------------------------------</p>
 <p>You can look at the output histogram file: <code>histograms.root</code>
 with <code>TBrowser b</code> as before, in your local terminal window.</p>
                 
