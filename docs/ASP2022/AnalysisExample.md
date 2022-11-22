@@ -28,7 +28,7 @@ Now in your test directory we will create the three files: `run-root.cmd`, `run-
 
 _We will not submit grid jobs so the "run-root.cmd" script is not needed for this exercise._
 
------------------------------_Skip from here_-----------------------------------------
+-----------------------------_Skip from here-1_-----------------------------------------
 
 First, we will utilize a simple command script to submit the grid jobs. It is `run-root.cmd`:
 
@@ -46,7 +46,7 @@ notification=Never
 queue 
 ```
 
------------------------------------------------_Skip to here_----------------------------------------------------
+-----------------------------------------------_Skip to here-1_----------------------------------------------------
 
 
 Note that the executable script is:  `run-root.sh` which is as follows:
@@ -96,7 +96,7 @@ The macro  `run-root.C` consists of the following code:
 ```
 _We will not submit grid jobs during this exercise. So we will skip to running root._
 
------------------------------_Skip from here_-----------------------------------------
+-----------------------------_Skip from here-2_-----------------------------------------
 
 The grid job can be submitted using:
 
@@ -123,7 +123,7 @@ Now open a different terminal window on your local desktop, and download the roo
 $ wget http://stash.osgconnect.net/~YOUR_USER_ID/t00.root  http://stash.osgconnect.net/~YOUR_USER_ID/t01.root
 ```
 
------------------------------------------------_Skip to here_----------------------------------------------------
+-----------------------------------------------_Skip to here-2_----------------------------------------------------
 
 Execute the script to run root:
 ```
@@ -156,7 +156,7 @@ When you are done with this, you can quit `root` again with the command `.q <Ret
 
 _We will not submit grid jobs during this exercise. So we will skip submit script._
 
------------------------------_Skip from here_-----------------------------------------
+-----------------------------_Skip from here-3_-----------------------------------------
 
 The grid job can be submitted using:
 
@@ -176,7 +176,7 @@ notification=Never
 queue 
 ```
 
------------------------------------------------_Skip to here_----------------------------------------------------
+-----------------------------------------------_Skip to here-3_----------------------------------------------------
 
 
 The new executable script you need for this job is:  `run-z.sh` which is as follows:
@@ -361,7 +361,7 @@ void readEvents(){
 
 _We will not submit grid jobs during this exercise. So we will skip to run root._
 
------------------------------_Skip from here_-----------------------------------------
+-----------------------------_Skip from here-4_-----------------------------------------
 
 
 
@@ -391,7 +391,7 @@ Go back to the local terminal window on your local desktop, and download the roo
 $ wget http://stash.osgconnect.net/~YOUR_USER_ID/histograms-z.root
 ```
 
------------------------------------------------_Skip to here_----------------------------------------------------
+-----------------------------------------------_Skip to here-4_----------------------------------------------------
 
 Setup a soft link to the input data file, muons.root, and execute the script to run root:
 
@@ -485,7 +485,7 @@ f.Close();
 
 _We will not submit grid jobs during this exercise. So we will skip submit script._
 
------------------------------_Skip from here_-----------------------------------------
+-----------------------------_Skip from here-5_-----------------------------------------
 
 
 
@@ -506,7 +506,7 @@ notification=Never
 queue 
 ```
 
------------------------------------------------_Skip to here_----------------------------------------------------
+-----------------------------------------------_Skip to here-5_----------------------------------------------------
 
 
 Create `run-root-2.sh`:
@@ -544,7 +544,7 @@ We can test the root job on the local machine by executing the script to run roo
 
 _We will not submit grid jobs during this exercise. So we will skip running condor._
 
------------------------------_Skip from here_-----------------------------------------
+-----------------------------_Skip from here-6_-----------------------------------------
 
 
 If this works, we can process the data files `t00.root` and `t01.root` on the
@@ -568,7 +568,7 @@ Go back to the local terminal window on your local desktop, and download the roo
 wget http://stash.osgconnect.net/~YOUR_USER_ID/histograms.root
 ```
 
------------------------------------------------_Skip to here_----------------------------------------------------
+-----------------------------------------------_Skip to here-6_----------------------------------------------------
 
 
 You can look at the output histogram file: `histograms.root`
