@@ -38,7 +38,7 @@ We will be using OSG Training Pool for this set of sessions. Please visit [https
    
 ## Thursday Morning - Computational Infrastructures - Session 5
 
-   * [ATLAS Analysis Example Lecture](/dosar/ASP2022/Intro_Anal_Ex-ASP2018.pdf)
+   * [ATLAS Analysis Example Lecture](/dosar/ASP2022/Intro_Anal_Ex-2022.pdf)
    * [ATLAS Analysis Example Exercise](/dosar/ASP2022/AnalysisExample)
    
 ## Thursday Afternoon - Computational Infrastructures - Session 6
