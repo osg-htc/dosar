@@ -32,7 +32,7 @@ We will be using OSG Training Pool for this set of sessions. Please visit [https
    
 ## Thursday Morning - Computational Infrastructures - Session 4
 
-   * Lecture 4 - [Slides](/dosar/ASP2022/Lecture4-ASP2018_final.pdf)
+   * Lecture 4 - [Slides](/dosar/ASP2022/Lecture4-ASP2022.pdf)
    * [Discipline specific tutorials](/dosar/ASP2022/13-DisciplineTutorials)
    * [Containers with Singularity](/dosar/ASP2022/14-Containers)
    
@@ -53,5 +53,4 @@ We will be using OSG Training Pool for this set of sessions. Please visit [https
    * Julia Gray - julia.ann.gray@gmail.com
    * Jae Yu - jaehoonyu@uta.edu
    * Chris Walker - walker@nhn.ou.edu
-   * [http://www.osgconnect.net/](http://www.osgconnect.net/)
    * If you want long‐term grid access, you can go to [http://www.osgconnect.net/](http://www.osgconnect.net/) and sign up
