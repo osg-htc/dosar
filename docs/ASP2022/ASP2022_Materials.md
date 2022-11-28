@@ -20,7 +20,7 @@ We will be using OSG Training Pool for this set of sessions. Please visit [https
    
 ## Wednesday Afternoon - Computational Infrastructures - Session 3
 
-   * Lecture 3 - [Slides](/dosar/ASP2022/Lecture3-ASP2018.pdf)
+   * Lecture 3 - [Slides](/dosar/ASP2022/Lecture3-ASP2022.pdf)
    * [A brief detour through the Mandlebrot set](/dosar/ASP2022/08-Mandlebrot)
    * [Coordinating sets of jobs: A simple DAG](/dosar/ASP2022/09-SimpleDAG)
    * [A more complex DAG](/dosar/ASP2022/10-ComplexDAG)
@@ -52,7 +52,6 @@ We will be using OSG Training Pool for this set of sessions. Please visit [https
    * Patrick Skubic - pskubic@ou.edu
    * Julia Gray - julia.ann.gray@gmail.com
    * Jae Yu - jaehoonyu@uta.edu
-   * Dick Greenwood - greenw@phys.latech.edu
    * Chris Walker - walker@nhn.ou.edu
    * [http://www.osgconnect.net/](http://www.osgconnect.net/)
    * DOSAR: Distributed Organization for Scientific and Academic Research [http://www.dosar.org/](http://www.dosar.org/) You are welcome to join our bi‐weekly video (Vidyo) meetings. Send request to be added to DOSAR email list to Prof. Greenwood: greenw@phys.latech.edu reference you attended the African School of Physics 2018.
