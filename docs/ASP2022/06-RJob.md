@@ -70,7 +70,7 @@ fi
 /opt/conda/bin/R --slave --vanilla < $1
 ```
 
-You could easily execute this on OSG Connect locally by making the shell script executable and executing it.
+You could easily execute this on OSpool by making the shell script executable and executing it.
 
 ```
 $ chmod 755 run-r.sh
