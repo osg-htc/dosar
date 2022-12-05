@@ -5,7 +5,7 @@ We will be using OSG Training Pool for this set of sessions. Please visit [https
 ## Wednesday Morning - Computational Infrastructures - Session 1
 
    * Welcome and Introduction - The Landscape of Academic Research Computing
-   * Lecture 1 - [Slides](/dosar/ASP2022/Lecture1-ASP2018.pdf)
+   * Lecture 1 - [Slides](/dosar/ASP2022/Lecture1-ASP2022.pdf)
    * [Introduction](/dosar/ASP2022/01-Introduction) 
    * [Our Job Manager (HTCondor)](/dosar/ASP2022/02-OurJobManager)
    * [Your First Managed Job](/dosar/ASP2022/03-FirstManagedJob)
