@@ -20,7 +20,7 @@ We will be using OSG Training Pool for this set of sessions. Please visit [https
    
 ## Wednesday Afternoon - Computational Infrastructures - Session 3
 
-   * Lecture 3 - [Slides](/dosar/ASP2022/Lecture3-ASP2022.pdf)
+   * Lecture 3 - [Slides](/dosar/ASP2022/Lecture3-ASP2022_final.pdf)
    * [A brief detour through the Mandlebrot set](/dosar/ASP2022/08-Mandlebrot)
    * [Coordinating sets of jobs: A simple DAG](/dosar/ASP2022/09-SimpleDAG)
    * [A more complex DAG](/dosar/ASP2022/10-ComplexDAG)
@@ -32,7 +32,7 @@ We will be using OSG Training Pool for this set of sessions. Please visit [https
    
 ## Thursday Morning - Computational Infrastructures - Session 4
 
-   * Lecture 4 - [Slides](/dosar/ASP2022/Lecture4-ASP2022.pdf)
+   * Lecture 4 - [Slides](/dosar/ASP2022/Lecture4-ASP2022_final.pdf)
    * [Discipline specific tutorials](/dosar/ASP2022/13-DisciplineTutorials)
    * [Containers with Singularity](/dosar/ASP2022/14-Containers)
    
