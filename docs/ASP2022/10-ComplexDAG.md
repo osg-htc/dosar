@@ -73,7 +73,7 @@ You should notice a few things about the montage submission file:
 
 ```
 universe                = vanilla
-executable              = wrapper_montage.sh
+executable              = /usr/bin/montage
 arguments               = tile_0_0.ppm tile_0_1.ppm tile_1_0.ppm tile_1_1.ppm -mode Concatenate -tile 2x2 mandle.gif
 should_transfer_files   = YES
 when_to_transfer_output = ONEXIT
@@ -85,14 +85,6 @@ log                     = montage.log
 queue
 ```
 
-### wrapper_montage.sh
-
-We will need to create a wrapper script so that we can use it to create the montage.  Put the following lines into `wrapper_montage.sh`:
-
-```
-montage $*
-```
-You also need to make that shell script executable again with `chmod +x wrapper_montage.sh`
 
 ## Make your DAG
 
@@ -133,8 +125,10 @@ Submitting job(s).
 Watch with condor_q:
 
 ```
-$ watch -n 10 condor_q YOUR_USER_ID -nobatch
+$ watch -n 1 condor_q YOUR_USER_ID -nobatch
 ```
+
+To get out of the `watch` command, press `Ctrl-c`.
 
 Here we see DAGMan running:
 
