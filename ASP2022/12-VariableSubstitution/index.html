@@ -572,7 +572,7 @@
 <p>Yes, we can!</p>
 <h2 id="declare-your-variables">Declare your variables</h2>
 <p>First declare your variables in your submit file. Make one submit file for all of your goatbrot jobs. Here's what it looks like. Call it <code>goatbrot.sub</code>:</p>
-<pre><code>executable              = /stash/user/rquick/public/goatbrot-master/goatbrot
+<pre><code>executable              = /home/jovyan/bin/goatbrot
 arguments               = -i 100000 -c $(CENTERX),$(CENTERY) -w 1.5 -s 500,500 -o tile_$(TILEY)_$(TILEX).ppm
 log                     = goatbrot.log
 output                  = goatbrot.out.$(TILEY).$(TILEX)
