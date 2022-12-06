@@ -642,7 +642,7 @@ Submitting job(s).
 06/22/12 18:08:42 Note: 0 total POST script deferrals because of -MaxPost limit (0)
 06/22/12 18:08:42 **** condor_scheduniv_exec.77.0 (condor_DAGMAN) pid 26867 EXITING WITH STATUS 1
 </code></pre>
-<p>DAGMan notices that one of the jobs failed because it's exit code was non-zero. DAGMan ran as much of the DAG as possible and logged enough information to continue the run when the situation is resolved. Do you see the part where it wrote the resuce DAG?</p>
+<p>DAGMan notices that one of the jobs failed because it's exit code was non-zero. DAGMan ran as much of the DAG as possible and logged enough information to continue the run when the situation is resolved. Do you see the part where it wrote the rescue DAG?</p>
 <p>Look at the rescue DAG. It's called a partial DAG: it indicates what part of the DAG has already been completed. When you re-submit the original DAG, DAGMan will notice the rescue DAG and use it in combination with the original DAG. (The rescue DAG used to be the full DAG with nodes marked as done and you would ask DAGMan to run the new rescue DAG. For your simplicity DAGMan lets you resubmit the original DAG and it reads both files.)</p>
 <pre><code>$ cat goatbrot.dag.rescue001
 # Rescue DAG file, created after running
