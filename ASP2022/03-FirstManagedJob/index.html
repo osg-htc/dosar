@@ -831,7 +831,7 @@ Thinking really hard for 4 seconds...
 We calculated: 24
 </code></pre>
 <p>Notice that we had three jobs with the same cluster number, but different process numbers. They have the same cluster number because they were all submitted from the same submit file. When the jobs ran, they created three different output files, each with the desired output.</p>
-<p>You are now ready to submit lots of jobs! Although this example was simple, Condor has many, many options so you can get a wide variety of behaviors. You can find many of these if you look at <a href="http://www.cs.wisc.edu/condor/manual/v8.6/condor_submit.html">the documentation for condor_submit</a>.</p>
+<p>You are now ready to submit lots of jobs! Although this example was simple, Condor has many, many options so you can get a wide variety of behaviors. You can find many of these if you look at <a href="https://htcondor.readthedocs.io/en/v10_0/man-pages/condor_submit.html">the documentation for condor_submit</a>.</p>
 <h2 id="on-your-own">On your own</h2>
 <p>Now that you've gotten your feet wet, try a few things on your own.</p>
 <h3 id="just-one-log-file">Just one log file</h3>
@@ -847,9 +847,9 @@ queue 10
 <p>What does it mean? What happens? Does it work as you expect?</p>
 <p>(An aside: you might wish to be able to do math, something like <code>$(Process)+1</code>. Unfortunately, you can't do that.)</p>
 <h2 id="challenges">Challenges</h2>
-<p>If you have time and feel comfortable with the technical background, try these extra challenges. You'll need to peruse the Condor manual (particularly the <a href="http://www.cs.wisc.edu/condor/manual/v8.6/condor_submit.html">manual page for condor_submit</a>) to find answers. Feel free to ask Rob--he'd love to give you hints!</p>
+<p>If you have time and feel comfortable with the technical background, try these extra challenges. You'll need to peruse the Condor manual (particularly the <a href="https://htcondor.readthedocs.io/en/v10_0/man-pages/condor_submit.html">manual page for condor_submit</a>) to find answers. Feel free to ask Rob--he'd love to give you hints!</p>
 <ul>
-<li>Make another scientific program (probably just modify simple.c) that takes its input from a file. Now submit 3 copies of this program where each input file is in a separate directory. Use the initialdir option <a href="http://www.cs.wisc.edu/condor/manual/v8.6/condor_submit.html">described in the manual</a>. This will let you specify a directory for the input to the program. You can run specify the initialdir with <code>$(Process)</code>. You can specify extra files to copy with <code>transfer_input_files</code>. Now you're really learning the basics of running something like a real scientific job!</li>
+<li>Make another scientific program (probably just modify simple.c) that takes its input from a file. Now submit 3 copies of this program where each input file is in a separate directory. Use the initialdir option <a href="https://htcondor.readthedocs.io/en/v10_0/man-pages/condor_submit.html">described in the manual</a>. This will let you specify a directory for the input to the program. You can run specify the initialdir with <code>$(Process)</code>. You can specify extra files to copy with <code>transfer_input_files</code>. Now you're really learning the basics of running something like a real scientific job!</li>
 <li>Condor can send you email when a job finishes. How can you control this? </li>
 <li>You know that your job should never run for more than four hours. If it does, then the job should be killed because there is a problem. How can you tell Condor to do this for you? </li>
 </ul>
