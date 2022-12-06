@@ -584,13 +584,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#wrapper_montagesh" class="md-nav__link">
-    wrapper_montage.sh
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -696,7 +689,7 @@ queue
 <li>We do <em>not</em> transfer the montage program because it is on the VM.</li>
 </ol>
 <pre><code>universe                = vanilla
-executable              = wrapper_montage.sh
+executable              = /usr/bin/montage
 arguments               = tile_0_0.ppm tile_0_1.ppm tile_1_0.ppm tile_1_1.ppm -mode Concatenate -tile 2x2 mandle.gif
 should_transfer_files   = YES
 when_to_transfer_output = ONEXIT
@@ -707,11 +700,6 @@ error                   = montage.err
 log                     = montage.log
 queue
 </code></pre>
-<h3 id="wrapper_montagesh">wrapper_montage.sh</h3>
-<p>We will need to create a wrapper script so that we can use it to create the montage.  Put the following lines into <code>wrapper_montage.sh</code>:</p>
-<pre><code>montage $*
-</code></pre>
-<p>You also need to make that shell script executable again with <code>chmod +x wrapper_montage.sh</code></p>
 <h2 id="make-your-dag">Make your DAG</h2>
 <p>In a file called <code>goatbrot.dag</code>, you have your DAG specification:</p>
 <pre><code>JOB g1 goatbrot1.sub
@@ -739,8 +727,9 @@ Submitting job(s).
 </code></pre>
 <h2 id="watch-your-dag">Watch your DAG</h2>
 <p>Watch with condor_q:</p>
-<pre><code>$ watch -n 10 condor_q YOUR_USER_ID -nobatch
+<pre><code>$ watch -n 1 condor_q YOUR_USER_ID -nobatch
 </code></pre>
+<p>To get out of the <code>watch</code> command, press <code>Ctrl-c</code>.</p>
 <p>Here we see DAGMan running:</p>
 <pre><code>-- Submitter: kagross@frontal.cci.ucad.sn : &lt;172.16.200.1:9645&gt; : frontal.cci.ucad.sn
  ID      OWNER            SUBMITTED     RUN_TIME ST PRI SIZE CMD               
