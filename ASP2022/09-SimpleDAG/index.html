@@ -591,7 +591,7 @@
 <p>The objective of this exercise is to learn the very basics of running a set of jobs, where our set is just one job. </p>
 <h2 id="what-is-dagman">What is DAGMan?</h2>
 <p>Your tutorial leader will introduce you to DAGMan and DAGs. In short, DAGMan lets you submit complex sequences of jobs as long as they can be expressed as a directed acylic graph. For example, you may wish to run a large parameter sweep but before the sweep run you need to prepare your data. After the sweep runs, you need to collate the results. </p>
-<p>DAGMan has many abilities such as throttling jobs, recovery from failures, and more. More information about DAGMan can be found at  <a href="https://htcondor.readthedocs.io/en/v10_0/man-pages/condor_dagman.html">in the Condor manual</a>.</p>
+<p>DAGMan has many abilities such as throttling jobs, recovery from failures, and more. More information about DAGMan can be found at  <a href="https://research.cs.wisc.edu/htcondor/manual/v8.6/2_10DAGMan_Applications.html">in the Condor manual</a>.</p>
 <h2 id="submitting-a-simple-dag">Submitting a simple DAG</h2>
 <p>We're going to go back to the "simple" example that we did first. (The one with the job that slept and multiplied a number by 2.) Make sure that you have a submit file (called <code>submit</code>) that has only one queue command in it, as when we first wrote it. And we will just run vanilla universe jobs for now, though we could equally well run standard universe jobs. </p>
 <pre><code>Universe                = vanilla
