@@ -100,7 +100,7 @@ A few tips:
 
    * You can remove all of your jobs with the `-all` option.
    * You can't remove other users jobs.
-   * There are [fancy options to condor_rm](http://www.cs.wisc.edu/condor/manual/v8.4/condor_rm.html).  
+   * There are [fancy options to condor_rm](https://htcondor.readthedocs.io/en/v10_0/man-pages/condor_rm.html).  
 
 ## Historical information
 
