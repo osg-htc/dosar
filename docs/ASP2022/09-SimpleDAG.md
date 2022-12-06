@@ -25,7 +25,7 @@ when_to_transfer_output = ON_EXIT
 Queue
 ```
 
-Make sure you've built the `simple` program. If you need to, go back to [the instructions for your first job](/dosar/ASP2022/03-FirstManagedJob) to do it again.
+Make sure you've built the `simple` program. If you need to, go back to [the instructions for your first job](/dosar/ASP2022/03-FirstManagedJob) to do it again. Make sure you are in the condor-test directory that you used before. `cd ~/condor-test`
 
 We are going to get a bit more sophisticated in submitting our jobs now. Let's have three windows open. Click the + sign just to the right of the title 'Terminal 1' -- NOT the x! -- in order to open additional terminals.
 
