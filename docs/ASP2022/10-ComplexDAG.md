@@ -9,7 +9,7 @@ We'll run our `goatbrot` example. If you didn't read about it yet, [please do so
 
 You can create your five jobs. The goatbrot jobs very similar to each other, but they have slightly different parameters (arguments) and output files. 
 
-You have placed the goatbrot executable in your bin directory: `~/bin/goatbrot`
+You have placed the goatbrot executable in your bin directory: `~/bin/goatbrot` .
 Condor does not deal well with `~/` as the home directory, so we will use the full path `/home/jovyan/bin/` instead in the submit scripts, which goes to the same path.
 
 ### goatbrot1.sub
