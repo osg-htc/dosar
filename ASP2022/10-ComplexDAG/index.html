@@ -647,9 +647,10 @@
 <h2 id="make-your-job-submission-files">Make your job submission files</h2>
 <p>We'll run our <code>goatbrot</code> example. If you didn't read about it yet, <a href="/dosar/ASP2022/08-Mandlebrot">please do so now</a>. We are going to make a DAG with four simultaneous jobs (<code>goatbrot</code>) and one final node to stitch them together (<code>montage</code>). This means we have five jobs. We're going to run <code>goatbrot</code> with more iterations (100,000) so it will take longer to run. </p>
 <p>You can create your five jobs. The goatbrot jobs very similar to each other, but they have slightly different parameters (arguments) and output files. </p>
-<p>You have placed the goatbrot executable in your bin directory: <code>~/bin/goatbrot</code></p>
+<p>You have placed the goatbrot executable in your bin directory: <code>~/bin/goatbrot</code>
+Condor does not deal well with ~/ as the home directory, so we will use the full path /home/jovyan/bin/ instead, which goes to the same path.</p>
 <h3 id="goatbrot1sub">goatbrot1.sub</h3>
-<pre><code>executable              = ~/bin/goatbrot
+<pre><code>executable              = /home/jovyan/bin/goatbrot
 arguments               = -i 100000 -c -0.75,0.75 -w 1.5 -s 500,500 -o tile_0_0.ppm
 log                     = goatbrot.log
 output                  = goatbrot.out.0.0
@@ -659,7 +660,7 @@ when_to_transfer_output = ONEXIT
 queue
 </code></pre>
 <h3 id="goatbrot2sub">goatbrot2.sub</h3>
-<pre><code>executable              = ~/bin/goatbrot
+<pre><code>executable              = /home/jovyan/bin/goatbrot
 arguments               = -i 100000 -c 0.75,0.75 -w 1.5 -s 500,500 -o tile_0_1.ppm
 log                     = goatbrot.log
 output                  = goatbrot.out.0.1
@@ -669,7 +670,7 @@ when_to_transfer_output = ONEXIT
 queue
 </code></pre>
 <h3 id="goatbrot3sub">goatbrot3.sub</h3>
-<pre><code>executable              = ~/bin/goatbrot
+<pre><code>executable              = /home/jovyan/bin/goatbrot
 arguments               = -i 100000 -c -0.75,-0.75 -w 1.5 -s 500,500 -o tile_1_0.ppm
 log                     = goatbrot.log
 output                  = goatbrot.out.1.0
@@ -679,7 +680,7 @@ when_to_transfer_output = ONEXIT
 queue
 </code></pre>
 <h3 id="goatbrot4sub">goatbrot4.sub</h3>
-<pre><code>executable              = ~/bin/goatbrot
+<pre><code>executable              = /home/jovyan/bin/goatbrot
 arguments               = -i 100000 -c 0.75,-0.75 -w 1.5 -s 500,500 -o tile_1_1.ppm
 log                     = goatbrot.log
 output                  = goatbrot.out.1.1
@@ -710,6 +711,7 @@ queue
 <p>We will need to create a wrapper script so that we can use it to create the montage.  Put the following lines into <code>wrapper_montage.sh</code>:</p>
 <pre><code>montage $*
 </code></pre>
+<p>You also need to make that shell script executable again with <code>chmod +x wrapper_montage.sh</code></p>
 <h2 id="make-your-dag">Make your DAG</h2>
 <p>In a file called <code>goatbrot.dag</code>, you have your DAG specification:</p>
 <pre><code>JOB g1 goatbrot1.sub
