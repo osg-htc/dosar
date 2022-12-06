@@ -641,7 +641,7 @@
 <p>We'll run our <code>goatbrot</code> example. If you didn't read about it yet, <a href="/dosar/ASP2022/08-Mandlebrot">please do so now</a>. We are going to make a DAG with four simultaneous jobs (<code>goatbrot</code>) and one final node to stitch them together (<code>montage</code>). This means we have five jobs. We're going to run <code>goatbrot</code> with more iterations (100,000) so it will take longer to run. </p>
 <p>You can create your five jobs. The goatbrot jobs very similar to each other, but they have slightly different parameters (arguments) and output files. </p>
 <p>You have placed the goatbrot executable in your bin directory: <code>~/bin/goatbrot</code> .
-Condor does not deal well with <code>~/</code> as the home directory, so we will use the full path <code>/home/jovyan/bin/</code> instead in the submit scripts, which goes to the same path.</p>
+Condor does not deal well with <code>~/</code> as the home directory, so we will use the full path <code>/home/jovyan/bin/</code> instead in the submit scripts, which goes to the same directory.</p>
 <h3 id="goatbrot1sub">goatbrot1.sub</h3>
 <pre><code>executable              = /home/jovyan/bin/goatbrot
 arguments               = -i 100000 -c -0.75,0.75 -w 1.5 -s 500,500 -o tile_0_0.ppm
@@ -729,7 +729,7 @@ Submitting job(s).
 <p>Watch with condor_q:</p>
 <pre><code>$ watch -n 1 condor_q YOUR_USER_ID -nobatch
 </code></pre>
-<p>To get out of the <code>watch</code> command, press <code>Ctrl-c</code>.</p>
+<p>To quit <code>watch</code> command, press <code>Ctrl-c</code>.</p>
 <p>Here we see DAGMan running:</p>
 <pre><code>-- Submitter: kagross@frontal.cci.ucad.sn : &lt;172.16.200.1:9645&gt; : frontal.cci.ucad.sn
  ID      OWNER            SUBMITTED     RUN_TIME ST PRI SIZE CMD               
