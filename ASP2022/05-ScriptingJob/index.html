@@ -583,6 +583,7 @@ answer=$(( $2 * 2 ))
 echo &quot;We calculated $answer.&quot;
 exit 0
 </code></pre>
+<p>You will need to make this shell script executable with <code>chmod +x simple.sh</code>, and then you can run it with <code>./simple.sh 3 4</code>.</p>
 <p>Can you write a submit file to run this job? This should be easy--the script is your <em>Executable</em>, not <code>/bin/sh</code>. You may also want to change the name of your <code>submit.log</code>, <code>submit.out</code>, and <code>submit.err</code> in your <code>submit</code> file to be sure they are not written over when you run this submission. </p>
 <h2 id="challenge">Challenge</h2>
 <p>Rewrite this script in Perl or Python (if you're comfortable with one of those languages). Does it still work for you?</p>
