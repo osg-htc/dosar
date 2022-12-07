@@ -23,6 +23,8 @@ echo "We calculated $answer."
 exit 0
 ```
 
+You will need to make this shell script executable with `chmod +x simple.sh`, and then you can run it with `./simple.sh 3 4`.
+
 Can you write a submit file to run this job? This should be easy--the script is your _Executable_, not `/bin/sh`. You may also want to change the name of your `submit.log`, `submit.out`, and `submit.err` in your `submit` file to be sure they are not written over when you run this submission. 
 
 ## Challenge
