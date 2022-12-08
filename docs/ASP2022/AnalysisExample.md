@@ -6,7 +6,8 @@ Root may be run in batch mode on the grid to analyze large data samples. This ex
 
 ## Prerequisite 
 
-* Open a new terminal on your local desktop.
+* Open a new Terminal on your local desktop. NOTE: You are no longer using the browser based terminal now, but the Terminal on your CentOS VM, just like you did to display mandle.gif with firefox.
+* 
 * Make a directory for this exercise
 
 ```
