@@ -5,42 +5,42 @@ We will be using OSG Training Pool for this set of sessions. Please visit [https
 ## Wednesday Morning - Computational Infrastructures - Session 1
 
    * Welcome and Introduction - The Landscape of Academic Research Computing
-   * Lecture 1 - [Intro-Slides](/dosar/ASP2022/asp2022-htc-intro-yu_v2.pdf) [Lecture1-Slides](/dosar/ASP2022/asp2022-htc-lecture1-yu_v2.pdf)
-   * [Introduction](/dosar/ASP2022/01-Introduction) 
-   * [Our Job Manager (HTCondor)](/dosar/ASP2022/02-OurJobManager)
-   * [Your First Managed Job](/dosar/ASP2022/03-FirstManagedJob)
-   * [A few tips and tricks](/dosar/ASP2022/04-TipsandTricks)
+   * Lecture 1 - [Intro-Slides](/dosar/ASP2024/asp2022-htc-intro-yu_v2.pdf) [Lecture1-Slides](/dosar/ASP2022/asp2022-htc-lecture1-yu_v2.pdf)
+   * [Introduction](/dosar/ASP2024/01-Introduction) 
+   * [Our Job Manager (HTCondor)](/dosar/ASP2024/02-OurJobManager)
+   * [Your First Managed Job](/dosar/ASP2024/03-FirstManagedJob)
+   * [A few tips and tricks](/dosar/ASP2024/04-TipsandTricks)
    
 ## Wednesday Afternoon - Computational Infrastructures - Session 2
 
-   * Lecture 2 - [Slides](/dosar/ASP2022/Lecture2-ASP2022.pdf)
-   * [A scripting job](/dosar/ASP2022/05-ScriptingJob)
-   * [An R Job](/dosar/ASP2022/06-RJob)
-   * [Working with file I/O](/dosar/ASP2022/07-WorkingwithFiles)
+   * Lecture 2 - [Slides](/dosar/ASP2024/Lecture2-ASP2022.pdf)
+   * [A scripting job](/dosar/ASP2024/05-ScriptingJob)
+   * [An R Job](/dosar/ASP2024/06-RJob)
+   * [Working with file I/O](/dosar/ASP2024/07-WorkingwithFiles)
    
 ## Wednesday Afternoon - Computational Infrastructures - Session 3
 
-   * Lecture 3 - [Slides](/dosar/ASP2022/Lecture3-ASP2022_final.pdf)
-   * [A brief detour through the Mandlebrot set](/dosar/ASP2022/08-Mandlebrot)
-   * [Coordinating sets of jobs: A simple DAG](/dosar/ASP2022/09-SimpleDAG)
-   * [A more complex DAG](/dosar/ASP2022/10-ComplexDAG)
+   * Lecture 3 - [Slides](/dosar/ASP2024/Lecture3-ASP2022_final.pdf)
+   * [A brief detour through the Mandlebrot set](/dosar/ASP2024/08-Mandlebrot)
+   * [Coordinating sets of jobs: A simple DAG](/dosar/ASP2024/09-SimpleDAG)
+   * [A more complex DAG](/dosar/ASP2024/10-ComplexDAG)
    
 ### Challenge Exercises on DAGs
 
-   * [Handling jobs that fail](/dosar/ASP2022/11-HandlingFailure)
-   * [Variable Substitution](/dosar/ASP2022/12-VariableSubstitution)
+   * [Handling jobs that fail](/dosar/ASP2024/11-HandlingFailure)
+   * [Variable Substitution](/dosar/ASP2024/12-VariableSubstitution)
    
 ## Thursday Morning - Computational Infrastructures - Session 4
 
-   * Lecture 4 - [Slides](/dosar/ASP2022/Lecture4-ASP2022_final.pdf)
-   * [Discipline specific tutorials](/dosar/ASP2022/13-DisciplineTutorials)
-   * [Containers with Singularity](/dosar/ASP2022/14-Containers)
+   * Lecture 4 - [Slides](/dosar/ASP2024/Lecture4-ASP2022_final.pdf)
+   * [Discipline specific tutorials](/dosar/ASP2024/13-DisciplineTutorials)
+   * [Containers with Singularity](/dosar/ASP2024/14-Containers)
    
 ## Thursday Morning - Computational Infrastructures - Session 5
 
-   * [ATLAS Analysis Example Lecture](/dosar/ASP2022/Intro_Anal_Ex-2022_v2.pdf)
-   * [ATLAS Analysis Example Exercise](/dosar/ASP2022/AnalysisExample)
-   * Computational Infrastructures Wrap Up - [Slides](/dosar/ASP2022/asp2022-htc-wrap-up-yu_v2.pdf)
+   * [ATLAS Analysis Example Lecture](/dosar/ASP2024/Intro_Anal_Ex-2022_v2.pdf)
+   * [ATLAS Analysis Example Exercise](/dosar/ASP2024/AnalysisExample)
+   * Computational Infrastructures Wrap Up - [Slides](/dosar/ASP2024/asp2022-htc-wrap-up-yu_v2.pdf)
    
 ## Contact information
 
