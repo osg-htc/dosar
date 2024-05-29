@@ -1,0 +1,1065 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://osg-htc.org/dosar/ASP2024/AnalysisExample/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>ATLAS Analysis Example - DOSAR Outreach Materials</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#atlas-analysis-example" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DOSAR Outreach Materials" class="md-header__button md-logo" aria-label="DOSAR Outreach Materials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DOSAR Outreach Materials
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ATLAS Analysis Example
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/osg-htc/dosar/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DOSAR Outreach Materials" class="md-nav__button md-logo" aria-label="DOSAR Outreach Materials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DOSAR Outreach Materials
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/osg-htc/dosar/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Current or Upcoming Events
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Current or Upcoming Events" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Current or Upcoming Events
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ASP2022/ASP2022_Schedule/" class="md-nav__link">
+        ASP 2022 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ASP2022/ASP2022_Materials/" class="md-nav__link">
+        ASP 2022 Materials
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Past Events
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Past Events" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Past Events
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataTrieste2019/School/" class="md-nav__link">
+        Data Trieste 2019 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataTrieste2019/Materials/" class="md-nav__link">
+        Data Trieste 2019 Materials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataSaoPaulo2018/School/" class="md-nav__link">
+        Data Sao Paulo 2018 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataSaoPaulo2018/Materials/" class="md-nav__link">
+        Data Sao Paulo 2018 Materials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataKigali2018/School/" class="md-nav__link">
+        Data Kigali 2018 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataKigali2018/Materials/" class="md-nav__link">
+        Data Kigali 2018 Materials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataTrieste2018/School/" class="md-nav__link">
+        Data Trieste 2018 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataTrieste2018/Materials/" class="md-nav__link">
+        Data Trieste 2018 Materials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ASP2018/ASP2018_Schedule/" class="md-nav__link">
+        ASP 2018 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ASP2018/ASP2018_Materials/" class="md-nav__link">
+        ASP 2018 Material
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Materials/DSP_DT2017/" class="md-nav__link">
+        Data Sao Paulo Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Materials/DSP_Materials/" class="md-nav__link">
+        Data Sao Paulo Materials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Materials/PH_DT2017/" class="md-nav__link">
+        Polar Hackathon Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Materials/PH_Materials/" class="md-nav__link">
+        Polar Hackathon Materials
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        DOSAR Video Meetings
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="DOSAR Video Meetings" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          DOSAR Video Meetings
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Meetings/24October2018/" class="md-nav__link">
+        October 24, 2018
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Meetings/12March2019/" class="md-nav__link">
+        March 12, 2019
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisite" class="md-nav__link">
+    Prerequisite
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simple-analysis-example" class="md-nav__link">
+    Simple Analysis Example
+  </a>
+  
+    <nav class="md-nav" aria-label="Simple Analysis Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-simulated-data-using-the-grid" class="md-nav__link">
+    Step 1: Create simulated data using the grid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-analyze-real-data" class="md-nav__link">
+    Step 2: Analyze Real Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-make-tselector" class="md-nav__link">
+    Step 3: Make TSelector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/osg-htc/dosar/edit/master/docs/ASP2024/AnalysisExample.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="atlas-analysis-example">ATLAS Analysis Example</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Root may be run in batch mode on the grid to analyze large data samples. This example creates simulated data in root format using trees and performs analysis on the simulated data by means of processing on the grid. This example is based on a demo developed by OU programmer Chris Walker.</p>
+<h2 id="prerequisite">Prerequisite</h2>
+<ul>
+<li>Open a new Terminal on your local desktop. NOTE: You are no longer using the browser based terminal now, but the Terminal on your CentOS VM, just like you did to display mandle.gif with firefox.</li>
+<li></li>
+<li>Make a directory for this exercise</li>
+</ul>
+<pre><code>$ mkdir -p analysis_example
+$ cd analysis_example
+</code></pre>
+<p>Again the <code>$</code> sign at the beginning of the commands to execute is the <code>command prompt</code>, so it should <code>not</code> be entered as part of the command.</p>
+<h2 id="simple-analysis-example">Simple Analysis Example</h2>
+<h3 id="step-1-create-simulated-data-using-the-grid">Step 1: Create simulated data using the grid</h3>
+<p><em>Note: Since the new training VMs on OSpool do not support running root, we will run root on the local desktops instead of using condor. So we will not need the condor submit scripts below but we will leave the instructions for them for future reference.</em></p>
+<p>Now in your test directory we will create the three files: <code>run-root.cmd</code>, <code>run-root.sh</code>, and <code>run-root.C</code> with the contents given below. This may require running an editor such as <code>emacs</code> or nano on your local desktop.</p>
+<p><em>We will not submit grid jobs so the "run-root.cmd" script is not needed for this exercise.</em></p>
+<p>-----------------------------<em>Skip from here-1</em>-----------------------------------------</p>
+<p>First, we will utilize a simple command script to submit the grid jobs. It is <code>run-root.cmd</code>:</p>
+<pre><code>universe=vanilla
+executable=run-root.sh
+transfer_input_files = run-root.C
+transfer_executable=True
+when_to_transfer_output = ON_EXIT
+log=run-root.log
+transfer_output_files = root.out,t00.root,t01.root
+output=run-root.out.$(Cluster).$(Process)
+error=run-root.err.$(Cluster).$(Process)
+notification=Never
+queue 
+</code></pre>
+<p>-----------------------------------------------<em>Skip to here-1</em>----------------------------------------------------</p>
+<p>Note that the executable script is:  <code>run-root.sh</code> which is as follows:</p>
+<pre><code>#!/bin/bash 
+root -b &lt; run-root.C &gt; root.out
+</code></pre>
+<p>This script runs Root in batch mode and executes input macro <code>run-root.C</code> and produces output that is routed to file <code>root.out</code>.
+It has to be made executable, by use of the <code>chmod</code> Linux command (protections can be checked with the command <code>ls -l</code>):</p>
+<pre><code>$ chmod +x run-root.sh
+</code></pre>
+<p>The macro  <code>run-root.C</code> consists of the following code:</p>
+<pre><code>{ 
+
+ // create files containing simulated data
+
+ TRandom g; 
+ char c[256]; 
+ for ( int j = 0 ; j &lt; 2 ; j++ ){ 
+    sprintf(c,&quot;t%2.2d.root\000&quot;,j); 
+    TFile f(c,&quot;RECREATE&quot;,&quot;MyFile&quot;, 0/*no compression*/); 
+    TTree *t = new TTree(&quot;t0&quot;,&quot;t0&quot;); 
+    Int_t Run; 
+    TBranch * b_Run = t-&gt;Branch(&quot;Run&quot;,&amp;Run); 
+    Int_t Event; 
+    TBranch * b_Event = t-&gt;Branch(&quot;Event&quot;,&amp;Event); 
+    Float_t Energy; 
+    TBranch * b_Energy = t-&gt;Branch(&quot;Energy&quot;,&amp;Energy); 
+    Run = j; 
+
+        for( Event = 0 ; Event &lt; 100 ; Event++ ){ 
+          Energy = g.Gaus(500.0 , 200.0);   
+          t-&gt;Fill(); 
+        }  
+    f.Write(); 
+    f.Close(); 
+ } 
+} 
+.q 
+</code></pre>
+<p><em>We will not submit grid jobs during this exercise. So we will skip to running root.</em></p>
+<p>-----------------------------<em>Skip from here-2</em>-----------------------------------------</p>
+<p>The grid job can be submitted using:</p>
+<pre><code>$ condor_submit run-root.cmd
+</code></pre>
+<p>It can be checked with: </p>
+<pre><code>$ condor_q YOUR_USER_ID -nobatch
+</code></pre>
+<p>After it runs, you will find a log file that describes the job: <code>run-root.log</code>, and output file: <code>root.out</code>, and the files containing the simulated data: <code>t00.root</code>, <code>t01.root</code> in your test directory. 
+You need to copy these files into your public directory, so that you can download it to your local desktop:</p>
+<pre><code>$ cp t0*.root ~/public/
+</code></pre>
+<p>Now open a different terminal window on your local desktop, and download the root files with:</p>
+<pre><code>$ wget http://stash.osgconnect.net/~YOUR_USER_ID/t00.root  http://stash.osgconnect.net/~YOUR_USER_ID/t01.root
+</code></pre>
+<p>-----------------------------------------------<em>Skip to here-2</em>----------------------------------------------------</p>
+<p>Execute the script to run root:</p>
+<pre><code>./run-root.sh
+</code></pre>
+<p>You can then inspect the contents of <code>t00.root</code> and <code>t01.root</code> by running root in your current directory in the local terminal window:</p>
+<pre><code>$ root t00.root
+</code></pre>
+<p>And then the Root command:  <code>TBrowser b</code></p>
+<p>With the <code>TBrowser</code> you can plot the simulated data in branch <code>Energy</code> as well as the other branches. Double click on the name of the root files, and then on the variables you would like to plot.</p>
+<p>Each data file contains a TTree named <code>t0</code>. You can plot the contents of all (in this example both) data file TTree's by using the TChain method as follows:</p>
+<p>In root execute the following commands:</p>
+<pre><code>TChain tc(&quot;t0&quot;);
+tc.Add(&quot;t*.root&quot;);
+tc.Draw(&quot;Energy&quot;);
+</code></pre>
+<p>When you are done with this, you can quit <code>root</code> again with the command <code>.q &lt;Return&gt;</code>.</p>
+<h3 id="step-2-analyze-real-data">Step 2: Analyze Real Data</h3>
+<p><em>We will not submit grid jobs during this exercise. So we will skip submit script.</em></p>
+<p>-----------------------------<em>Skip from here-3</em>-----------------------------------------</p>
+<p>The grid job can be submitted using:</p>
+<p>Now we want to have a look at a real live ATLAS root file. For this, go back to the remote terminal window on osgconnect. You will need a new condor submit script called <code>run-z.cmd</code>:</p>
+<pre><code>universe=vanilla
+executable=run-z.sh
+transfer_input_files = readEvents.C,/home/pskubic/public/muons.root
+transfer_executable=True
+when_to_transfer_output = ON_EXIT
+log=run-z.log
+transfer_output_files = root-z.out,histograms-z.root
+output=run-z.out.$(Cluster).$(Process)
+error=run-z.err.$(Cluster).$(Process)
+notification=Never
+queue 
+</code></pre>
+<p>-----------------------------------------------<em>Skip to here-3</em>----------------------------------------------------</p>
+<p>The new executable script you need for this job is:  <code>run-z.sh</code> which is as follows:</p>
+<pre><code>#!/bin/bash 
+root -b -q readEvents.C+ &gt; root-z.out
+</code></pre>
+<p>This script runs root in batch mode and executes input macro <code>readEvents.C</code> and produces output that is routed to file <code>root-z.out</code>.
+It has to be made executable, by use of the <code>chmod</code> Linux command (protections can be checked with the command <code>ls -l</code>):</p>
+<pre><code>$ chmod +x run-z.sh
+</code></pre>
+<p>The macro  <code>readEvents.C</code> consists of the following code:</p>
+<pre><code>#include &quot;TFile.h&quot;
+#include &quot;TTree.h&quot;
+#include &quot;TCanvas.h&quot;
+#include &quot;TH1F.h&quot;
+#include &quot;iostream&quot;
+//#include &quot;TLorentzVector.h&quot;
+using namespace std;
+
+void readEvents(){
+
+    // load the ROOT ntuple file
+    TFile * f = new TFile(&quot;muons.root&quot;);
+    TTree *tree = (TTree *) f-&gt;Get(&quot;POOLCollectionTree&quot;);
+    int nEntries = tree-&gt;GetEntries();
+    cout &lt;&lt; &quot;There are &quot; &lt;&lt; nEntries &lt;&lt; &quot; entries in your ntuple&quot; &lt;&lt; endl;
+
+    // create local variables for the tree's branches
+    UInt_t NLooseMuons;
+    Float_t LooseMuonsEta1;
+    Float_t LooseMuonsPhi1;
+    Float_t LooseMuonsPt1;
+
+    Float_t LooseMuonsEta2;
+    Float_t LooseMuonsPhi2;
+    Float_t LooseMuonsPt2;
+
+    // set the tree's branches to the local variables
+    tree-&gt;SetBranchAddress(&quot;NLooseMuon&quot;, &amp;NLooseMuons);
+    tree-&gt;SetBranchAddress(&quot;LooseMuonEta1&quot;, &amp;LooseMuonsEta1);
+    tree-&gt;SetBranchAddress(&quot;LooseMuonPhi1&quot;, &amp;LooseMuonsPhi1);
+    tree-&gt;SetBranchAddress(&quot;LooseMuonPt1&quot;, &amp;LooseMuonsPt1);
+
+    tree-&gt;SetBranchAddress(&quot;LooseMuonEta2&quot;, &amp;LooseMuonsEta2);
+    tree-&gt;SetBranchAddress(&quot;LooseMuonPhi2&quot;, &amp;LooseMuonsPhi2);
+    tree-&gt;SetBranchAddress(&quot;LooseMuonPt2&quot;, &amp;LooseMuonsPt2);
+
+    // declare some histograms
+  TH1F *muPt1 = new TH1F(&quot;muPt1&quot;, &quot;;p_{T} [GeV/c];Events&quot;, 50, 0, 200);
+  TH1F *muPx1 = new TH1F(&quot;muPx1&quot;, &quot;;p_{x} [GeV/c];Events&quot;, 50, 0, 200); //added px
+  TH1F *muPy1 = new TH1F(&quot;muPy1&quot;, &quot;;p_{y} [GeV/c];Events&quot;, 50, 0, 200); //added py
+  TH1F *muPz1 = new TH1F(&quot;muPz1&quot;, &quot;;p_{z} [GeV/c];Events&quot;, 50, 0, 200); //added pz
+  TH1F *muEta1 = new TH1F(&quot;muEta1&quot;, &quot;;#eta;Events&quot;, 50, -3, 3);
+  TH1F *muPhi1 = new TH1F(&quot;muPhi1&quot;, &quot;;#phi;Events&quot;, 50, -4, 4);
+  TH1F *muE1 = new TH1F(&quot;muE1&quot;, &quot;;Energy;Events&quot;, 50, 0, 200);
+
+  TH1F *muPt2 = new TH1F(&quot;muPt2&quot;, &quot;;p_{T} [GeV/c];Events&quot;, 50, 0, 200);
+  TH1F *muPx2 = new TH1F(&quot;muPx2&quot;, &quot;;p_{x} [GeV/c];Events&quot;, 50, 0, 200); //added px
+  TH1F *muPy2 = new TH1F(&quot;muPy2&quot;, &quot;;p_{y} [GeV/c];Events&quot;, 50, 0, 200); //added py
+  TH1F *muPz2 = new TH1F(&quot;muPz2&quot;, &quot;;p_{z} [GeV/c];Events&quot;, 50, 0, 200); //added pz
+  TH1F *muEta2 = new TH1F(&quot;muEta2&quot;, &quot;;#eta;Events&quot;, 50, -3, 3);
+  TH1F *muPhi2 = new TH1F(&quot;muPhi2&quot;, &quot;;#phi;Events&quot;, 50, -4, 4);
+  TH1F *muE2 = new TH1F(&quot;muE2&quot;, &quot;;Energy;Events&quot;, 50, 0, 200);
+
+  TH1F *zPt = new TH1F(&quot;zPt&quot;, &quot;;p_{T} [GeV/c];Events&quot;, 50, 0, 200);
+  TH1F *zPx = new TH1F(&quot;zPx&quot;, &quot;;p_{x} [GeV/c];Events&quot;, 50, 0, 200); //added px
+  TH1F *zPy = new TH1F(&quot;zPy&quot;, &quot;;p_{y} [GeV/c];Events&quot;, 50, 0, 200); //added py
+  TH1F *zPz = new TH1F(&quot;zPz&quot;, &quot;;p_{z} [GeV/c];Events&quot;, 50, 0, 200); //added pz
+  //TH1F *zEta = new TH1F(&quot;zEta&quot;, &quot;;#eta;Events&quot;, 50, -3, 3);
+  //TH1F *zPhi = new TH1F(&quot;zPhi&quot;, &quot;;#phi;Events&quot;, 50, -4, 4);
+  TH1F *zE = new TH1F(&quot;zE&quot;, &quot;;Energy;Events&quot;, 50, 0, 200);  
+  TH1F *zMass = new TH1F(&quot;zMass&quot;, &quot;;Mass;Events&quot;, 50, 0, 200);  
+
+
+    // loop over each entry (event) in the tree
+    for( int entry=0; entry &lt; nEntries; entry++ ){
+      if( entry%10000 * 0 ) cout &lt;&lt; &quot;Entry:&quot; &lt;&lt; entry &lt;&lt; endl;
+
+      // check that the event is read properly
+      int entryCheck = tree-&gt;GetEntry( entry );
+      if( entryCheck &lt;= 0 ){  continue; }
+
+      // only look at events containing at least 2 leptons
+      if(NLooseMuons &lt; 2) continue;
+
+      // require the leptons to have some transverse momentum
+      if(abs(LooseMuonsPt1) *0.001 &lt; 20 || abs(LooseMuonsPt2) *0.001 &lt; 20 ) continue;
+
+      // make a LorentzVector from the muon
+      //TLorentzVector Muons1;
+     // Muons1.SetPtEtaPhiM(fabs(LooseMuonsPt1), LooseMuonsEta1, LooseMuonsPhi1, 0);
+
+      // print out the details of an electron every so often
+      if( entry%10000 * 0 ){ 
+        cout &lt;&lt; &quot;Muons pt1: &quot; &lt;&lt; LooseMuonsPt1 &lt;&lt; &quot; eta: &quot; &lt;&lt; LooseMuonsEta1 &lt;&lt; &quot; phi &quot; &lt;&lt; LooseMuonsPhi1 &lt;&lt; endl;
+        cout &lt;&lt; &quot;Muons pt2: &quot; &lt;&lt; LooseMuonsPt2 &lt;&lt; &quot; eta: &quot; &lt;&lt; LooseMuonsEta2 &lt;&lt; &quot; phi &quot; &lt;&lt; LooseMuonsPhi2 &lt;&lt; endl;
+      }
+
+      //calculation of muon energy
+        Double_t muonMass = 0.0;  // assume the mass of the muon is negligible
+        Double_t muonPx1 = abs(LooseMuonsPt1)*cos(LooseMuonsPhi1);
+        Double_t muonPy1 = abs(LooseMuonsPt1)*sin(LooseMuonsPhi1);
+        Double_t muonPz1 = abs(LooseMuonsPt1)*sinh(LooseMuonsEta1);
+    Double_t muonEnergy1 = sqrt (muonPx1*muonPx1 + muonPy1*muonPy1 + muonPz1*muonPz1 + muonMass*muonMass);
+
+    Double_t muonPx2 = abs(LooseMuonsPt2)*cos(LooseMuonsPhi2);
+        Double_t muonPy2 = abs(LooseMuonsPt2)*sin(LooseMuonsPhi2);
+        Double_t muonPz2 = abs(LooseMuonsPt2)*sinh(LooseMuonsEta2);
+    Double_t muonEnergy2 = sqrt (muonPx2*muonPx2 + muonPy2*muonPy2 + muonPz2*muonPz2 + muonMass*muonMass);
+
+    Double_t zCompX = muonPx1 + muonPx2;
+        Double_t zCompY = muonPy1 + muonPy2;
+        Double_t zLongi = muonPz1 + muonPz2;
+        Double_t zPerp = sqrt (zCompX*zCompX + zCompY*zCompY);  
+    Double_t zEnergy = muonEnergy1 + muonEnergy2;
+    Double_t zM = sqrt (zEnergy*zEnergy -zCompX*zCompX -zCompY*zCompY -zLongi*zLongi);
+
+
+      // fill our histograms
+        muPt1-&gt;Fill((LooseMuonsPt1)*0.001); // in GeV
+        muEta1-&gt;Fill(LooseMuonsEta1);
+        muPhi1-&gt;Fill(LooseMuonsPhi1);
+    muPx1-&gt;Fill( muonPx1*0.001); // in GeV
+    muPy1-&gt;Fill( muonPy1*0.001); // in GeV
+    muPz1-&gt;Fill( muonPz1*0.001); // in GeV
+        muE1-&gt;Fill(muonEnergy1*0.001); // in GeV
+
+    muPt2-&gt;Fill((LooseMuonsPt2)*0.001); // in GeV
+        muEta2-&gt;Fill(LooseMuonsEta2);
+        muPhi2-&gt;Fill(LooseMuonsPhi2);
+    muPx2-&gt;Fill( muonPx2*0.001); // in GeV
+    muPy2-&gt;Fill( muonPy2*0.001); // in GeV
+    muPz2-&gt;Fill( muonPz2*0.001); // in GeV
+        muE2-&gt;Fill(muonEnergy2*0.001); // in GeV
+
+    zPt-&gt;Fill( zPerp*0.001); // in GeV
+    zPx-&gt;Fill( zCompX*0.001); // in GeV
+    zPy-&gt;Fill( zCompY*0.001); // in GeV
+    zPz-&gt;Fill( zLongi*0.001); // in GeV
+        zE-&gt;Fill( zEnergy*0.001); // in GeV
+        zMass-&gt;Fill(zM*0.001); // in GeV
+
+    }
+
+  // draw the eta distribution
+  zMass-&gt;Draw();
+
+  // make a ROOT output file to store your histograms
+  TFile *outFile = new TFile(&quot;histograms-z.root&quot;, &quot;recreate&quot;);
+  muPt1-&gt;Write();
+  muEta1-&gt;Write();
+  muPhi1-&gt;Write();
+  muE1-&gt;Write();
+  muPx1-&gt;Write();
+  muPy1-&gt;Write();
+  muPz1-&gt;Write();
+
+  muPt2-&gt;Write();
+  muEta2-&gt;Write();
+  muPhi2-&gt;Write();
+  muE2-&gt;Write();
+  muPx2-&gt;Write();
+  muPy2-&gt;Write();
+  muPz2-&gt;Write();
+
+  zPt-&gt;Write();
+  zE-&gt;Write();
+  zPx-&gt;Write();
+  zPy-&gt;Write();
+  zPz-&gt;Write();
+  zMass-&gt;Write();
+
+  outFile-&gt;Close();
+}
+</code></pre>
+<p><em>We will not submit grid jobs during this exercise. So we will skip to run root.</em></p>
+<p>-----------------------------<em>Skip from here-4</em>-----------------------------------------</p>
+<p>The grid job can be submitted using:</p>
+<pre><code>$ condor_submit run-z.cmd
+</code></pre>
+<p>It can again be checked with: </p>
+<pre><code>$ condor_q YOUR_USER_ID -nobatch
+</code></pre>
+<p>After it runs, you will find a log file that describes the job: <code>run-z.log</code>, and output file: <code>root-z.out</code>, and the files containing the simulated data: <code>histograms-z.root</code> in your test directory. </p>
+<p>You again need to copy that file into your public directory, so that you can download it to your local desktop:</p>
+<pre><code>$ cp histograms-z.root ~/public/
+</code></pre>
+<p>Go back to the local terminal window on your local desktop, and download the root files with:</p>
+<pre><code>$ wget http://stash.osgconnect.net/~YOUR_USER_ID/histograms-z.root
+</code></pre>
+<p>-----------------------------------------------<em>Skip to here-4</em>----------------------------------------------------</p>
+<p>Setup a soft link to the input data file, muons.root, and execute the script to run root:</p>
+<pre><code>ln -s /opt/data/muons.root .
+./run-z.sh
+</code></pre>
+<p>You can inspect the contents of <code>histograms-z.root</code> by running Root (i.e., <code>root histograms-z.root</code>) in your current directory in your local terminal window:</p>
+<pre><code>$ root histograms-z.root
+</code></pre>
+<p>And then using the Root command:  <code>TBrowser b</code></p>
+<p>With the <code>TBrowser</code> you can plot the variables in the root file. Double click on <code>histograms-z.root</code>, and then on the variables to plot them.</p>
+<h3 id="step-3-make-tselector">Step 3: Make TSelector</h3>
+<p>Now let's go back to the files created in step 1, in the local terminal window. Start <code>root</code> in your test directory with the following commands:</p>
+<pre><code>$ root -b
+</code></pre>
+<p>And then execute the following commands:</p>
+<pre><code>TFile f(&quot;t00.root&quot;);
+t0-&gt;MakeSelector(&quot;s0&quot;,&quot;=legacy&quot;);
+f.Close();
+.q
+</code></pre>
+<p>This will create files <code>s0.C</code> and <code>s0.h</code> in your test directory that contain code corresponding to the definition of the TTree <code>t0</code>. This code can be used to process files containing data in these TTree's.</p>
+<p>Now we will add a histogram to the TSelector code. Several code lines have to be added to the TSelector code files <code>s0.C</code> and <code>s0.h</code>.</p>
+<p>To <code>s0.h</code> make the following additions:
+after existing include statements add:</p>
+<pre><code>#include &lt;TH1F.h&gt;
+</code></pre>
+<p>After class s0 definition:</p>
+<pre><code>class s0 : public TSelector {
+public :
+</code></pre>
+<p>add</p>
+<pre><code>TH1F *e;
+</code></pre>
+<p>To <code>s0.C</code> make the following additions:</p>
+<p>After entry:</p>
+<pre><code>void s0::SlaveBegin(TTree * /*tree*/)
+{
+</code></pre>
+<p>add</p>
+<pre><code>e = new TH1F(&quot;e&quot;, &quot;e&quot;, 1000, -199.0, 1200.0);
+</code></pre>
+<p>After Process entry:</p>
+<pre><code>Bool_t s0::Process(Long64_t entry)
+{
+</code></pre>
+<p>add</p>
+<pre><code>GetEntry(entry);
+e-&gt;Fill(Energy);
+</code></pre>
+<p>After terminate entry:</p>
+<pre><code>void s0::Terminate()
+{
+</code></pre>
+<p>add</p>
+<pre><code>TFile f(&quot;histograms.root&quot;,&quot;RECREATE&quot;);
+f.WriteObject(e,&quot;Energy&quot;);
+f.Close();
+</code></pre>
+<p><em>We will not submit grid jobs during this exercise. So we will skip submit script.</em></p>
+<p>-----------------------------<em>Skip from here-5</em>-----------------------------------------</p>
+<p>Now create the new script files for Step 2:</p>
+<p>create <code>run-root-2.cmd</code>:</p>
+<pre><code>universe=vanilla
+executable=run-root-2.sh 
+transfer_input_files = s0.C,s0.h,run-root-2.C,t00.root,t01.root 
+transfer_executable=True 
+when_to_transfer_output = ON_EXIT 
+log=run-root-2.log 
+transfer_output_files = root-2.out,histograms.root 
+output=run-root-2.out.$(Cluster).$(Process) 
+error=run-root-2.err.$(Cluster).$(Process) 
+notification=Never 
+queue 
+</code></pre>
+<p>-----------------------------------------------<em>Skip to here-5</em>----------------------------------------------------</p>
+<p>Create <code>run-root-2.sh</code>:</p>
+<pre><code>#!/bin/bash 
+root -b &lt; run-root-2.C &gt; root-2.out 
+</code></pre>
+<p>It has to be made executable, by use of the <code>chmod</code> Linux command:</p>
+<pre><code>chmod +x run-root-2.sh
+</code></pre>
+<p>Create <code>run-root-2.C</code></p>
+<pre><code>.L s0.C++ 
+{ 
+ //Load and run TSelector 
+
+  s0 *s = new s0(); 
+
+  TChain tc(&quot;t0&quot;); 
+  tc.Add(&quot;t*.root&quot;); 
+  tc.Process(s); 
+
+} 
+</code></pre>
+<p>We can test the root job on the local machine by executing the script to run root:</p>
+<pre><code>./run-root-2.sh
+</code></pre>
+<p><em>We will not submit grid jobs during this exercise. So we will skip running condor.</em></p>
+<p>-----------------------------<em>Skip from here-6</em>-----------------------------------------</p>
+<p>If this works, we can process the data files <code>t00.root</code> and <code>t01.root</code> on the
+Grid with our new command script <code>run-root-2.cmd</code>.</p>
+<p>This can be done with command:</p>
+<pre><code>condor_submit run-root-2.cmd
+</code></pre>
+<p>Once your job has finished, you again need to copy that file into your public directory, so that you can download it to your local desktop:</p>
+<pre><code>cp histograms.root ~/public/
+</code></pre>
+<p>Go back to the local terminal window on your local desktop, and download the root files with:</p>
+<pre><code>wget http://stash.osgconnect.net/~YOUR_USER_ID/histograms.root
+</code></pre>
+<p>-----------------------------------------------<em>Skip to here-6</em>----------------------------------------------------</p>
+<p>You can look at the output histogram file: <code>histograms.root</code>
+with <code>TBrowser b</code> as before, in your local terminal window.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>
