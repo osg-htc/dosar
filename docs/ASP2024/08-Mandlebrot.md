@@ -1,4 +1,4 @@
-# A brief detour through the Mandlebrot set
+# A super brief detour through the Mandlebrot set
 
 Before we dive into a more complicated DAG, let's get a more interesting job. I'm tired of this lazy, sleepy job that only does trivial mathematics. Let's make pretty pictures!
 
