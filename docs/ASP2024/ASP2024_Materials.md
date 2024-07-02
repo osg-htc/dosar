@@ -2,7 +2,7 @@
 
 We will be using OSG Training Pool for this set of sessions. Please visit [https://notebook.ospool.osg-htc.org/hub/login](https://notebook.ospool.osg-htc.org/hub/login) to log in.
 
-## Wednesday Morning - Computational Infrastructures - Session 1
+## Wednesday Afternoon - Computational Infrastructures - Session 1
 
    * Welcome and Introduction - The Landscape of Academic Research Computing
    * Lecture 1 - [Intro-Slides](/dosar/ASP2024/asp2022-htc-intro-yu_v2.pdf) [Lecture1-Slides](/dosar/ASP2022/asp2022-htc-lecture1-yu_v2.pdf)
@@ -18,7 +18,7 @@ We will be using OSG Training Pool for this set of sessions. Please visit [https
    * [An R Job](/dosar/ASP2024/06-RJob)
    * [Working with file I/O](/dosar/ASP2024/07-WorkingwithFiles)
    
-## Wednesday Afternoon - Computational Infrastructures - Session 3
+## Thursday Morning - Computational Infrastructures - Session 3
 
    * Lecture 3 - [Slides](/dosar/ASP2024/Lecture3-ASP2022_final.pdf)
    * [A brief detour through the Mandlebrot set](/dosar/ASP2024/08-Mandlebrot)
@@ -36,7 +36,7 @@ We will be using OSG Training Pool for this set of sessions. Please visit [https
    * [Discipline specific tutorials](/dosar/ASP2024/13-DisciplineTutorials)
    * [Containers with Singularity](/dosar/ASP2024/14-Containers)
    
-## Thursday Morning - Computational Infrastructures - Session 5
+## Thursday Afternoon - Computational Infrastructures - Session 5
 
    * [ATLAS Analysis Example Lecture](/dosar/ASP2024/Intro_Anal_Ex-2022_v2.pdf)
    * [ATLAS Analysis Example Exercise](/dosar/ASP2024/AnalysisExample)
