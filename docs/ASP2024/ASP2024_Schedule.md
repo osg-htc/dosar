@@ -6,17 +6,17 @@
 
    * Welcome and Background
    * The Landscape of Research Computing
+   * Profiling your application and choosing appropriate computing resources
+   * Introduction to High Throughput Computing (HTC)
    
 ### Thursday AM Session
 
-   * Profiling your application and choosing appropriate computing resources
-   * Introduction to High Throughput Computing (HTC)
    * Workflows and distributed environments
    * Workflows with Directed Acyclic Graphs (DAGs)
+   * Brief Introduction to clouds and containers
    
 ### Thursday PM Session
 
-   * Brief Introduction to clouds and containers
    * ATLAS Analysis Example
    * Close out and resources for further collaboration
    
