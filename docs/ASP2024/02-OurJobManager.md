@@ -18,11 +18,11 @@ How do you know what version of Condor you are using? Try <code>condor_version</
 
 ```
 $ condor_version
-$CondorVersion: 9.12.0 2022-10-05 BuildID: 608474 PackageID: 9.12.0-1.1 $
-$CondorPlatform: X86_64-Ubuntu_20.04 $
+$CondorVersion: 23.7.2 2024-05-16 BuildID: 733409 PackageID: 23.7.2-0.2 GitSHA: 585ec167 $
+$CondorPlatform: X86_64-Ubuntu_22.04 $
 ```
 
-Note that the "CondorPlatform" reports the type of computer we built it on, _not necessarily_ the computer we're running on. It was built on Ubuntu 20.04, but you might notice that we're running on Ubuntu 20.04.5, which is a slightly newer version.
+Note that the "CondorPlatform" reports the type of computer we built it on, _not necessarily_ the computer we're running on. It was built on Ubuntu 22.04, but you might notice that we're running on Ubuntu 22.04.4, which is a slightly newer version.
 
 ### Extra Tip: The OS version
 
@@ -30,7 +30,7 @@ Do you know how to find the OS version? You can usually look in /etc/issue to fi
 
 ```
 $ cat /etc/issue
-Ubuntu 20.04.5 LTS \n \l
+Ubuntu 22.04.4 LTS \n \l
 ```
 
 Or you can run:
@@ -39,9 +39,9 @@ Or you can run:
 $ lsb_release -a
 o No LSB modules are available.
 Distributor ID: Ubuntu
-Description:    Ubuntu 20.04.5 LTS
-Release:        20.04
-Codename:       focal
+Description:    Ubuntu 22.04.4 LTS
+Release:        22.04
+Codename:       jammy
 ```
 
 Where is Condor installed? 
@@ -56,20 +56,19 @@ Condor has some configuration files that it needs to find. They are in the stand
 
 ```
 $ ls /etc/condor
-condor_config	     condor_ssh_to_job_sshd_config_template  ganglia.d
-condor_config.local  config.d
+condor_config  condor_config.local  config.d  ganglia.d
 ```
 
 Condor has some directories that it keeps records of jobs in. Remember that each submission computer keeps track of all jobs submitted to it. That's in the local directory: 
 
 ```
 $ condor_config_val -v LOCAL_DIR
-LOCAL_DIR = /var
- # at: /etc/condor/condor_config, line 26
- # raw: LOCAL_DIR = /var
+LOCAL_DIR = /home/jovyan/.condor/local
+ # at: /etc/condor/condor_config.local, line 2
+ # raw: LOCAL_DIR = $ENV(HOME)/.condor/local
 
-$ ls -CF /var/lib/condor
-dead.letter  execute/  spool/
+$ s -CF /home/jovyan/.condor/local/
+cred_dir/  execute/  lock/  log/  run/  spool/
 ```
 
 The spool directory is where Condor keeps the jobs you submit, while the execute directory is where Condor keeps running jobs. Since this is a submission-only computer, it should be empty.
@@ -78,15 +77,16 @@ Check if Condor is running.  Your output will differ slightly, but you should se
 
 ```
 $ ps auwx --forest | grep condor_ | grep -v grep
-condor   2299245  0.0  0.1  50972  7348 ?        Ss   Jul10   0:08 condor_master -pidfile /var/run/condor/condor_master.pid
-root     2299287  0.0  0.1  25924  5072 ?        S    Jul10   1:54  \_ condor_procd -A /var/run/condor/procd_pipe -L /var/log/condor/ProcLog -R 1000000 -S 60 -C 499
-condor   2299288  0.0  0.1  50596  7796 ?        Ss   Jul10   0:16  \_ condor_shared_port -f
-condor   2299289  0.0  0.2  70020  9100 ?        Ss   Jul10   0:13  \_ condor_collector -f
-condor   2299290  0.0  0.5 116132 23872 ?        Ss   Jul10   6:19  \_ condor_schedd -f
-condor   2299291  0.0  0.1  51056  7956 ?        Ss   Jul10   0:59  \_ condor_negotiator -f
+jovyan      17  0.0  0.0  23844  7240 ?        Ss   19:32   0:00 condor_master
+jovyan      18  0.0  0.0   7620  2372 ?        S    19:32   0:00  \_ condor_procd -A /home/jovyan/.condor/local/run/procd_pipe -L /home/jovyan/
+jovyan      19  0.0  0.0  18200  8284 ?        Ss   19:32   0:00  \_ condor_shared_port
+jovyan      20  0.0  0.0  20180  9640 ?        Ss   19:32   0:00  \_ condor_collector
+jovyan      21  0.0  0.0  20688 10028 ?        Ss   19:32   0:00  \_ condor_negotiator
+jovyan      22  0.0  0.0  21320 10104 ?        Ss   19:32   0:00  \_ condor_schedd
+jovyan      23  0.0  0.0  21136 10172 ?        Ss   19:32   0:00  \_ condor_startd
 ```
 
-For this version of Condor there are four processes running: the condor_master, the condor_schedd, the condor_procd, and condor_collector. In general, you might see many different Condor processes. Here's a list of the processes:
+For this version of Condor there are these processes running: the condor_master, the condor_schedd, the condor_procd, the condor_collector, the condor_negotiator, and condor_shared_port. In general, you might see many different Condor processes. Here's a list of the processes:
 
    * *condor_master*: This program runs constantly and ensures that all other parts of Condor are running. If they hang or crash, it restarts them.
    * *condor_schedd*: If this program is running, it allows jobs to be submitted from this computer--that is, your computer is a "submit machine". This will advertise jobs to the central manager so that it knows about them. It will contact a condor_startd on other execute machines for each job that needs to be started.
@@ -107,8 +107,12 @@ You can find out what jobs have been submitted on your computer with the condor_
 
 ```
 $ condor_q -nobatch
--- Schedd: user-training.osgconnect.net : <192.170.227.119:9618?... @ 07/19/17 03:26:20
+-- Schedd: jovyan@jupyter-email-3ahorst-2eseverini-40gmail-2ecom : <127.0.0.1:9618?... @ 07/02/24 19:44:46
  ID      OWNER            SUBMITTED     RUN_TIME ST PRI SIZE CMD
+
+Total for query: 0 jobs; 0 completed, 0 removed, 0 idle, 0 running, 0 held, 0 suspended 
+Total for jovyan: 0 jobs; 0 completed, 0 removed, 0 idle, 0 running, 0 held, 0 suspended 
+Total for all users: 0 jobs; 0 completed, 0 removed, 0 idle, 0 running, 0 held, 0 suspended
 
 0 jobs; 0 completed, 0 removed, 0 idle, 0 running, 0 held, 0 suspended 
 ```
@@ -141,23 +145,20 @@ How do you use the `-constraint` or `-format` options to `condor_q`? When would 
 You can find out what computers are in your Condor pool. (A pool is similar to a cluster, but it doesn't have the connotation that all computers are dedicated full-time to computation: some may be desktop computers owned by users.) To look, use condor_status:
 
 ```
-$ condor_status -pool flock.opensciencegrid.org
-Name                             OpSys      Arch   State     Activity LoadAv Mem    ActvtyTime
+$ condor_status
+Name                                                 OpSys      Arch   State     Activity LoadAv Mem     ActvtyTime
 
-slot1@amundsen.grid.uchicago.edu LINUX      X86_64 Owner     Idle      0.000 32768  1+02:46:31
-slot2@amundsen.grid.uchicago.edu LINUX      X86_64 Owner     Idle      0.000 32768  5+01:05:58
-slot1@c2                         LINUX      X86_64 Unclaimed Idle      0.000 48289  3+10:04:49
-slot1@dhcp-10-1-202-3            LINUX      X86_64 Unclaimed Idle      0.000  3251  0+08:10:13
-slot1_1@dhcp-10-1-202-3          LINUX      X86_64 Claimed   Busy      0.990  6144  0+01:09:46
-slot1_2@dhcp-10-1-202-3          LINUX      X86_64 Claimed   Busy      0.990  6144  0+00:46:46
-slot1_3@dhcp-10-1-202-3          LINUX      X86_64 Claimed   Busy      0.990  2048  0+00:53:08
-slot1_4@dhcp-10-1-202-3          LINUX      X86_64 Claimed   Busy      0.990  1024  0+05:48:14
-slot1_5@dhcp-10-1-202-3          LINUX      X86_64 Claimed   Busy      0.000  6144  0+00:16:48
-slot1_6@dhcp-10-1-202-3          LINUX      X86_64 Claimed   Busy      0.990  2816  0+13:16:34
+slot1@jupyter-email-3ahorst-2eseverini-40gmail-2ecom LINUX      X86_64 Unclaimed Idle      0.000 257750  0+00:14:02
+
+               Total Owner Claimed Unclaimed Matched Preempting  Drain Backfill BkIdle
+
+  X86_64/LINUX     1     0       0         1       0          0      0        0      0
+
+         Total     1     0       0         1       0          0      0        0      0
 ...
 ```
 
-Let's look at exactly what you can see:
+Let's look at exactly what you can see (this will look differently on different condor pools):
 
    * *Name*: The name of the computer. Sometimes this gets chopped off, like above.
    * *OpSys*: The operating system, though not at the granularity you may wish: It says "Linux" instead of which distribution and version of Linux.
