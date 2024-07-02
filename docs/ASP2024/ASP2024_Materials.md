@@ -13,7 +13,7 @@ We will be using OSG Training Pool for this set of sessions. Please visit [https
    
 ## Wednesday Afternoon - Computational Infrastructures - Session 2
 
-   * Lecture 2 - [Slides](/dosar/ASP2024/Lecture2-ASP2024.pdf)
+   * Lecture 2 - [Slides](/docs/ASP2024/Lecture2-ASP2024.pdf)
    * [A scripting job](/dosar/ASP2024/05-ScriptingJob)
    * [An R Job](/dosar/ASP2024/06-RJob)
    * [Working with file I/O](/dosar/ASP2024/07-WorkingwithFiles)
