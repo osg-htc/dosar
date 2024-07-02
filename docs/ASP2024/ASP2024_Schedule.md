@@ -2,19 +2,19 @@
 
 ## High-Level Curriculum Overview
 
-### Wednesday AM Session
+### Wednesday PM Session
 
    * Welcome and Background
    * The Landscape of Research Computing
    
-### Wednesday PM Session
+### Thursday AM Session
 
    * Profiling your application and choosing appropriate computing resources
    * Introduction to High Throughput Computing (HTC)
    * Workflows and distributed environments
    * Workflows with Directed Acyclic Graphs (DAGs)
    
-### Thursday AM Session
+### Thursday PM Session
 
    * Brief Introduction to clouds and containers
    * ATLAS Analysis Example
@@ -22,29 +22,31 @@
    
 ## Detailed Schedule
 
-### Wednesday 7-December 2022
+### Wednesday 17-July 2024
 
 | Time  | Description                                                         | Instructor       |
 |-------|---------------------------------------------------------------------|------------------|
-| 11:00 | Welcome and the Landscape of Research Computing                     | Jae Yu           |
-| 11:45 | Exercise - UNIX Refresher, Running simple Condor jobs               | All              |
-| 12:30 | Lunch                                                               |                  |
-| 14:00 | Profiling your application and finding a home for your workflow     | Pat Skubic       |
-| 14:45 | Exercise - Running scripting and R jobs with Condor                 | All              |
-| 15:30 | Coffee Break                                                        |                  |
-| 16:00 | Workflows and distributed environments                              | Horst Severini   |
-| 16:45 | Exercise - DAGMan                                                   | All              |
+| 14:30 | Welcome and the Landscape of Research Computing                     | Jae Yu           |
+| 15:15 | Exercise - UNIX Refresher, Running simple Condor jobs               | All              |
+| 16:00 | Coffee Break                                                        |                  |
+| 16:30 | Profiling your application and finding a home for your workflow     | Pat Skubic       |
+| 17:15 | Exercise - Running scripting and R jobs with Condor                 | All              |
 
-### Thursday 8-December 2022
+### Thursday 18-July 2024
 
 | Time  | Description                                                         | Instructor       |
 |-------|---------------------------------------------------------------------|------------------|
-| 09:00 | A Brief Introduction to Clouds and Containers                       | Horst Severini   |
-| 09:45 | Exercise - Using Containers on OSG and Discpline Specfic Tutorials  | All              |
-| 10:30 | Coffee Break                                                        |                  |
-| 11:00 | ATLAS Analysis Example and Exercises                                | Pat Skubic       |
-| 11:45 | Closing Thoughts                                                    | All              |
-| 12:30 | Lunch                                                               |                  |
+| 09:30 | Workflows and distributed environments                              | Horst Severini   |
+| 10:15 | Exercise - DAGMan                                                   | All              |
+| 11:00 | Coffee Break                                                        |                  |
+| 11:30 | A Brief Introduction to Clouds and Containers                       | Horst Severini   |
+| 12:15 | Exercise - Using Containers on OSG and Discpline Specfic Tutorials  | All              |
+| 13:00 | Lunch                                                               |                  |
+| 14:30 | ATLAS Analysis Example                                              | Pat Skubic       |
+| 14:30 | ATLAS Analysis Exercises                                            | All              |
+| 16:00 | Coffee Break                                                        |                  |
+| 16:30 | More Exercise Time                                                  | All              |
+| 17:30 | Closing Thoughts                                                    | All              |
 
 ## Materials
 
