@@ -7,7 +7,7 @@ The objective of this exercise is to learn the very basics of running a set of j
 
 Your tutorial leader will introduce you to DAGMan and DAGs. In short, DAGMan lets you submit complex sequences of jobs as long as they can be expressed as a directed acylic graph. For example, you may wish to run a large parameter sweep but before the sweep run you need to prepare your data. After the sweep runs, you need to collate the results. 
 
-DAGMan has many abilities such as throttling jobs, recovery from failures, and more. More information about DAGMan can be found at  [in the Condor manual](https://research.cs.wisc.edu/htcondor/manual/v8.6/2_10DAGMan_Applications.html).
+DAGMan has many abilities such as throttling jobs, recovery from failures, and more. More information about DAGMan can be found at  [in the Condor manual](https://htcondor.org/documentation/htcondor.html).
 
 ## Submitting a simple DAG
 
@@ -25,7 +25,7 @@ when_to_transfer_output = ON_EXIT
 Queue
 ```
 
-Make sure you've built the `simple` program. If you need to, go back to [the instructions for your first job](/dosar/ASP2022/03-FirstManagedJob) to do it again. Make sure you are in the condor-test directory that you used before. `cd ~/condor-test` . If the directory `condor-test` was deleted, you will have to create it again and create and compile the simple program again.
+Make sure you've built the `simple` program. If you need to, go back to [the instructions for your first job](/dosar/ASP2024/03-FirstManagedJob) to do it again. Make sure you are in the condor-test directory that you used before. `cd ~/condor-test` . If the directory `condor-test` was deleted, you will have to create it again and create and compile the simple program again.
 
 We are going to get a bit more sophisticated in submitting our jobs now. Let's have three windows open. Click the + sign just to the right of the title 'Terminal 1' -- NOT the x! -- in order to open additional terminals.
 
