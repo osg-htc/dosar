@@ -53,7 +53,12 @@ queue
 Note that the executable script is:  `run-root.sh` which is as follows:
 
 ```
-#!/bin/bash 
+#!/bin/bash
+
+# setup
+source /cvmfs/sft.cern.ch/lcg/views/setupViews.sh LCG_105a x86_64-ubuntu2204-gcc11-opt
+
+# execute
 root -b < run-root.C > root.out
 ```
 
