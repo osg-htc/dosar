@@ -657,7 +657,12 @@ queue
 </code></pre>
 <p>-----------------------------------------------<em>Skip to here-1</em>----------------------------------------------------</p>
 <p>Note that the executable script is:  <code>run-root.sh</code> which is as follows:</p>
-<pre><code>#!/bin/bash 
+<pre><code>#!/bin/bash
+
+# setup
+source /cvmfs/sft.cern.ch/lcg/views/setupViews.sh LCG_105a x86_64-ubuntu2204-gcc11-opt
+
+# execute
 root -b &lt; run-root.C &gt; root.out
 </code></pre>
 <p>This script runs Root in batch mode and executes input macro <code>run-root.C</code> and produces output that is routed to file <code>root.out</code>.
