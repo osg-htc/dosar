@@ -187,7 +187,12 @@ queue
 
 The new executable script you need for this job is:  `run-z.sh` which is as follows:
 ```
-#!/bin/bash 
+#!/bin/bash
+
+# setup
+source /cvmfs/sft.cern.ch/lcg/views/setupViews.sh LCG_105a x86_64-ubuntu2204-gcc11-opt
+
+# execute
 root -b -q readEvents.C+ > root-z.out
 ```
 This script runs root in batch mode and executes input macro `readEvents.C` and produces output that is routed to file `root-z.out`.
