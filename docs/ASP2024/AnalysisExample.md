@@ -171,7 +171,7 @@ Now we want to have a look at a real live ATLAS root file. For this, go back to 
 ```
 universe=vanilla
 executable=run-z.sh
-transfer_input_files = readEvents.C,/home/pskubic/public/muons.root
+transfer_input_files = readEvents.C,muons.root
 transfer_executable=True
 when_to_transfer_output = ON_EXIT
 log=run-z.log
