@@ -6,7 +6,7 @@ Root may be run in batch mode on the grid to analyze large data samples. This ex
 
 ## Prerequisite 
 
-* Open a new Terminal on your local desktop. NOTE: You are no longer using the browser based terminal now, but the Terminal on your CentOS VM, just like you did to display mandle.gif with firefox.
+* Open a new Terminal on your local desktop. NOTE: You are no longer using the browser based terminal now, but the Terminal on your VM, just like you did to display mandle.gif with firefox.
 * 
 * Make a directory for this exercise
 
@@ -21,7 +21,7 @@ Again the `$` sign at the beginning of the commands to execute is the `command p
 
 ### Step 1: Create simulated data using the grid
 
-_Note: Since the new training VMs on OSpool do not support running root, we will run root on the local desktops instead of using condor. So we will not need the condor submit scripts below but we will leave the instructions for them for future reference._
+_Note: We have introduced the option of skipping the grid (condor) submit steps, if time is short. So you can skip the condor submit scripts below if you wish, although they will still work._
 
 
 Now in your test directory we will create the three files: `run-root.cmd`, `run-root.sh`, and `run-root.C` with the contents given below. This may require running an editor such as `emacs` or nano on your local desktop.
@@ -100,7 +100,6 @@ The macro  `run-root.C` consists of the following code:
 } 
 .q 
 ```
-_We will not submit grid jobs during this exercise. So we will skip to running root._
 
 -----------------------------_Skip from here-2_-----------------------------------------
 
@@ -117,21 +116,18 @@ $ condor_q YOUR_USER_ID -nobatch
 ```
 
 After it runs, you will find a log file that describes the job: `run-root.log`, and output file: `root.out`, and the files containing the simulated data: `t00.root`, `t01.root` in your test directory. 
-You need to copy these files into your public directory, so that you can download it to your local desktop:
+You need to download these root files to your local desktop:
 
 ```
-$ cp t0*.root ~/public/
+See instructions for downloading mandle.gif in the Mandlebrot Session. 
 ```
 
-Now open a different terminal window on your local desktop, and download the root files with:
+Now open a different terminal window on your local desktop to view the files.
 
-```
-$ wget http://stash.osgconnect.net/~YOUR_USER_ID/t00.root  http://stash.osgconnect.net/~YOUR_USER_ID/t01.root
-```
 
 -----------------------------------------------_Skip to here-2_----------------------------------------------------
 
-Execute the script to run root:
+If condor submit was skipped, you can execute the script to run root interactively:
 ```
 ./run-root.sh
 ```
@@ -160,7 +156,6 @@ When you are done with this, you can quit `root` again with the command `.q <Ret
 
 ### Step 2: Analyze Real Data
 
-_We will not submit grid jobs during this exercise. So we will skip submit script._
 
 -----------------------------_Skip from here-3_-----------------------------------------
 
@@ -390,24 +385,21 @@ $ condor_q YOUR_USER_ID -nobatch
 
 After it runs, you will find a log file that describes the job: `run-z.log`, and output file: `root-z.out`, and the files containing the simulated data: `histograms-z.root` in your test directory. 
 
-You again need to copy that file into your public directory, so that you can download it to your local desktop:
+You again need to download those files to your local desktop:
 
 ```
-$ cp histograms-z.root ~/public/
+See instructions for downloading mandle.gif in a previous session.
 ```
 
-Go back to the local terminal window on your local desktop, and download the root files with:
+Go back to the local terminal window on your local desktop and locate the files you downloaded.
 
-```
-$ wget http://stash.osgconnect.net/~YOUR_USER_ID/histograms-z.root
-```
 
 -----------------------------------------------_Skip to here-4_----------------------------------------------------
 
-Setup a soft link to the input data file, muons.root, and execute the script to run root:
+Use wget to download the input data file, muons.root, and execute the script to run root:
 
 ```
-ln -s /opt/data/muons.root .
+wget https://www.nhn.ou.edu/~hs/tmp/muons.root
 ./run-z.sh
 ```
 
@@ -494,7 +486,6 @@ f.WriteObject(e,"Energy");
 f.Close();
 ```
 
-_We will not submit grid jobs during this exercise. So we will skip submit script._
 
 -----------------------------_Skip from here-5_-----------------------------------------
 
