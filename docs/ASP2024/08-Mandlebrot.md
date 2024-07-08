@@ -11,6 +11,7 @@ We have a simple program that can draw the Mandlebrot set. It's called `goatbrot
 Since your training VMs don't have the goatbrot executable needed for this exercise, we will need to download it first. Execute the following commands to do this:
 
 ```
+$ source /cvmfs/sft.cern.ch/lcg/views/setupViews.sh LCG_105a x86_64-ubuntu2204-gcc11-opt
 $ mkdir bin
 $ cd bin
 $ wget https://www.nhn.ou.edu/~hs/tmp/goatbrot
