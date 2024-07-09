@@ -21,15 +21,12 @@ Again the `$` sign at the beginning of the commands to execute is the `command p
 
 ### Step 1: Create simulated data using the grid
 
-_Note: We have introduced the option of skipping the grid (condor) submit steps, if time is short. So you can skip the condor submit scripts below if you wish, although they will still work._
 
 
 Now in your test directory we will create the three files: `run-root.cmd`, `run-root.sh`, and `run-root.C` with the contents given below. This may require running an editor such as `emacs` or nano on your local desktop.
 
 
-_We will not submit grid jobs so the "run-root.cmd" script is not needed for this exercise._
 
------------------------------_Skip from here-1_-----------------------------------------
 
 First, we will utilize a simple command script to submit the grid jobs. It is `run-root.cmd`:
 
@@ -47,7 +44,6 @@ notification=Never
 queue 
 ```
 
------------------------------------------------_Skip to here-1_----------------------------------------------------
 
 
 Note that the executable script is:  `run-root.sh` which is as follows:
@@ -101,7 +97,6 @@ The macro  `run-root.C` consists of the following code:
 .q 
 ```
 
------------------------------_Skip from here-2_-----------------------------------------
 
 The grid job can be submitted using:
 
@@ -125,7 +120,6 @@ See instructions for downloading mandle.gif in the Mandlebrot Session.
 Now open a different terminal window on your local desktop to view the files.
 
 
------------------------------------------------_Skip to here-2_----------------------------------------------------
 
 If condor submit was skipped, you can execute the script to run root interactively:
 ```
@@ -157,9 +151,7 @@ When you are done with this, you can quit `root` again with the command `.q <Ret
 ### Step 2: Analyze Real Data
 
 
------------------------------_Skip from here-3_-----------------------------------------
 
-The grid job can be submitted using:
 
 Now we want to have a look at a real live ATLAS root file. For this, go back to the remote terminal window on osgconnect. You will need a new condor submit script called `run-z.cmd`:
 
@@ -177,7 +169,6 @@ notification=Never
 queue 
 ```
 
------------------------------------------------_Skip to here-3_----------------------------------------------------
 
 
 The new executable script you need for this job is:  `run-z.sh` which is as follows:
@@ -365,9 +356,7 @@ void readEvents(){
 }
 ```
 
-_We will not submit grid jobs during this exercise. So we will skip to run root._
 
------------------------------_Skip from here-4_-----------------------------------------
 
 
 
@@ -394,7 +383,6 @@ See instructions for downloading mandle.gif in a previous session.
 Go back to the local terminal window on your local desktop and locate the files you downloaded.
 
 
------------------------------------------------_Skip to here-4_----------------------------------------------------
 
 Use wget to download the input data file, muons.root, and execute the script to run root:
 
@@ -487,7 +475,6 @@ f.Close();
 ```
 
 
------------------------------_Skip from here-5_-----------------------------------------
 
 
 
@@ -508,7 +495,6 @@ notification=Never
 queue 
 ```
 
------------------------------------------------_Skip to here-5_----------------------------------------------------
 
 
 Create `run-root-2.sh`:
@@ -544,9 +530,6 @@ We can test the root job on the local machine by executing the script to run roo
 ./run-root-2.sh
 ```
 
-_We will not submit grid jobs during this exercise. So we will skip running condor._
-
------------------------------_Skip from here-6_-----------------------------------------
 
 
 If this works, we can process the data files `t00.root` and `t01.root` on the
@@ -570,7 +553,6 @@ Go back to the local terminal window on your local desktop, and download the roo
 wget http://stash.osgconnect.net/~YOUR_USER_ID/histograms.root
 ```
 
------------------------------------------------_Skip to here-6_----------------------------------------------------
 
 
 You can look at the output histogram file: `histograms.root`
