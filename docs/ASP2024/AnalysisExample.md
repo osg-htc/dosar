@@ -499,7 +499,11 @@ queue
 
 Create `run-root-2.sh`:
 ```
-#!/bin/bash 
+#!/bin/bash
+# setup
+source /cvmfs/sft.cern.ch/lcg/views/setupViews.sh LCG_105a x86_64-ubuntu2204-gcc11-opt
+
+# execute
 root -b < run-root-2.C > root-2.out 
 ```
 
@@ -535,7 +539,12 @@ We can test the root job on the local machine by executing the script to run roo
 If this works, we can process the data files `t00.root` and `t01.root` on the
 Grid with our new command script `run-root-2.cmd`.
 
-This can be done with command:
+Use the upload feature in ospool to upload files needed to submit this to condor:
+s0.C, s0.h, run-root-2.C, run-root-2.cmd, run-root-2.sh.
+
+Make sute t00.root and t01.root are present in ospool.
+
+The condor job can now be submitted from ospool using this command:
 
 ```
 condor_submit run-root-2.cmd
