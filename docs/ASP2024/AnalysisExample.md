@@ -541,16 +541,11 @@ This can be done with command:
 condor_submit run-root-2.cmd
 ```
 
-Once your job has finished, you again need to copy that file into your public directory, so that you can download it to your local desktop:
+
+Go back to the local terminal window on your local desktop, and download the root files:
 
 ```
-cp histograms.root ~/public/
-```
-
-Go back to the local terminal window on your local desktop, and download the root files with:
-
-```
-wget http://stash.osgconnect.net/~YOUR_USER_ID/histograms.root
+See download instructions for mandle.gif file in a previous session.
 ```
 
 
