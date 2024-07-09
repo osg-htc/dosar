@@ -1023,9 +1023,11 @@ root -b &lt; run-root-2.C &gt; root-2.out
 </code></pre>
 <p>If this works, we can process the data files <code>t00.root</code> and <code>t01.root</code> on the
 Grid with our new command script <code>run-root-2.cmd</code>.</p>
-<p>Use the upload feature in ospool to upload files needed to submit this to condor:
-s0.C, s0.h, run-root-2.C, run-root-2.cmd, run-root-2.sh.</p>
-<p>Make sute t00.root and t01.root are present in ospool.</p>
+<pre><code>Use the upload feature in ospool to upload files needed to submit this to condor:
+
+s0.C, s0.h, run-root-2.C, run-root-2.cmd, run-root-2.sh.
+</code></pre>
+<p>Make sure t00.root and t01.root are present in ospool.</p>
 <p>The condor job can now be submitted from ospool using this command:</p>
 <pre><code>condor_submit run-root-2.cmd
 </code></pre>
