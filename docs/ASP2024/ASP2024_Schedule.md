@@ -26,7 +26,7 @@
 
 | Time  | Description                                                         | Instructor       |
 |-------|---------------------------------------------------------------------|------------------|
-| 14:30 | Welcome and the Landscape of Research Computing                     | Jae Yu           |
+| 14:30 | Welcome and the Landscape of Research Computing                     | Julia Gray       |
 | 15:15 | Exercise - UNIX Refresher, Running simple Condor jobs               | All              |
 | 16:00 | Coffee Break                                                        |                  |
 | 16:30 | Profiling your application and finding a home for your workflow     | Pat Skubic       |
@@ -46,7 +46,7 @@
 | 14:30 | ATLAS Analysis Exercises                                            | All              |
 | 16:00 | Coffee Break                                                        |                  |
 | 16:30 | More Exercise Time                                                  | All              |
-| 17:30 | Closing Thoughts                                                    | All              |
+| 17:30 | Closing Thoughts                                                    | Julia Gray       |
 
 ## Materials
 
