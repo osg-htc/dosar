@@ -33,7 +33,7 @@ We will be using OSG Training Pool for this set of sessions. Please visit [https
 ## Thursday Morning - Computational Infrastructures - Session 4
 
    * Lecture 4 - [Slides](/dosar/ASP2024/Lecture4-ASP2024.pdf)
-[comment]:   * [Discipline specific tutorials](/dosar/ASP2024/13-DisciplineTutorials)
+<!--   * [Discipline specific tutorials](/dosar/ASP2024/13-DisciplineTutorials) -->
    * [Containers with Singularity](/dosar/ASP2024/14-Containers)
    
 ## Thursday Afternoon - Computational Infrastructures - Session 5
