@@ -40,7 +40,7 @@ We will be using OSG Training Pool for this set of sessions. Please visit [https
 
    * [ATLAS Analysis Example Lecture](/dosar/ASP2024/Intro_Anal_Ex-2024.pdf)
    * [ATLAS Analysis Example Exercise](/dosar/ASP2024/AnalysisExample)
-   * Computational Infrastructures Wrap Up - [Slides](/dosar/ASP2024/LectureCloseout_ASP2024.pdf)
+   * Computational Infrastructures Wrap Up - [Slides](/dosar/ASP2024/LectureCloseout_ASP2024_final.pdf)
    
 ## Contact information
 
