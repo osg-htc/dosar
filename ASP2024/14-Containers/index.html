@@ -700,6 +700,7 @@ apptainer exec /cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-ubun
 </code></pre>
 <p>Don't forget to make it executable with <code>chmod +x job.sh</code>.
 This script will invoke the Ubuntu 20 container with apptainer and run the command <code>cat /etc/lsb-release</code>, which returns the OS version of the container. So you can see that it returns 20.04, compared to 22.04 of the training machine.</p>
+<p>This is just a very simple example. You can construct much more complex workloads or scripts to execute in apptainer.</p>
 <p>The user support team maintains a set of images. These contain a basic set of
 tools and libraries. The images are are:</p>
 <table>
