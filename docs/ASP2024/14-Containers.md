@@ -1,13 +1,13 @@
-# Singularity Containers in OSG
+# Apptainer/Singularity Containers in OSG
 
 
 ### Objective
 
-Singularity is a container system to allow users full control over their enviroment. You
+Apptainer (formerly Singularity) is a container system to allow users full control over their enviroment. You
 can create your own container image which your job will execute within, or choose from
 a set of pre-defined images. For more information about Singularity, please see:
 
- * [Singularity Home Page](http://singularity.lbl.gov/)
+ * [Singularity Home Page](https://apptainer.org/documentation/)
 
 The following talk describes Singularity for scientific computing:
 
@@ -21,15 +21,15 @@ functionality described further down:
 
 ## Default Image
 
-The default setup is to auto load an image on sites which support Singularity. Every
+The default setup is to auto load an image on sites which support Apptainer. Every
 job which lands on such a site, will have a container started just for that job, and
 then run within that container. Most users will not even know that their jobs are run
 within a container, but it will provide them with a consistent environment across
-OSG sites. The current default container is based on EL6 and contains a basic
+OSG sites. The current default container is based on EL9 and contains a basic
 set of tools expected from OSG compute nodes. The image is loaded from
-*/cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-el6* and the definition file
+*/cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-el9* and the definition file
 is available in GitHub
-[https://github.com/opensciencegrid/osgvo-el6](https://github.com/opensciencegrid/osgvo-el6) .
+[https://github.com/opensciencegrid/osgvo-el9](https://github.com/opensciencegrid/osgvo-el9) .
 If you want to steer a job to run on a default Singularity instance,
 use *HAS_SINGULARITY == True* in the job requirements. For example:
 
@@ -46,14 +46,16 @@ use *HAS_SINGULARITY == True* in the job requirements. For example:
 
     queue
 
+The HAS_SINGULARITY variable is not defined in this training account, since it is just a light weight account, so we will comment it out for our exercises.
+
 To instruct the system to load a different image, use the *+SingularityImage* attribute in 
-your job submit file. For example, to run your job under EL7:
+your job submit file. For example, to run your job under EL8:
 
     universe = vanilla
     executable = job.sh
-    Requirements = HAS_SINGULARITY == TRUE
+    R#equirements = HAS_SINGULARITY == TRUE
 
-    +SingularityImage = "/cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-el7"
+    +SingularityImage = "/cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-el8"
     +SingularityBindCVMFS = True
 
     should_transfer_files = IF_NEEDED
