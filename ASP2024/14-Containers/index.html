@@ -636,7 +636,7 @@
 can create your own container image which your job will execute within, or choose from
 a set of pre-defined images. For more information about Singularity, please see:</p>
 <ul>
-<li><a href="https://apptainer.org/documentation/">Singularity Home Page</a></li>
+<li><a href="https://apptainer.org/documentation/">Apptainer Home Page</a></li>
 </ul>
 <p>The following talk describes Singularity for scientific computing:</p>
 <ul>
@@ -675,12 +675,12 @@ queue
 </code></pre>
 <p>The HAS_SINGULARITY variable is not defined in this training account, since it is just a light weight account, so we will comment it out for our exercises.</p>
 <p>To instruct the system to load a different image, use the <em>+SingularityImage</em> attribute in 
-your job submit file. For example, to run your job under EL8:</p>
+your job submit file. For example, to run your job under Ubuntu 20, create a submit file named <code>apptainer.submit</code>:</p>
 <pre><code>universe = vanilla
 executable = job.sh
-R#equirements = HAS_SINGULARITY == TRUE
+#Requirements = HAS_SINGULARITY == TRUE
 
-+SingularityImage = "/cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-el8"
++SingularityImage = "/cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-ubuntu-20.04"
 +SingularityBindCVMFS = True
 
 should_transfer_files = IF_NEEDED
@@ -692,6 +692,14 @@ log = log
 
 queue
 </code></pre>
+<p>The <em>+SingularityImage</em> attribute is also not defined in this training account, but since it starts with a <em>+</em>, it is simply ignored here.</p>
+<p>As an example script to run, you can create the following shell script, named <code>job.sh</code>:</p>
+<pre><code>#!/bin/bash
+
+apptainer exec /cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-ubuntu-20.04\:latest cat /etc/lsb-release
+</code></pre>
+<p>Don't forget to make it executable with <code>chmod +x job.sh</code>.
+This script will invoke the Ubuntu 20 container with apptainer and run the command <code>cat /etc/lsb-release</code>, which returns the OS version of the container. So you can see that it returns 20.04, compared to 22.04 of the training machine.</p>
 <p>The user support team maintains a set of images. These contain a basic set of
 tools and libraries. The images are are:</p>
 <table>
@@ -706,15 +714,15 @@ tools and libraries. The images are are:</p>
 <tbody>
 <tr>
 <td align="left"><strong>EL 6</strong></td>
-<td align="left">/cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-el6:latest</td>
-<td align="center"><a href="https://github.com/opensciencegrid/osgvo-el6">GitHub</a></td>
-<td align="left">A basic Enterprise Linux (CentOS) 6 based image. This is currently our default image</td>
+<td align="left">/cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-el8:latest</td>
+<td align="center"><a href="https://github.com/opensciencegrid/osgvo-el8">GitHub</a></td>
+<td align="left">A basic Enterprise Linux (CentOS) 8 based image. This is currently our default image</td>
 </tr>
 <tr>
 <td align="left"><strong>EL 7</strong></td>
-<td align="left">/cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-el7:latest</td>
-<td align="center"><a href="https://github.com/opensciencegrid/osgvo-el7">GitHub</a></td>
-<td align="left">A basic Enterprise Linux (CentOS) 7 based image.</td>
+<td align="left">/cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-el9:latest</td>
+<td align="center"><a href="https://github.com/opensciencegrid/osgvo-el9">GitHub</a></td>
+<td align="left">A basic Enterprise Linux (CentOS) 9 based image.</td>
 </tr>
 <tr>
 <td align="left"><strong>Ubuntu Xenial</strong></td>
@@ -736,6 +744,7 @@ tools and libraries. The images are are:</p>
 </tr>
 </tbody>
 </table>
+<p><em>The following is just for your information, as it will not work on these training accounts, you need a full fledged OSPool account to do these kinds of exercises. But they are useful to read through.</em></p>
 <h2 id="exloring-images-on-the-submit-host">Exloring Images on the Submit Host</h2>
 <p>Images can be explored interactively on the submit hosts by starting it
 in "shell" mode. The recommended command line, similar to how containers
