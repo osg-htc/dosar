@@ -16,7 +16,7 @@
     
     
       
-        <title>Singularity Containers in OSG - DOSAR Outreach Materials</title>
+        <title>Apptainer/Singularity Containers in OSG - DOSAR Outreach Materials</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#singularity-containers-in-osg" class="md-skip">
+        <a href="#apptainersingularity-containers-in-osg" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Singularity Containers in OSG
+              Apptainer/Singularity Containers in OSG
             
           </span>
         </div>
@@ -630,13 +630,13 @@
                   </a>
                 
                 
-                <h1 id="singularity-containers-in-osg">Singularity Containers in OSG</h1>
+                <h1 id="apptainersingularity-containers-in-osg">Apptainer/Singularity Containers in OSG</h1>
 <h3 id="objective">Objective</h3>
-<p>Singularity is a container system to allow users full control over their enviroment. You
+<p>Apptainer (formerly Singularity) is a container system to allow users full control over their enviroment. You
 can create your own container image which your job will execute within, or choose from
 a set of pre-defined images. For more information about Singularity, please see:</p>
 <ul>
-<li><a href="http://singularity.lbl.gov/">Singularity Home Page</a></li>
+<li><a href="https://apptainer.org/documentation/">Singularity Home Page</a></li>
 </ul>
 <p>The following talk describes Singularity for scientific computing:</p>
 <ul>
@@ -649,15 +649,15 @@ functionality described further down:</p>
 <li><a href="https://djw8605.github.io/2017/01/12/singularity-on-the-osg/">Singularity on the OSG</a></li>
 </ul>
 <h2 id="default-image">Default Image</h2>
-<p>The default setup is to auto load an image on sites which support Singularity. Every
+<p>The default setup is to auto load an image on sites which support Apptainer. Every
 job which lands on such a site, will have a container started just for that job, and
 then run within that container. Most users will not even know that their jobs are run
 within a container, but it will provide them with a consistent environment across
-OSG sites. The current default container is based on EL6 and contains a basic
+OSG sites. The current default container is based on EL9 and contains a basic
 set of tools expected from OSG compute nodes. The image is loaded from
-<em>/cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-el6</em> and the definition file
+<em>/cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-el9</em> and the definition file
 is available in GitHub
-<a href="https://github.com/opensciencegrid/osgvo-el6">https://github.com/opensciencegrid/osgvo-el6</a> .
+<a href="https://github.com/opensciencegrid/osgvo-el9">https://github.com/opensciencegrid/osgvo-el9</a> .
 If you want to steer a job to run on a default Singularity instance,
 use <em>HAS_SINGULARITY == True</em> in the job requirements. For example:</p>
 <pre><code>universe = vanilla
@@ -673,13 +673,14 @@ log = log
 
 queue
 </code></pre>
+<p>The HAS_SINGULARITY variable is not defined in this training account, since it is just a light weight account, so we will comment it out for our exercises.</p>
 <p>To instruct the system to load a different image, use the <em>+SingularityImage</em> attribute in 
-your job submit file. For example, to run your job under EL7:</p>
+your job submit file. For example, to run your job under EL8:</p>
 <pre><code>universe = vanilla
 executable = job.sh
-Requirements = HAS_SINGULARITY == TRUE
+R#equirements = HAS_SINGULARITY == TRUE
 
-+SingularityImage = "/cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-el7"
++SingularityImage = "/cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-el8"
 +SingularityBindCVMFS = True
 
 should_transfer_files = IF_NEEDED
