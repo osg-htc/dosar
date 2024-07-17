@@ -686,9 +686,9 @@ executable = job.sh
 should_transfer_files = IF_NEEDED
 when_to_transfer_output = ON_EXIT
 
-output = out
-error = err
-log = log
+output = apptainer.out
+error = apptainer.err
+log = apptainer.log
 
 queue
 </code></pre>
@@ -713,13 +713,13 @@ tools and libraries. The images are are:</p>
 </thead>
 <tbody>
 <tr>
-<td align="left"><strong>EL 6</strong></td>
+<td align="left"><strong>EL 8</strong></td>
 <td align="left">/cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-el8:latest</td>
 <td align="center"><a href="https://github.com/opensciencegrid/osgvo-el8">GitHub</a></td>
 <td align="left">A basic Enterprise Linux (CentOS) 8 based image. This is currently our default image</td>
 </tr>
 <tr>
-<td align="left"><strong>EL 7</strong></td>
+<td align="left"><strong>EL 9</strong></td>
 <td align="left">/cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-el9:latest</td>
 <td align="center"><a href="https://github.com/opensciencegrid/osgvo-el9">GitHub</a></td>
 <td align="left">A basic Enterprise Linux (CentOS) 9 based image.</td>
