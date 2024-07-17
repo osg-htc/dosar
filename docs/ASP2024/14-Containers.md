@@ -99,7 +99,7 @@ Images can be explored interactively on the submit hosts by starting it
 in "shell" mode. The recommended command line, similar to how containers
 are started for jobs, is:
 
-    singularity shell \
+    apptainer shell \
                 --home $PWD:/srv \
                 --pwd /srv \
                 --bind /cvmfs \
