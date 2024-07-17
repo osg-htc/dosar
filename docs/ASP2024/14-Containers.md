@@ -46,7 +46,7 @@ use *HAS_SINGULARITY == True* in the job requirements. For example:
 
     queue
 
-The HAS_SINGULARITY variable is not defined in this training account, since it is just a light weight account, so we will comment it out for our exercises.
+Note that the *HAS_SINGULARITY* variable is not defined in this training account, since it is just a light weight account, so we will comment it out for our exercises.
 
 To instruct the system to load a different image, use the *+SingularityImage* attribute in 
 your job submit file. For example, to run your job under Ubuntu 20, create a submit file named `apptainer.submit`:
