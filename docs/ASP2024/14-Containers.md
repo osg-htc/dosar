@@ -61,9 +61,9 @@ your job submit file. For example, to run your job under Ubuntu 20, create a sub
     should_transfer_files = IF_NEEDED
     when_to_transfer_output = ON_EXIT
 
-    output = out
-    error = err
-    log = log
+    output = apptainer.out
+    error = apptainer.err
+    log = apptainer.log
 
     queue
 
@@ -83,8 +83,8 @@ tools and libraries. The images are are:
 
 |                     | **Image Location**                                                                 | **Defintion** | **Description** |
 |:--------------------|:-----------------------------------------------------------------------------------|:-------------:|:----------------|
-| **EL 6**            | /cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-el8:latest            | [GitHub](https://github.com/opensciencegrid/osgvo-el8)   | A basic Enterprise Linux (CentOS) 8 based image. This is currently our default image |
-| **EL 7**            | /cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-el9:latest            | [GitHub](https://github.com/opensciencegrid/osgvo-el9) | A basic Enterprise Linux (CentOS) 9 based image. |
+| **EL 8**            | /cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-el8:latest            | [GitHub](https://github.com/opensciencegrid/osgvo-el8)   | A basic Enterprise Linux (CentOS) 8 based image. This is currently our default image |
+| **EL 9**            | /cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-el9:latest            | [GitHub](https://github.com/opensciencegrid/osgvo-el9) | A basic Enterprise Linux (CentOS) 9 based image. |
 | **Ubuntu Xenial**   | /cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-ubuntu-xenial:latest  | [GitHub](https://github.com/opensciencegrid/osgvo-ubuntu-xenial) | A good image if you prefer Ubuntu over EL flavors |
 | **TensorFlow**      | /cvmfs/singularity.opensciencegrid.org/opensciencegrid/tensorflow:latest           | [GitHub](https://github.com/opensciencegrid/osgvo-tensorflow) | Base on the TensorFlow base image, with a few OSG package added |
 | **TensorFlow GPU**  | /cvmfs/singularity.opensciencegrid.org/opensciencegrid/tensorflow-gpu:latest       | [GitHub](https://github.com/opensciencegrid/osgvo-tensorflow-gpu) | Used for running TensorFlow jobs on OSG GPU resources |
