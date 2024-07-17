@@ -7,7 +7,7 @@ Apptainer (formerly Singularity) is a container system to allow users full contr
 can create your own container image which your job will execute within, or choose from
 a set of pre-defined images. For more information about Singularity, please see:
 
- * [Singularity Home Page](https://apptainer.org/documentation/)
+ * [Apptainer Home Page](https://apptainer.org/documentation/)
 
 The following talk describes Singularity for scientific computing:
 
@@ -49,13 +49,13 @@ use *HAS_SINGULARITY == True* in the job requirements. For example:
 The HAS_SINGULARITY variable is not defined in this training account, since it is just a light weight account, so we will comment it out for our exercises.
 
 To instruct the system to load a different image, use the *+SingularityImage* attribute in 
-your job submit file. For example, to run your job under EL8:
+your job submit file. For example, to run your job under Ubuntu 20, create a submit file named `apptainer.submit`:
 
     universe = vanilla
     executable = job.sh
-    R#equirements = HAS_SINGULARITY == TRUE
+    #Requirements = HAS_SINGULARITY == TRUE
 
-    +SingularityImage = "/cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-el8"
+    +SingularityImage = "/cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-ubuntu-20.04"
     +SingularityBindCVMFS = True
 
     should_transfer_files = IF_NEEDED
@@ -67,17 +67,29 @@ your job submit file. For example, to run your job under EL8:
 
     queue
 
+The *+SingularityImage* attribute is also not defined in this training account, but since it starts with a *+*, it is simply ignored here.
+
+As an example script to run, you can create the following shell script, named `job.sh`:
+
+    #!/bin/bash
+    
+    apptainer exec /cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-ubuntu-20.04\:latest cat /etc/lsb-release
+
+Don't forget to make it executable with `chmod +x job.sh`.
+This script will invoke the Ubuntu 20 container with apptainer and run the command `cat /etc/lsb-release`, which returns the OS version of the container. So you can see that it returns 20.04, compared to 22.04 of the training machine.
+
 The user support team maintains a set of images. These contain a basic set of
 tools and libraries. The images are are:
 
 |                     | **Image Location**                                                                 | **Defintion** | **Description** |
 |:--------------------|:-----------------------------------------------------------------------------------|:-------------:|:----------------|
-| **EL 6**            | /cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-el6:latest            | [GitHub](https://github.com/opensciencegrid/osgvo-el6)   | A basic Enterprise Linux (CentOS) 6 based image. This is currently our default image |
-| **EL 7**            | /cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-el7:latest            | [GitHub](https://github.com/opensciencegrid/osgvo-el7) | A basic Enterprise Linux (CentOS) 7 based image. |
+| **EL 6**            | /cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-el8:latest            | [GitHub](https://github.com/opensciencegrid/osgvo-el8)   | A basic Enterprise Linux (CentOS) 8 based image. This is currently our default image |
+| **EL 7**            | /cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-el9:latest            | [GitHub](https://github.com/opensciencegrid/osgvo-el9) | A basic Enterprise Linux (CentOS) 9 based image. |
 | **Ubuntu Xenial**   | /cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-ubuntu-xenial:latest  | [GitHub](https://github.com/opensciencegrid/osgvo-ubuntu-xenial) | A good image if you prefer Ubuntu over EL flavors |
 | **TensorFlow**      | /cvmfs/singularity.opensciencegrid.org/opensciencegrid/tensorflow:latest           | [GitHub](https://github.com/opensciencegrid/osgvo-tensorflow) | Base on the TensorFlow base image, with a few OSG package added |
 | **TensorFlow GPU**  | /cvmfs/singularity.opensciencegrid.org/opensciencegrid/tensorflow-gpu:latest       | [GitHub](https://github.com/opensciencegrid/osgvo-tensorflow-gpu) | Used for running TensorFlow jobs on OSG GPU resources |
 
+*The following is just for your information, as it will not work on these training accounts, you need a full fledged OSPool account to do these kinds of exercises. But they are useful to read through.*
 
 ## Exloring Images on the Submit Host
 
