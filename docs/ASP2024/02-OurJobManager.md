@@ -67,7 +67,7 @@ LOCAL_DIR = /home/jovyan/.condor/local
  # at: /etc/condor/condor_config.local, line 2
  # raw: LOCAL_DIR = $ENV(HOME)/.condor/local
 
-$ s -CF /home/jovyan/.condor/local/
+$ ls -CF /home/jovyan/.condor/local/
 cred_dir/  execute/  lock/  log/  run/  spool/
 ```
 
