@@ -30,7 +30,7 @@
 | 15:15 | Exercise - UNIX Refresher, Running simple Condor jobs               | All              |
 | 16:00 | Coffee Break                                                        |                  |
 | 16:30 | Profiling your application and finding a home for your workflow     | Pat Skubic       |
-| 17:15 | Exercise - Running scripting and R jobs with Condor                 | All              |
+| 17:30 | Exercise - Running scripting and R jobs with Condor                 | All              |
 
 ### Thursday 18-July 2024
 
@@ -43,7 +43,7 @@
 | 12:15 | Exercise - Using Containers on OSG and Discpline Specfic Tutorials  | All              |
 | 13:00 | Lunch                                                               |                  |
 | 14:30 | ATLAS Analysis Example                                              | Pat Skubic       |
-| 14:30 | ATLAS Analysis Exercises                                            | All              |
+| 15:15 | ATLAS Analysis Exercises                                            | All              |
 | 16:00 | Coffee Break                                                        |                  |
 | 16:30 | More Exercise Time                                                  | All              |
 | 17:30 | Closing Thoughts                                                    | Julia Gray       |
