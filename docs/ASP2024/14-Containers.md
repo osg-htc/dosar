@@ -78,6 +78,8 @@ As an example script to run, you can create the following shell script, named `j
 Don't forget to make it executable with `chmod +x job.sh`.
 This script will invoke the Ubuntu 20 container with apptainer and run the command `cat /etc/lsb-release`, which returns the OS version of the container. So you can see that it returns 20.04, compared to 22.04 of the training machine.
 
+This is just a very simple example. You can construct much more complex workloads or scripts to execute in apptainer.
+
 The user support team maintains a set of images. These contain a basic set of
 tools and libraries. The images are are:
 
