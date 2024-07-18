@@ -7,12 +7,11 @@ Root may be run in batch mode on the grid to analyze large data samples. This ex
 ## Prerequisite 
 
 * Open a new Terminal on your VM.
-* 
 * Make a directory for this exercise
 
 ```
-$ mkdir -p analysis_example
-$ cd analysis_example
+$ mkdir -p ~/analysis_example
+$ cd ~/analysis_example
 ```
 
 Again the `$` sign at the beginning of the commands to execute is the `command prompt`, so it should `not` be entered as part of the command.
