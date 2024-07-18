@@ -96,6 +96,9 @@ source /cvmfs/sft.cern.ch/lcg/views/setupViews.sh LCG_105a x86_64-ubuntu2204-gcc
 montage $*
 ```
 
+And you will need to make the `montage` script executable with `chmod +x montage` again.
+
+
 ## Make your DAG
 
 In a file called `goatbrot.dag`, you have your DAG specification:
