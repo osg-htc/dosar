@@ -5,7 +5,7 @@ The objective of this exercise is to run a real set of jobs with DAGMan.
 
 ## Make your job submission files
 
-We'll run our `goatbrot` example. If you didn't read about it yet, [please do so now](/dosar/ASP2022/08-Mandlebrot). We are going to make a DAG with four simultaneous jobs (`goatbrot`) and one final node to stitch them together (`montage`). This means we have five jobs. We're going to run `goatbrot` with more iterations (100,000) so it will take longer to run. 
+We'll run our `goatbrot` example. If you didn't read about it yet, [please do so now](/dosar/ASP2024/08-Mandlebrot). We are going to make a DAG with four simultaneous jobs (`goatbrot`) and one final node to stitch them together (`montage`). This means we have five jobs. We're going to run `goatbrot` with more iterations (100,000) so it will take longer to run. 
 
 You can create your five jobs. The goatbrot jobs very similar to each other, but they have slightly different parameters (arguments) and output files. 
 
@@ -70,10 +70,11 @@ You should notice a few things about the montage submission file:
 
    1. The `transfer_input_files` statement refers to the files created by the other jobs. 
    1. We do *not* transfer the montage program because it is on the VM.
+   1. We need to write a wrapper script named `montage` (see below) which sets up the montage program and then runs it.
 
 ```
 universe                = vanilla
-executable              = /usr/bin/montage
+executable              = montage
 arguments               = tile_0_0.ppm tile_0_1.ppm tile_1_0.ppm tile_1_1.ppm -mode Concatenate -tile 2x2 mandle.gif
 should_transfer_files   = YES
 when_to_transfer_output = ONEXIT
@@ -85,6 +86,15 @@ log                     = montage.log
 queue
 ```
 
+### montage
+
+```
+#!/bin/bash
+
+source /cvmfs/sft.cern.ch/lcg/views/setupViews.sh LCG_105a x86_64-ubuntu2204-gcc11-opt
+
+montage $*
+```
 
 ## Make your DAG
 
