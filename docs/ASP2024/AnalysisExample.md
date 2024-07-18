@@ -6,7 +6,7 @@ Root may be run in batch mode on the grid to analyze large data samples. This ex
 
 ## Prerequisite 
 
-* Open a new Terminal on your local desktop. NOTE: You are no longer using the browser based terminal now, but the Terminal on your VM, just like you did to display mandle.gif with firefox.
+* Open a new Terminal on your VM.
 * 
 * Make a directory for this exercise
 
@@ -21,12 +21,7 @@ Again the `$` sign at the beginning of the commands to execute is the `command p
 
 ### Step 1: Create simulated data using the grid
 
-
-
-Now in your test directory we will create the three files: `run-root.cmd`, `run-root.sh`, and `run-root.C` with the contents given below. This may require running an editor such as `emacs` or nano on your local desktop.
-
-
-
+Now in your test directory we will create the three files: `run-root.cmd`, `run-root.sh`, and `run-root.C` with the contents given below. This may require running an editor such as nano.
 
 First, we will utilize a simple command script to submit the grid jobs. It is `run-root.cmd`:
 
