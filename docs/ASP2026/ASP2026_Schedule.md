@@ -1,4 +1,4 @@
-# ASP 2024
+# ASP 2026
 
 ## High-Level Curriculum Overview
 
@@ -22,7 +22,7 @@
    
 ## Detailed Schedule
 
-### Wednesday 17-July 2024
+### Wednesday 15-July 2026
 
 | Time  | Description                                                         | Instructor       |
 |-------|---------------------------------------------------------------------|------------------|
@@ -32,7 +32,7 @@
 | 16:30 | Profiling your application and finding a home for your workflow     | Pat Skubic       |
 | 17:30 | Exercise - Running scripting and R jobs with Condor                 | All              |
 
-### Thursday 18-July 2024
+### Thursday 16-July 2026
 
 | Time  | Description                                                         | Instructor       |
 |-------|---------------------------------------------------------------------|------------------|
@@ -50,4 +50,4 @@
 
 ## Materials
 
-[Materials Page](/dosar/ASP2024/ASP2024_Materials/)
+[Materials Page](/dosar/ASP2026/ASP2026_Materials/)
