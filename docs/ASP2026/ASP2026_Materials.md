@@ -5,42 +5,42 @@ We will be using OSG Training Pool for this set of sessions. Please visit [https
 ## Wednesday Afternoon - Computational Infrastructures - Session 1
 
    * Welcome and Introduction - The Landscape of Academic Research Computing
-   * Lecture 1 - [Slides](/dosar/ASP2024/Lecture1_ASP2024_final.pdf)
-   * [Introduction](/dosar/ASP2024/01-Introduction) 
-   * [Our Job Manager (HTCondor)](/dosar/ASP2024/02-OurJobManager)
-   * [Your First Managed Job](/dosar/ASP2024/03-FirstManagedJob)
-   * [A few tips and tricks](/dosar/ASP2024/04-TipsandTricks)
+   * Lecture 1 - [Slides](/dosar/ASP2026/Lecture1_ASP2024_final.pdf)
+   * [Introduction](/dosar/ASP2026/01-Introduction) 
+   * [Our Job Manager (HTCondor)](/dosar/ASP2026/02-OurJobManager)
+   * [Your First Managed Job](/dosar/ASP2026/03-FirstManagedJob)
+   * [A few tips and tricks](/dosar/ASP2026/04-TipsandTricks)
    
 ## Wednesday Afternoon - Computational Infrastructures - Session 2
 
-   * Lecture 2 - [Slides](/dosar/ASP2024/Lecture2-ASP2024_v2.pdf)
-   * [A scripting job](/dosar/ASP2024/05-ScriptingJob)
-   * [An R Job](/dosar/ASP2024/06-RJob)
-   * [Working with file I/O](/dosar/ASP2024/07-WorkingwithFiles)
+   * Lecture 2 - [Slides](/dosar/ASP2026/Lecture2-ASP2024_v2.pdf)
+   * [A scripting job](/dosar/ASP2026/05-ScriptingJob)
+   * [An R Job](/dosar/ASP2026/06-RJob)
+   * [Working with file I/O](/dosar/ASP2026/07-WorkingwithFiles)
    
 ## Thursday Morning - Computational Infrastructures - Session 3
 
-   * Lecture 3 - [Slides](/dosar/ASP2024/Lecture3-ASP2024.pdf)
-   * [A brief detour through the Mandlebrot set](/dosar/ASP2024/08-Mandlebrot)
-   * [Coordinating sets of jobs: A simple DAG](/dosar/ASP2024/09-SimpleDAG)
-   * [A more complex DAG](/dosar/ASP2024/10-ComplexDAG)
+   * Lecture 3 - [Slides](/dosar/ASP2026/Lecture3-ASP2024.pdf)
+   * [A brief detour through the Mandlebrot set](/dosar/ASP2026/08-Mandlebrot)
+   * [Coordinating sets of jobs: A simple DAG](/dosar/ASP2026/09-SimpleDAG)
+   * [A more complex DAG](/dosar/ASP2026/10-ComplexDAG)
    
 ### Challenge Exercises on DAGs
 
-   * [Handling jobs that fail](/dosar/ASP2024/11-HandlingFailure)
-   * [Variable Substitution](/dosar/ASP2024/12-VariableSubstitution)
+   * [Handling jobs that fail](/dosar/ASP2026/11-HandlingFailure)
+   * [Variable Substitution](/dosar/ASP2026/12-VariableSubstitution)
    
 ## Thursday Morning - Computational Infrastructures - Session 4
 
-   * Lecture 4 - [Slides](/dosar/ASP2024/Lecture4-ASP2024.pdf)
-<!--   * [Discipline specific tutorials](/dosar/ASP2024/13-DisciplineTutorials) -->
-   * [Containers with Singularity](/dosar/ASP2024/14-Containers)
+   * Lecture 4 - [Slides](/dosar/ASP2026/Lecture4-ASP2024.pdf)
+<!--   * [Discipline specific tutorials](/dosar/ASP2026/13-DisciplineTutorials) -->
+   * [Containers with Singularity](/dosar/ASP2026/14-Containers)
    
 ## Thursday Afternoon - Computational Infrastructures - Session 5
 
-   * [ATLAS Analysis Example Lecture](/dosar/ASP2024/Intro_Anal_Ex-2024.pdf)
-   * [ATLAS Analysis Example Exercise](/dosar/ASP2024/AnalysisExample)
-   * Computational Infrastructures Wrap Up - [Slides](/dosar/ASP2024/LectureCloseout_ASP2024_final.pdf)
+   * [ATLAS Analysis Example Lecture](/dosar/ASP2026/Intro_Anal_Ex-2024.pdf)
+   * [ATLAS Analysis Example Exercise](/dosar/ASP2026/AnalysisExample)
+   * Computational Infrastructures Wrap Up - [Slides](/dosar/ASP2026/LectureCloseout_ASP2024_final.pdf)
    
 ## Contact information
 

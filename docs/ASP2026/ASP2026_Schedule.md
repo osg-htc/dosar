@@ -26,27 +26,26 @@
 
 | Time  | Description                                                         | Instructor       |
 |-------|---------------------------------------------------------------------|------------------|
-| 14:30 | Welcome and the Landscape of Research Computing                     | Julia Gray       |
-| 15:15 | Exercise - UNIX Refresher, Running simple Condor jobs               | All              |
+| 11:30 | Welcome and the Landscape of Research Computing                     | Julia Gray       |
+| 12:15 | Exercise - UNIX Refresher, Running simple Condor jobs               | All              |
+| 13:00 | Lunch  Break                                                        |                  |
+| 14:30 | Profiling your application and finding a home for your workflow     | Pat Skubic       |
+| 15:30 | Exercise - Running scripting and R jobs with Condor                 | All              |
 | 16:00 | Coffee Break                                                        |                  |
-| 16:30 | Profiling your application and finding a home for your workflow     | Pat Skubic       |
-| 17:30 | Exercise - Running scripting and R jobs with Condor                 | All              |
+| 16:30 | Workflows and distributed environments                              | Horst Severini   |
+| 17:30 | Exercise - DAGMan                                                   | All              |
 
 ### Thursday 16-July 2026
 
 | Time  | Description                                                         | Instructor       |
 |-------|---------------------------------------------------------------------|------------------|
-| 09:30 | Workflows and distributed environments                              | Horst Severini   |
-| 10:15 | Exercise - DAGMan                                                   | All              |
+| 09:00 | A Brief Introduction to Clouds and Containers                       | Horst Severini   |
+| 09:45 | Exercise - Using Containers on OSG and Discpline Specfic Tutorials  | All              |
+| 10:30 | ATLAS Analysis Example                                              | Pat Skubic       |
 | 11:00 | Coffee Break                                                        |                  |
-| 11:30 | A Brief Introduction to Clouds and Containers                       | Horst Severini   |
-| 12:15 | Exercise - Using Containers on OSG and Discpline Specfic Tutorials  | All              |
-| 13:00 | Lunch                                                               |                  |
-| 14:30 | ATLAS Analysis Example                                              | Pat Skubic       |
-| 15:15 | ATLAS Analysis Exercises                                            | All              |
-| 16:00 | Coffee Break                                                        |                  |
-| 16:30 | More Exercise Time                                                  | All              |
-| 17:30 | Closing Thoughts                                                    | Julia Gray       |
+| 11:30 | ATLAS Analysis Exercises                                            | All              |
+| 12:00 | More Exercise Time                                                  | All              |
+| 12:30 | Closing Thoughts                                                    | Julia Gray       |
 
 ## Materials
 
