@@ -2,21 +2,21 @@
 
 ## High-Level Curriculum Overview
 
-### Wednesday PM Session
+### Wednesday AM Session
 
    * Welcome and Background
    * The Landscape of Research Computing
+   
+### Wednesday PM Session
+
    * Profiling your application and choosing appropriate computing resources
    * Introduction to High Throughput Computing (HTC)
+   * Workflows and distributed environments
+   * Workflows with Directed Acyclic Graphs (DAGs)
    
 ### Thursday AM Session
 
-   * Workflows and distributed environments
-   * Workflows with Directed Acyclic Graphs (DAGs)
    * Brief Introduction to clouds and containers
-   
-### Thursday PM Session
-
    * ATLAS Analysis Example
    * Close out and resources for further collaboration
    
