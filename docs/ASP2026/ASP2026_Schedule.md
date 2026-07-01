@@ -30,10 +30,10 @@
 | 12:15 | Exercise - UNIX Refresher, Running simple Condor jobs               | All              |
 | 13:00 | Lunch  Break                                                        |                  |
 | 14:30 | Profiling your application and finding a home for your workflow     | Pat Skubic       |
-| 15:30 | Exercise - Running scripting and R jobs with Condor                 | All              |
+| 15:15 | Exercise - Running scripting and R jobs with Condor                 | All              |
 | 16:00 | Coffee Break                                                        |                  |
 | 16:30 | Workflows and distributed environments                              | Horst Severini   |
-| 17:30 | Exercise - DAGMan                                                   | All              |
+| 17:15 | Exercise - DAGMan                                                   | All              |
 
 ### Thursday 16-July 2026
 
