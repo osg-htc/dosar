@@ -18,8 +18,8 @@ How do you know what version of Condor you are using? Try <code>condor_version</
 
 ```
 $ condor_version
-$CondorVersion: 23.7.2 2024-05-16 BuildID: 733409 PackageID: 23.7.2-0.2 GitSHA: 585ec167 $
-$CondorPlatform: X86_64-Ubuntu_22.04 $
+$CondorVersion: 25.11.0 2026-06-10 BuildID: 920473 PackageID: 25.11.0-1+ubu24 GitSHA: 7f5259d9 $
+$CondorPlatform: X86_64-Ubuntu_24.04 $
 ```
 
 Note that the "CondorPlatform" reports the type of computer we built it on, _not necessarily_ the computer we're running on. It was built on Ubuntu 22.04, but you might notice that we're running on Ubuntu 22.04.4, which is a slightly newer version.
@@ -30,18 +30,18 @@ Do you know how to find the OS version? You can usually look in /etc/issue to fi
 
 ```
 $ cat /etc/issue
-Ubuntu 22.04.4 LTS \n \l
+Ubuntu 24.04.3 LTS \n \l
 ```
 
 Or you can run:
 
 ```
 $ lsb_release -a
-o No LSB modules are available.
+No LSB modules are available.
 Distributor ID: Ubuntu
-Description:    Ubuntu 22.04.4 LTS
-Release:        22.04
-Codename:       jammy
+Description:    Ubuntu 24.04.3 LTS
+Release:        24.04
+Codename:       noble
 ```
 
 Where is Condor installed? 
