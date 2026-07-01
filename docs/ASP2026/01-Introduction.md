@@ -8,7 +8,7 @@ You will need your Gmail or GitHub credentials for this session.
    * You may enjoy browsing the [Condor web page](http://www.cs.wisc.edu/condor/).<br>
 
 ## Which Condor?
-We will be using Condor 23.7.2, which is a recent version of Condor.
+We will be using Condor 25.11.0, which is a recent version of Condor.
 
 ## Where you will work
 
@@ -22,7 +22,7 @@ Click on 'Sign in with CILogon'.
 Select the Identity Provider Google (or GitHub).
 Click 'Log On'.
 Log into your Google account (or GitHub).
-Click the 'Server Option' 'Data Science'.
+Click the 'Server Option' 'Guest Account: Explore OSPool Notebooks'.
 Click 'Start'. This will take some time.
 In the 'Launcher' window, click on 'Terminal' (bottom left).
 
