@@ -612,8 +612,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#creating-a-custom-image" class="md-nav__link">
-    Creating a Custom Image
+  <a href="#creating-a-custom-image-note-that-docker-isnt-installed-in-these-training-accounts" class="md-nav__link">
+    Creating a Custom Image -- Note that Docker isn't installed in these training accounts
   </a>
   
 </li>
@@ -780,13 +780,13 @@ are started for jobs, is:</p>
             --bind /cvmfs \
             --scratch /var/tmp \
             --scratch /tmp \
-            --contain --ipc --pid \
+            --contain --ipc \
             /cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-ubuntu-xenial:latest
 </code></pre>
 <h2 id="custom-images">Custom Images</h2>
 <p>OSG Connect provides tooling for users to create, publish and load custom images.
 This is useful if your job requires some very specific software setup.</p>
-<h3 id="creating-a-custom-image">Creating a Custom Image</h3>
+<h3 id="creating-a-custom-image-note-that-docker-isnt-installed-in-these-training-accounts">Creating a Custom Image -- Note that Docker isn't installed in these training accounts</h3>
 <p>If you want to use an image you have created yourself, the image
 should be defined as a Docker image and published in the <a href="https://hub.docker.com/">Docker
 Hub</a>. The reason we use Docker as a source
