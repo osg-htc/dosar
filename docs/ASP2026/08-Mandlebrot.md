@@ -12,11 +12,11 @@ Since your training VMs don't have the goatbrot executable needed for this exerc
 
 ```
 $ source /cvmfs/sft.cern.ch/lcg/views/setupViews.sh LCG_105a x86_64-ubuntu2204-gcc11-opt
-$ mkdir bin
-$ cd bin
+$ mkdir ~/bin
+$ cd ~/bin
 $ wget https://www.nhn.ou.edu/~hs/tmp/goatbrot
 $ chmod +x goatbrot
-$ cd ..
+$ cd -
 ```
 
 ## A simple invocation of goatbrot
@@ -37,7 +37,7 @@ $ convert tile_000000_000000.ppm ~/mandle.gif
 
 3. We may want to download the GIF file from your training VM to your local desktop. To do so, find the file mandle.gif in the list of files and directories in the side bar to the left of your terminal window. Right-click on it and select Download, and download it to your local desktop. Depending on the browser that your local machine uses, it may be neccessary to double-Left-click to view, or Right-click on it and select "Open With" and select "image", or select "Open in new Tab" to view it directly from Ospool (JupyterLab).
 
-4. If you choose to DownLoad in the previous step then point your local Browser at the file URL: open a Terminal on your local VM, and then type in there:
+4. If you choose to download in the previous step then point your local Browser at the file URL: open a Terminal on your local VM, and then type in there:
 
 ```
 firefox Downloads/mandle.gif
