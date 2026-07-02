@@ -105,7 +105,7 @@ are started for jobs, is:
                 --bind /cvmfs \
                 --scratch /var/tmp \
                 --scratch /tmp \
-                --contain --ipc --pid \
+                --contain --ipc \
                 /cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-ubuntu-xenial:latest
 
 
@@ -114,7 +114,7 @@ are started for jobs, is:
 OSG Connect provides tooling for users to create, publish and load custom images.
 This is useful if your job requires some very specific software setup.
 
-### Creating a Custom Image
+### Creating a Custom Image -- Note that Docker isn't installed in these training accounts
 
 If you want to use an image you have created yourself, the image
 should be defined as a Docker image and published in the [Docker
