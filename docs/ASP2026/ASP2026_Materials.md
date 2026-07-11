@@ -13,14 +13,14 @@ We will be using OSG Training Pool for this set of sessions. Please visit [https
 
    * [Your First Managed Job](/dosar/ASP2026/03-FirstManagedJob)
    * [A few tips and tricks](/dosar/ASP2026/04-TipsandTricks)
-   * Lecture 2 - [Slides](/dosar/ASP2026/Lecture2-ASP2024_v2.pdf)
+   * Lecture 2 - [Slides](/dosar/ASP2026/Lecture2-ASP2026.pdf)
    * [A scripting job](/dosar/ASP2026/05-ScriptingJob)
    * [An R Job](/dosar/ASP2026/06-RJob)
    * [Working with file I/O](/dosar/ASP2026/07-WorkingwithFiles)
    
 ## Wednesday Afternoon - Computational Infrastructures - Session 3
 
-   * Lecture 3 - [Slides](/dosar/ASP2026/Lecture3-ASP2024.pdf)
+   * Lecture 3 - [Slides](/dosar/ASP2026/Lecture3-ASP2026.pdf)
    * [A brief detour through the Mandlebrot set](/dosar/ASP2026/08-Mandlebrot)
    * [Coordinating sets of jobs: A simple DAG](/dosar/ASP2026/09-SimpleDAG)
    * [A more complex DAG](/dosar/ASP2026/10-ComplexDAG)
@@ -32,13 +32,13 @@ We will be using OSG Training Pool for this set of sessions. Please visit [https
    
 ## Thursday Morning - Computational Infrastructures - Session 4
 
-   * Lecture 4 - [Slides](/dosar/ASP2026/Lecture4-ASP2024.pdf)
+   * Lecture 4 - [Slides](/dosar/ASP2026/Lecture4-ASP2026.pdf)
 <!--   * [Discipline specific tutorials](/dosar/ASP2026/13-DisciplineTutorials) -->
    * [Containers with Singularity](/dosar/ASP2026/14-Containers)
    
 ## Thursday Morning - Computational Infrastructures - Session 5
 
-   * [ATLAS Analysis Example Lecture](/dosar/ASP2026/Intro_Anal_Ex-2024.pdf)
+   * [ATLAS Analysis Example Lecture](/dosar/ASP2026/Intro_Anal_Ex-2026.pdf)
    * [ATLAS Analysis Example Exercise](/dosar/ASP2026/AnalysisExample)
    * Computational Infrastructures Wrap Up - [Slides](/dosar/ASP2026/LectureCloseout_ASP2024_final.pdf)
    
