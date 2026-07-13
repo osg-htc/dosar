@@ -1,6 +1,6 @@
 # ASP 2024 Materials
 
-We will be using OSG Training Pool for this set of sessions. Please visit [https://notebook.ospool.osg-htc.org/hub/login](https://notebook.ospool.osg-htc.org/hub/login) to log in.
+We will be using OSG Training Pool for this set of sessions. Please visit <a href="https://notebook.ospool.osg-htc.org/hub/login" target="_blank">https://notebook.ospool.osg-htc.org/hub/login</a> to log in.
 
 ## Wednesday Afternoon - Computational Infrastructures - Session 1
 
