@@ -45,7 +45,7 @@
 | 11:00 | Coffee Break                                                        |                  |
 | 11:30 | ATLAS Analysis Exercises                                            | All              |
 | 12:00 | More Exercise Time                                                  | All              |
-| 12:30 | Closing Thoughts                                                    | Julia Gray       |
+| 12:30 | Closing Thoughts                                                    | Jae Yu           |
 
 ## Materials
 
