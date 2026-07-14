@@ -99,3 +99,6 @@ Create several text files, then submit jobs (preferably from a single submit fil
 
 Instead of downloading these files and transferring them directly, can you change your `transfer-input-files` to use a URL and have Condor download them for you? Give this a try.
 
+## Back to Exercises
+
+[Materials Page](/dosar/ASP2026/ASP2026_Materials/)
