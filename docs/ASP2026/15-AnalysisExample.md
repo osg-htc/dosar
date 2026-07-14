@@ -351,7 +351,12 @@ void readEvents(){
 ```
 
 
+Use wget to download the input data file, muons.root, and execute the script to run root:
 
+```
+wget https://www.nhn.ou.edu/~hs/tmp/muons.root
+./run-z.sh
+```
 
 
 The grid job can be submitted using:
@@ -375,16 +380,6 @@ See instructions for downloading mandle.gif in a previous session.
 ```
 
 Go back to the local terminal window on your local desktop and locate the files you downloaded.
-
-
-
-Use wget to download the input data file, muons.root, and execute the script to run root:
-
-```
-wget https://www.nhn.ou.edu/~hs/tmp/muons.root
-./run-z.sh
-```
-
 
 You can inspect the contents of `histograms-z.root` by running Root (i.e., `root histograms-z.root`) in your current directory in your local terminal window:
 
