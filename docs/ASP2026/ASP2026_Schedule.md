@@ -44,7 +44,7 @@
 | 10:30 | ATLAS Analysis Example                                              | Pat Skubic       |
 | 11:00 | Coffee Break                                                        |                  |
 | 11:30 | ATLAS Analysis Exercises                                            | All              |
-| 12:00 | More Exercise Time                                                  | All              |
+| 12:00 | Distributed Computing and AI                                        | Julia Gray       |
 | 12:30 | Closing Thoughts                                                    | Jae Yu           |
 
 ## Materials
