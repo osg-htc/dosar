@@ -60,7 +60,7 @@ $ ls -lh simple
 -rwxrwxr-x 1 roy roy 595K Jun 20 11:12 simple
 ```
 
-Finally, run the program and tell it to sleep for four seconds and calculate 10 * 2: 
+Your permissions, username, and group may differ somewhat from the example. Finally, run the program and tell it to sleep for four seconds and calculate 10 * 2: 
 
 ```
 $ ./simple 4 10
@@ -106,10 +106,11 @@ Submitting job(s).
 1 job(s) submitted to cluster 2056.
 ```
 
-Now, watch your job run (insert your username in the command below instead of `YOUR_USER_ID`.  If you forgot your username use the `whoami` command.  Note that most of your output will be different than the example, the important column to watch is the `ST` column - the job state):
+Now, watch your job run (insert your username in the command below instead of `YOUR_USER_ID`.  If you forgot your username use the `whoami` command.  Note that most of your output will be different than the example, the important column to watch is the `ST` column - the job state). If you do not see your job listed, it may have already completed (see below):
+
+Note the job state of 'I' means the job is idle - not yet running
 
 ```
-# Note the job state of 'I' means the job is idle - not yet running
 $ condor_q YOUR_USER_ID -nobatch
 
 -- Schedd: user-training.osgconnect.net : <192.170.227.119:9618?... @ 07/19/17 03:41:08
@@ -120,8 +121,11 @@ Total for query: 1 jobs; 0 completed, 0 removed, 1 idle, 0 running, 0 held, 0 su
 Total for all users: 1 jobs; 0 completed, 0 removed, 1 idle, 0 running, 0 held, 0 suspended
 
 1 jobs; 0 completed, 0 removed, 1 idle, 0 running, 0 held, 0 suspended
+```
 
-# After some time your job will enter the 'R' state which means it is currently running
+After some time your job will enter the 'R' state which means it is currently running
+
+```
 $ condor_q YOUR_USER_ID -nobatch
 
 -- Schedd: user-training.osgconnect.net : <192.170.227.119:9618?... @ 07/19/17 03:41:14
@@ -132,8 +136,11 @@ Total for query: 1 jobs; 0 completed, 0 removed, 0 idle, 1 running, 0 held, 0 su
 Total for all users: 1 jobs; 0 completed, 0 removed, 0 idle, 1 running, 0 held, 0 suspended
 
 1 jobs; 0 completed, 0 removed, 1 idle, 0 running, 0 held, 0 suspended
+```
 
-# When your job disappears from the queue that means it completed.
+When your job disappears from the queue that means it completed.
+
+```
 $ condor_q YOUR_USER_ID -nobatch
 
 -- Schedd: user-training.osgconnect.net : <192.170.227.119:9618?... @ 07/19/17 03:41:21
