@@ -935,6 +935,10 @@ void readEvents(){
   outFile-&gt;Close();
 }
 </code></pre>
+<p>Use wget to download the input data file, muons.root, and execute the script to run root:</p>
+<pre><code>wget https://www.nhn.ou.edu/~hs/tmp/muons.root
+./run-z.sh
+</code></pre>
 <p>The grid job can be submitted using:</p>
 <pre><code>$ condor_submit run-z.cmd
 </code></pre>
@@ -946,10 +950,6 @@ void readEvents(){
 <pre><code>See instructions for downloading mandle.gif in a previous session.
 </code></pre>
 <p>Go back to the local terminal window on your local desktop and locate the files you downloaded.</p>
-<p>Use wget to download the input data file, muons.root, and execute the script to run root:</p>
-<pre><code>wget https://www.nhn.ou.edu/~hs/tmp/muons.root
-./run-z.sh
-</code></pre>
 <p>You can inspect the contents of <code>histograms-z.root</code> by running Root (i.e., <code>root histograms-z.root</code>) in your current directory in your local terminal window:</p>
 <pre><code>$ root histograms-z.root
 </code></pre>
