@@ -30,19 +30,19 @@ We will be using OSG Training Pool for this set of sessions. Please visit <a hre
    * [Handling jobs that fail](/dosar/ASP2026/11-HandlingFailure)
    * [Variable Substitution](/dosar/ASP2026/12-VariableSubstitution)
    
-## Thursday Morning - Computational Infrastructures - Session 4
+<!--    ## Thursday Morning - Computational Infrastructures - Session 4
 
    * Lecture 4 - <a href="https://osg-htc.org/dosar/ASP2026/Lecture4-ASP2026.pdf" target="_blank">Slides</a>
-<!--   * [Discipline specific tutorials](/dosar/ASP2026/13-DisciplineTutorials) -->
-   * [Containers with Singularity](/dosar/ASP2026/14-Containers)
+   * [Discipline specific tutorials](/dosar/ASP2026/13-DisciplineTutorials)
+   * [Containers with Singularity](/dosar/ASP2026/14-Containers) -->
    
 
-## Thursday Morning - Computational Infrastructures - Session 5
+## Thursday Morning - Computational Infrastructures - Session 4
 
    * ATLAS Analysis Example Lecture - <a href="https://osg-htc.org/dosar/ASP2026/Intro_Anal_Ex-2026.pdf" target="_blank">Slides</a>
    * [ATLAS Analysis Example Exercise](/dosar/ASP2026/15-AnalysisExample)
    
-## Thursday Morning - Distributed Computing and AI - Session 6
+## Thursday Morning - Distributed Computing and AI - Session 5
    * From HTCs to LLMs - <a href="https://osg-htc.org/dosar/ASP2026/Extra_AI_Lecture_ASP2026.pdf" target="_blank">Slides</a>
    * [ATLAS Analysis with Vibe Coding](/dosar/ASP2026/16-AIExercise)
 
