@@ -79,3 +79,7 @@ Run the commands above, make sure you can create the Mandlebrot image. When you 
 The same way we did above.  
    1. Find the file mandle.gif in your side bar again.
    2. Download it and display it in Firefox.
+
+## Back to Exercises
+
+[Materials Page](/dosar/ASP2026/ASP2026_Materials/)
