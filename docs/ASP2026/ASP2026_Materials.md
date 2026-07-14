@@ -5,7 +5,7 @@ We will be using OSG Training Pool for this set of sessions. Please visit <a hre
 ## Wednesday Morning - Computational Infrastructures - Session 1
 
    * Welcome and Introduction - The Landscape of Academic Research Computing
-   * Lecture 1 - <a href="https://osg-htc.org/dosar/ASP2026/Lecture1_ASP2024_final.pdf" target="_blank">Slides</a>
+   * Lecture 1 - <a href="https://osg-htc.org/dosar/ASP2026/Lecture1_ASP2026.pdf" target="_blank">Slides</a>
    * [Introduction](/dosar/ASP2026/01-Introduction)
    * [Our Job Manager (HTCondor)](/dosar/ASP2026/02-OurJobManager)
    
@@ -36,10 +36,17 @@ We will be using OSG Training Pool for this set of sessions. Please visit <a hre
 <!--   * [Discipline specific tutorials](/dosar/ASP2026/13-DisciplineTutorials) -->
    * [Containers with Singularity](/dosar/ASP2026/14-Containers)
    
+
 ## Thursday Morning - Computational Infrastructures - Session 5
 
    * ATLAS Analysis Example Lecture - <a href="https://osg-htc.org/dosar/ASP2026/Intro_Anal_Ex-2026.pdf" target="_blank">Slides</a>
    * [ATLAS Analysis Example Exercise](/dosar/ASP2026/AnalysisExample)
+   
+## Thursday Morning - Distributed Computing and AI - Session 6
+   * From HTCs to LLMs - <a href="https://osg-htc.org/dosar/ASP2026/Extra_AI_Lecture_ASP2026.pdf" target="_blank">Slides</a>
+   * [ATLAS Analysis with Vibe Coding](/dosar/ASP2026/ASP_AI_Exercise_Documentation)
+
+## Thursday Morning - Closeout   
    * Computational Infrastructures Wrap Up - <a href="https://osg-htc.org/dosar/ASP2026/LectureCloseout_ASP2024_final.pdf" target="_blank">Slides</a>
    
 ## Contact information
