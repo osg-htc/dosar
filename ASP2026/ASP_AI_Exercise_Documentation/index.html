@@ -1,0 +1,1049 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://osg-htc.org/dosar/ASP2026/ASP_AI_Exercise_Documentation/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+    
+    
+      
+        <title>AI Tools for Physicists: An Introduction - DOSAR Outreach Materials</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.33e2939f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ai-tools-for-physicists-an-introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DOSAR Outreach Materials" class="md-header__button md-logo" aria-label="DOSAR Outreach Materials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DOSAR Outreach Materials
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AI Tools for Physicists: An Introduction
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/osg-htc/dosar/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DOSAR Outreach Materials" class="md-nav__button md-logo" aria-label="DOSAR Outreach Materials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DOSAR Outreach Materials
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/osg-htc/dosar/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Current or Upcoming Events
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Current or Upcoming Events" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Current or Upcoming Events
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ASP2026_Schedule/" class="md-nav__link">
+        ASP 2026 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ASP2026_Materials/" class="md-nav__link">
+        ASP 2026 Materials
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Past Events
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Past Events" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Past Events
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ASP2024/ASP2024_Schedule/" class="md-nav__link">
+        ASP 2024 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ASP2024/ASP2024_Materials/" class="md-nav__link">
+        ASP 2024 Materials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ASP2022/ASP2022_Schedule/" class="md-nav__link">
+        ASP 2022 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ASP2022/ASP2022_Materials/" class="md-nav__link">
+        ASP 2022 Materials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataTrieste2019/School/" class="md-nav__link">
+        Data Trieste 2019 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataTrieste2019/Materials/" class="md-nav__link">
+        Data Trieste 2019 Materials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataSaoPaulo2018/School/" class="md-nav__link">
+        Data Sao Paulo 2018 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataSaoPaulo2018/Materials/" class="md-nav__link">
+        Data Sao Paulo 2018 Materials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataKigali2018/School/" class="md-nav__link">
+        Data Kigali 2018 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataKigali2018/Materials/" class="md-nav__link">
+        Data Kigali 2018 Materials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataTrieste2018/School/" class="md-nav__link">
+        Data Trieste 2018 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DataTrieste2018/Materials/" class="md-nav__link">
+        Data Trieste 2018 Materials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ASP2018/ASP2018_Schedule/" class="md-nav__link">
+        ASP 2018 Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ASP2018/ASP2018_Materials/" class="md-nav__link">
+        ASP 2018 Material
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Materials/DSP_DT2017/" class="md-nav__link">
+        Data Sao Paulo Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Materials/DSP_Materials/" class="md-nav__link">
+        Data Sao Paulo Materials
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Materials/PH_DT2017/" class="md-nav__link">
+        Polar Hackathon Schedule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Materials/PH_Materials/" class="md-nav__link">
+        Polar Hackathon Materials
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        DOSAR Video Meetings
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="DOSAR Video Meetings" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          DOSAR Video Meetings
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Meetings/24October2018/" class="md-nav__link">
+        October 24, 2018
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Meetings/12March2019/" class="md-nav__link">
+        March 12, 2019
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#african-school-of-physics-kenya-2026" class="md-nav__link">
+    African School of Physics — Kenya 2026
+  </a>
+  
+    <nav class="md-nav" aria-label="African School of Physics — Kenya 2026">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-documentation" class="md-nav__link">
+    Exercise Documentation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    Background
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-overview" class="md-nav__link">
+    Exercise Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-architecture" class="md-nav__link">
+    The Architecture
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-the-exercise" class="md-nav__link">
+    Running the Exercise
+  </a>
+  
+    <nav class="md-nav" aria-label="Running the Exercise">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-start-with-a-basic-plot" class="md-nav__link">
+    Step 1: Start with a basic plot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-add-a-gaussian-fit" class="md-nav__link">
+    Step 2: Add a Gaussian fit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-iterate-and-improve" class="md-nav__link">
+    Step 3: Iterate and improve
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-test-the-limits" class="md-nav__link">
+    Step 4: Test the limits
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-working-example" class="md-nav__link">
+    Complete Working Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-your-own-free-api-key" class="md-nav__link">
+    Getting Your Own Free API Key
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Your Own Free API Key">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-google-gemini-recommended" class="md-nav__link">
+    Option 1: Google Gemini (Recommended)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-openrouter-no-google-account-needed" class="md-nav__link">
+    Option 2: OpenRouter (No Google account needed)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    Key Takeaways
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-reading" class="md-nav__link">
+    Further Reading
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/osg-htc/dosar/edit/master/docs/ASP2026/ASP_AI_Exercise_Documentation.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="ai-tools-for-physicists-an-introduction">AI Tools for Physicists: An Introduction</h1>
+<h2 id="african-school-of-physics-kenya-2026">African School of Physics — Kenya 2026</h2>
+<h3 id="exercise-documentation">Exercise Documentation</h3>
+<hr />
+<h2 id="background">Background</h2>
+<p>You have just completed two distributed computing exercises:</p>
+<ol>
+<li><strong>Mandelbrot set</strong> — an embarrassingly parallel problem where each pixel is computed independently across many grid nodes</li>
+<li><strong>Z→ee dielectron analysis</strong> — a data-parallel HEP analysis where the same code runs on different data chunks across the WLCG grid, and you combined results at the end to reconstruct the Z boson mass peak</li>
+</ol>
+<p>These exercises share a fundamental architecture with modern AI:</p>
+<p>Large Language Models (LLMs) like GPT and Claude are trained using <strong>data parallelism</strong> across thousands of GPUs. The same model code runs on different batches of training data simultaneously, and the results (gradients) are combined back to a central parameter server at the end of each training step. This is conceptually identical to your HTCondor jobs running on different data files and combining histograms at the end.</p>
+<p>The difference is scale and hardware, not architecture.</p>
+<hr />
+<h2 id="exercise-overview">Exercise Overview</h2>
+<p>In this exercise you will use an AI assistant to help you write PyROOT plotting code for your Z→ee analysis results. The AI acts as a knowledgeable coding collaborator — you describe what you want in plain English, and it generates complete, runnable PyROOT code with explanations.</p>
+<p><strong>Learning objectives:</strong></p>
+<ul>
+<li>Understand how an API call works (client → server → AI → response)</li>
+<li>Use AI as a tool for scientific coding tasks</li>
+<li>Practice iterative prompt engineering</li>
+<li>Understand the limits of AI-generated code</li>
+<li>Learn how to get your own free AI API access after the school</li>
+</ul>
+<hr />
+<h2 id="the-architecture">The Architecture</h2>
+<p>When you run the script, this is what happens:</p>
+<pre><code>Your machine
+    |
+    | HTTP POST request (your question as JSON)
+    |
+    v
+ASP proxy server (asp.travelwith.kids)
+    |
+    | Validated request with physics system prompt
+    |
+    v
+Anthropic API (Claude Haiku)
+    |
+    | PyROOT code + explanation
+    |
+    v
+ASP proxy server
+    |
+    | Response forwarded
+    |
+    v
+Your machine (code printed to terminal)
+</code></pre>
+<p>This is the same client-server pattern used in production AI systems everywhere. The proxy server holds the API key so individual users never need their own credentials for the class exercise.</p>
+<hr />
+<h2 id="setup">Setup</h2>
+<p>The script requires only Python 3, which is already installed on your Scientific Linux VM. No additional packages are needed.</p>
+<p><strong>Step 1 — Get the script</strong></p>
+<p>Download from the course materials area, or:</p>
+<pre><code class="language-bash">wget https://asp.travelwith.kids/asp_assistant.py
+</code></pre>
+<p><strong>Step 2 — Set your class token</strong></p>
+<p>Open the script in a text editor:</p>
+<pre><code class="language-bash">nano asp_assistant.py
+</code></pre>
+<p>Find this line near the top:</p>
+<pre><code class="language-python">CLASS_TOKEN = &quot;replace_me&quot;
+</code></pre>
+<p>Replace <code>replace_me</code> with the token written on the whiteboard. Save and close.</p>
+<p><strong>Step 3 — Run it</strong></p>
+<pre><code class="language-bash">python3 asp_assistant.py
+</code></pre>
+<hr />
+<h2 id="running-the-exercise">Running the Exercise</h2>
+<h3 id="step-1-start-with-a-basic-plot">Step 1: Start with a basic plot</h3>
+<p>Run the assistant and describe your Z→ee histogram. A good starting question:</p>
+<pre><code>I have a TH1F histogram called h_mee containing the dielectron invariant
+mass from my Z to ee analysis. The range is 60 to 120 GeV. Please write
+PyROOT code to plot it with proper axis labels and a title.
+</code></pre>
+<p>Copy the generated code into a new file called <code>plot_zmass.py</code> and run it:</p>
+<pre><code class="language-bash">python3 plot_zmass.py
+</code></pre>
+<h3 id="step-2-add-a-gaussian-fit">Step 2: Add a Gaussian fit</h3>
+<p>Ask the assistant to add a fit:</p>
+<pre><code>Now add a Gaussian fit to the Z peak. The peak should be around 91 GeV.
+Also add a linear background term.
+</code></pre>
+<p>Or more specifically:</p>
+<pre><code>Add a TF1 fit with a Gaussian signal plus a first-order polynomial
+background. Fit in the range 80 to 100 GeV. Print the fit parameters
+and show them on the plot.
+</code></pre>
+<h3 id="step-3-iterate-and-improve">Step 3: Iterate and improve</h3>
+<p>Try these follow-up requests one at a time:</p>
+<ul>
+<li><code>Add the chi-squared per degree of freedom to the legend</code></li>
+<li><code>Change the histogram fill color to light blue with a dark blue border</code></li>
+<li><code>Add a vertical dashed line at 91.2 GeV to mark the PDG Z mass value</code></li>
+<li><code>Save the plot as a PDF file called zmass_fit.pdf</code></li>
+<li><code>Make the axis labels larger — font size 16</code></li>
+</ul>
+<h3 id="step-4-test-the-limits">Step 4: Test the limits</h3>
+<p>Ask the AI something it cannot know:</p>
+<pre><code>Add error bars that show the systematic uncertainty from the energy scale calibration
+</code></pre>
+<p>The AI does not know your specific systematic uncertainties. Observe how it handles this — does it make up numbers? Does it ask for clarification? This is an important lesson: AI is a tool, not an oracle.</p>
+<hr />
+<h2 id="complete-working-example">Complete Working Example</h2>
+<pre><code class="language-python">import ROOT
+
+# Open your ROOT file and get the histogram
+f = ROOT.TFile(&quot;zmass_combined.root&quot;, &quot;READ&quot;)
+h_mee = f.Get(&quot;h_mee&quot;)
+h_mee.SetDirectory(0)  # Keep histogram in memory after file closes
+f.Close()
+
+# Style the histogram
+h_mee.SetFillColor(ROOT.kAzure - 9)
+h_mee.SetLineColor(ROOT.kAzure + 1)
+h_mee.SetLineWidth(2)
+h_mee.GetXaxis().SetTitle(&quot;m_{ee} [GeV/c^{2}]&quot;)
+h_mee.GetYaxis().SetTitle(&quot;Events / 1 GeV&quot;)
+h_mee.GetXaxis().SetTitleSize(0.05)
+h_mee.GetYaxis().SetTitleSize(0.05)
+h_mee.SetTitle(&quot;Z #rightarrow ee Invariant Mass&quot;)
+
+# Define fit function: Gaussian signal + linear background
+fit_func = ROOT.TF1(&quot;fit_func&quot;,
+    &quot;[0]*TMath::Gaus(x,[1],[2]) + [3] + [4]*x&quot;,
+    80, 100)
+
+# Set initial parameter values
+fit_func.SetParameter(0, h_mee.GetMaximum())  # Amplitude
+fit_func.SetParameter(1, 91.2)                # Mean (Z mass)
+fit_func.SetParameter(2, 2.5)                 # Sigma
+fit_func.SetParameter(3, 10)                  # Background constant
+fit_func.SetParameter(4, -0.1)                # Background slope
+fit_func.SetParNames(&quot;Amplitude&quot;, &quot;Mean&quot;, &quot;Sigma&quot;, &quot;BG const&quot;, &quot;BG slope&quot;)
+fit_func.SetLineColor(ROOT.kRed)
+fit_func.SetLineWidth(2)
+
+# Draw and fit
+canvas = ROOT.TCanvas(&quot;canvas&quot;, &quot;Z mass&quot;, 800, 600)
+canvas.SetGrid()
+h_mee.Draw(&quot;HIST&quot;)
+h_mee.Fit(fit_func, &quot;R&quot;)  # R = fit in defined range
+fit_func.Draw(&quot;SAME&quot;)
+
+# Add a legend with fit results
+legend = ROOT.TLegend(0.6, 0.65, 0.88, 0.85)
+legend.SetBorderSize(1)
+legend.AddEntry(h_mee, &quot;Data&quot;, &quot;f&quot;)
+legend.AddEntry(fit_func,
+    f&quot;Fit: #mu = {fit_func.GetParameter(1):.2f} GeV&quot;, &quot;l&quot;)
+legend.AddEntry(ROOT.nullptr,
+    f&quot;#sigma = {fit_func.GetParameter(2):.2f} GeV&quot;, &quot;&quot;)
+legend.AddEntry(ROOT.nullptr,
+    f&quot;#chi^{{2}}/NDF = {fit_func.GetChisquare():.1f}/{fit_func.GetNDF()}&quot;, &quot;&quot;)
+legend.Draw()
+
+# PDG Z mass reference line
+z_mass_line = ROOT.TLine(91.1876, 0, 91.1876, h_mee.GetMaximum())
+z_mass_line.SetLineColor(ROOT.kGreen + 2)
+z_mass_line.SetLineWidth(2)
+z_mass_line.SetLineStyle(2)  # Dashed
+z_mass_line.Draw()
+
+canvas.Update()
+canvas.SaveAs(&quot;zmass_fit.pdf&quot;)
+print(&quot;Plot saved to zmass_fit.pdf&quot;)
+
+ROOT.gApplication.Run()
+</code></pre>
+<hr />
+<h2 id="getting-your-own-free-api-key">Getting Your Own Free API Key</h2>
+<p>The class proxy expires after the school. Here is how to get your own free access:</p>
+<h3 id="option-1-google-gemini-recommended">Option 1: Google Gemini (Recommended)</h3>
+<p>Free tier: 15 requests per minute, 1 million tokens per day. No credit card required.</p>
+<ol>
+<li>Go to <strong>aistudio.google.com</strong></li>
+<li>Sign in with your Google account (free to create)</li>
+<li>Click <strong>Get API key</strong> then <strong>Create API key</strong></li>
+<li>Copy your key</li>
+</ol>
+<p>Update <code>asp_assistant.py</code> — replace the <code>ask_assistant</code> function:</p>
+<pre><code class="language-python">GEMINI_API_KEY = &quot;YOUR_KEY_HERE&quot;
+GEMINI_URL = &quot;https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent&quot;
+
+def ask_assistant(question):
+    system_context = &quot;&quot;&quot;You are a PyROOT plotting assistant for physics students.
+    Generate complete, runnable PyROOT code with explanations.&quot;&quot;&quot;
+
+    payload = json.dumps({
+        &quot;contents&quot;: [{
+            &quot;parts&quot;: [{&quot;text&quot;: system_context + &quot;\n\nQuestion: &quot; + question}]
+        }]
+    }).encode(&quot;utf-8&quot;)
+
+    url = f&quot;{GEMINI_URL}?key={GEMINI_API_KEY}&quot;
+    req = urllib.request.Request(
+        url,
+        data    = payload,
+        headers = {&quot;Content-Type&quot;: &quot;application/json&quot;},
+        method  = &quot;POST&quot;,
+    )
+
+    with urllib.request.urlopen(req, timeout=30) as response:
+        data = json.loads(response.read().decode(&quot;utf-8&quot;))
+
+    return data[&quot;candidates&quot;][0][&quot;content&quot;][&quot;parts&quot;][0][&quot;text&quot;]
+</code></pre>
+<h3 id="option-2-openrouter-no-google-account-needed">Option 2: OpenRouter (No Google account needed)</h3>
+<p>Free models available with any email address.</p>
+<ol>
+<li>Go to <strong>openrouter.ai</strong></li>
+<li>Sign up with any email — no credit card needed</li>
+<li>Go to <strong>Keys</strong> then <strong>Create Key</strong></li>
+<li>Use free models such as <code>meta-llama/llama-3.1-8b-instruct:free</code></li>
+</ol>
+<p>Update <code>asp_assistant.py</code>:</p>
+<pre><code class="language-python">OPENROUTER_API_KEY = &quot;YOUR_KEY_HERE&quot;
+OPENROUTER_URL = &quot;https://openrouter.ai/api/v1/chat/completions&quot;
+
+def ask_assistant(question):
+    payload = json.dumps({
+        &quot;model&quot;: &quot;meta-llama/llama-3.1-8b-instruct:free&quot;,
+        &quot;messages&quot;: [
+            {
+                &quot;role&quot;: &quot;system&quot;,
+                &quot;content&quot;: &quot;You are a PyROOT plotting assistant for physics students. Generate complete, runnable PyROOT code with explanations.&quot;
+            },
+            {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: question}
+        ]
+    }).encode(&quot;utf-8&quot;)
+
+    req = urllib.request.Request(
+        OPENROUTER_URL,
+        data    = payload,
+        headers = {
+            &quot;Content-Type&quot;:  &quot;application/json&quot;,
+            &quot;Authorization&quot;: f&quot;Bearer {OPENROUTER_API_KEY}&quot;,
+        },
+        method = &quot;POST&quot;,
+    )
+
+    with urllib.request.urlopen(req, timeout=30) as response:
+        data = json.loads(response.read().decode(&quot;utf-8&quot;))
+
+    return data[&quot;choices&quot;][0][&quot;message&quot;][&quot;content&quot;]
+</code></pre>
+<hr />
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ul>
+<li>AI tools are coding collaborators, not autonomous scientists — they need good prompts and human verification</li>
+<li>The API pattern you used (HTTP POST with JSON, token authentication) is universal across all AI providers</li>
+<li>Distributed computing for AI training follows the same data-parallel patterns you used in HTCondor</li>
+<li>Free tiers exist for continued learning and experimentation after the school</li>
+</ul>
+<hr />
+<h2 id="further-reading">Further Reading</h2>
+<ul>
+<li>Anthropic Claude API: docs.anthropic.com</li>
+<li>Google Gemini API: aistudio.google.com</li>
+<li>OpenRouter free models: openrouter.ai/models?q=free</li>
+<li>ROOT documentation: root.cern/doc/master</li>
+<li>HTCondor documentation: htcondor.org/documentation</li>
+<li>WLCG: wlcg.web.cern.ch</li>
+</ul>
+<hr />
+<p><em>African School of Physics — Kenya 2026</em>
+<em>Exercise designed by Julia Gray</em></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d892486b.min.js"></script>
+      
+    
+  </body>
+</html>
