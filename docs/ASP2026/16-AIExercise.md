@@ -9,7 +9,7 @@
 You have just completed two distributed computing exercises:
 
 1. **Mandelbrot set** — an embarrassingly parallel problem where each pixel is computed independently across many grid nodes
-2. **Z→ee dielectron analysis** — a data-parallel HEP analysis where the same code runs on different data chunks across the WLCG grid, and you combined results at the end to reconstruct the Z boson mass peak
+2. **Z→mumu dimuon analysis** — a data-parallel HEP analysis where the same code runs on different data chunks across the WLCG grid, and you combined results at the end to reconstruct the Z boson mass peak
 
 These exercises share a fundamental architecture with modern AI:
 
@@ -21,7 +21,7 @@ The difference is scale and hardware, not architecture.
 
 ## Exercise Overview
 
-In this exercise you will use an AI assistant to help you write PyROOT plotting code for your Z→ee analysis results. The AI acts as a knowledgeable coding collaborator — you describe what you want in plain English, and it generates complete, runnable PyROOT code with explanations.
+In this exercise you will use an AI assistant to help you write PyROOT plotting code for your Z→mumu analysis results. The AI acts as a knowledgeable coding collaborator — you describe what you want in plain English, and it generates complete, runnable PyROOT code with explanations.
 
 **Learning objectives:**
 
@@ -101,11 +101,11 @@ python3 asp_assistant.py
 
 ### Step 1: Start with a basic plot
 
-Run the assistant and describe your Z→ee histogram. A good starting question:
+Run the assistant and describe your Z→mumu histogram. A good starting question:
 
 ```
-I have a TH1F histogram called h_mee containing the dielectron invariant
-mass from my Z to ee analysis. The range is 60 to 120 GeV. Please write
+I have a TH1F histogram called zMass containing the dimuon invariant
+mass from my Z to mumu analysis. The range is 0 to 200 GeV. Please write
 PyROOT code to plot it with proper axis labels and a title.
 ```
 
@@ -161,19 +161,19 @@ import ROOT
 
 # Open your ROOT file and get the histogram
 f = ROOT.TFile("zmass_combined.root", "READ")
-h_mee = f.Get("h_mee")
-h_mee.SetDirectory(0)  # Keep histogram in memory after file closes
+h_mmumu = f.Get("zMass")
+h_mmumu.SetDirectory(0)  # Keep histogram in memory after file closes
 f.Close()
 
 # Style the histogram
-h_mee.SetFillColor(ROOT.kAzure - 9)
-h_mee.SetLineColor(ROOT.kAzure + 1)
-h_mee.SetLineWidth(2)
-h_mee.GetXaxis().SetTitle("m_{ee} [GeV/c^{2}]")
-h_mee.GetYaxis().SetTitle("Events / 1 GeV")
-h_mee.GetXaxis().SetTitleSize(0.05)
-h_mee.GetYaxis().SetTitleSize(0.05)
-h_mee.SetTitle("Z #rightarrow ee Invariant Mass")
+h_mmumu.SetFillColor(ROOT.kAzure - 9)
+h_mmumu.SetLineColor(ROOT.kAzure + 1)
+h_mmumu.SetLineWidth(2)
+h_mmumu.GetXaxis().SetTitle("m_{mumu} [GeV/c^{2}]")
+h_mmumu.GetYaxis().SetTitle("Events / 1 GeV")
+h_mmumu.GetXaxis().SetTitleSize(0.05)
+h_mmumu.GetYaxis().SetTitleSize(0.05)
+h_mmumu.SetTitle("Z #rightarrow mumu Invariant Mass")
 
 # Define fit function: Gaussian signal + linear background
 fit_func = ROOT.TF1("fit_func",
@@ -181,11 +181,11 @@ fit_func = ROOT.TF1("fit_func",
     80, 100)
 
 # Set initial parameter values
-fit_func.SetParameter(0, h_mee.GetMaximum())  # Amplitude
-fit_func.SetParameter(1, 91.2)                # Mean (Z mass)
-fit_func.SetParameter(2, 2.5)                 # Sigma
-fit_func.SetParameter(3, 10)                  # Background constant
-fit_func.SetParameter(4, -0.1)                # Background slope
+fit_func.SetParameter(0, h_mmumu.GetMaximum())  # Amplitude
+fit_func.SetParameter(1, 91.2)                  # Mean (Z mass)
+fit_func.SetParameter(2, 2.5)                   # Sigma
+fit_func.SetParameter(3, 10)                    # Background constant
+fit_func.SetParameter(4, -0.1)                  # Background slope
 fit_func.SetParNames("Amplitude", "Mean", "Sigma", "BG const", "BG slope")
 fit_func.SetLineColor(ROOT.kRed)
 fit_func.SetLineWidth(2)
@@ -193,8 +193,8 @@ fit_func.SetLineWidth(2)
 # Draw and fit
 canvas = ROOT.TCanvas("canvas", "Z mass", 800, 600)
 canvas.SetGrid()
-h_mee.Draw("HIST")
-h_mee.Fit(fit_func, "R")  # R = fit in defined range
+h_mmumu.Draw("HIST")
+h_mmumu.Fit(fit_func, "R")  # R = fit in defined range
 fit_func.Draw("SAME")
 
 # Add a legend with fit results
@@ -210,7 +210,7 @@ legend.AddEntry(ROOT.nullptr,
 legend.Draw()
 
 # PDG Z mass reference line
-z_mass_line = ROOT.TLine(91.1876, 0, 91.1876, h_mee.GetMaximum())
+z_mass_line = ROOT.TLine(91.1876, 0, 91.1876, h_mmumu.GetMaximum())
 z_mass_line.SetLineColor(ROOT.kGreen + 2)
 z_mass_line.SetLineWidth(2)
 z_mass_line.SetLineStyle(2)  # Dashed
