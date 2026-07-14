@@ -551,3 +551,7 @@ See download instructions for mandle.gif file in a previous session.
 
 You can look at the output histogram file: `histograms.root`
 with `TBrowser b` as before, in your local terminal window.
+
+## Back to Exercises
+
+[Materials Page](/dosar/ASP2026/ASP2026_Materials/)
