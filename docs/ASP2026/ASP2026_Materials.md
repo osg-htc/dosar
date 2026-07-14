@@ -51,7 +51,6 @@ We will be using OSG Training Pool for this set of sessions. Please visit <a hre
    
 ## Contact information
 
-   * Rob Quick - rquick@iu.edu
    * Horst Severini - severini@ou.edu
    * Patrick Skubic - pskubic@ou.edu
    * Julia Gray - julia.ann.gray@gmail.com
