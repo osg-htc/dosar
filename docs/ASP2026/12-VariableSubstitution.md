@@ -32,3 +32,7 @@ VARS g1 TILEY="0"
 ```
 
 Edit your DAG similarly for all of your goatbrot jobs. If you need help, check the Condor manual for [for a description of how to use VARS](https://htcondor.org/documentation/htcondor.html). What happens?
+
+## Back to Exercises
+
+[Materials Page](/dosar/ASP2026/ASP2026_Materials/)
