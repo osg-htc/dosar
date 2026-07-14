@@ -849,7 +849,7 @@ and show them on the plot.
 <pre><code class="language-python">import ROOT
 
 # Open your ROOT file and get the histogram
-f = ROOT.TFile(&quot;zmass_combined.root&quot;, &quot;READ&quot;)
+f = ROOT.TFile(&quot;histograms-z.root&quot;, &quot;READ&quot;)
 h_mmumu = f.Get(&quot;zMass&quot;)
 h_mmumu.SetDirectory(0)  # Keep histogram in memory after file closes
 f.Close()
