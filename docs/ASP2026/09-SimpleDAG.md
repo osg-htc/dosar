@@ -307,3 +307,7 @@ $ rm simple.dag.*
 ## Challenge
 
    * What is the scheduler universe? Why does DAGMan use it?
+
+## Back to Exercises
+
+[Materials Page](/dosar/ASP2026/ASP2026_Materials/)
