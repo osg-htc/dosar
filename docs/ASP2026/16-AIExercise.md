@@ -200,7 +200,7 @@ fit_func.Draw("SAME")
 # Add a legend with fit results
 legend = ROOT.TLegend(0.6, 0.65, 0.88, 0.85)
 legend.SetBorderSize(1)
-legend.AddEntry(h_mee, "Data", "f")
+legend.AddEntry(h_mmumu, "Data", "f")
 legend.AddEntry(fit_func,
     f"Fit: #mu = {fit_func.GetParameter(1):.2f} GeV", "l")
 legend.AddEntry(ROOT.nullptr,
