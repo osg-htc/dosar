@@ -219,8 +219,6 @@ z_mass_line.Draw()
 canvas.Update()
 canvas.SaveAs("zmass_fit.pdf")
 print("Plot saved to zmass_fit.pdf")
-
-ROOT.gApplication.Run()
 ```
 
 ---
