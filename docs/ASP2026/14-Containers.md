@@ -175,3 +175,8 @@ automatically be detected and CVMFS will be updated accordingly.
 
 ### Source
 Paged sourced from https://support.opensciencegrid.org/support/solutions/articles/12000024676-singularity-containers. 
+
+## Back to Exercises
+
+[Materials Page](/dosar/ASP2026/ASP2026_Materials/)
+
