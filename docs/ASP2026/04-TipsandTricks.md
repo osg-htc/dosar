@@ -127,3 +127,7 @@ $ condor_history kagross
    8.0   kagross         7/31 12:42   0+00:00:07 C   7/31 12:42 /home/kagross/simple 4 10
 ...
 ```
+
+## Back to Exercises
+
+[Materials Page](/dosar/ASP2026/ASP2026_Materials/)
