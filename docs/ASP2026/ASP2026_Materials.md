@@ -5,22 +5,22 @@ We will be using OSG Training Pool for this set of sessions. Please visit <a hre
 ## Wednesday Morning - Computational Infrastructures - Session 1
 
    * Welcome and Introduction - The Landscape of Academic Research Computing
-   * Lecture 1 - [Slides](/dosar/ASP2026/Lecture1_ASP2024_final.pdf)
-   * <a href="https://osg-htc.org/dosar/ASP2026/01-Introduction/" target="_blank">Introduction</a>
+   * Lecture 1 - <a href="https://osg-htc.org/dosar/ASP2026/Lecture1_ASP2024_final.pdf" target="_blank">Slides</a>
+   * [Introduction](/dosar/ASP2026/01-Introduction)
    * [Our Job Manager (HTCondor)](/dosar/ASP2026/02-OurJobManager)
    
 ## Wednesday Afternoon - Computational Infrastructures - Session 2
 
    * [Your First Managed Job](/dosar/ASP2026/03-FirstManagedJob)
    * [A few tips and tricks](/dosar/ASP2026/04-TipsandTricks)
-   * Lecture 2 - [Slides](/dosar/ASP2026/Lecture2-ASP2026.pdf)
+   * Lecture 2 - <a href="https://osg-htc.org/dosar/ASP2026/Lecture2-ASP2026.pdf" target="_blank">Slides</a>
    * [A scripting job](/dosar/ASP2026/05-ScriptingJob)
    * [An R Job](/dosar/ASP2026/06-RJob)
    * [Working with file I/O](/dosar/ASP2026/07-WorkingwithFiles)
    
 ## Wednesday Afternoon - Computational Infrastructures - Session 3
 
-   * Lecture 3 - [Slides](/dosar/ASP2026/Lecture3-ASP2026.pdf)
+   * Lecture 3 - <a href="https://osg-htc.org/dosar/ASP2026/Lecture3-ASP2026.pdf" target="_blank">Slides</a>
    * [A brief detour through the Mandlebrot set](/dosar/ASP2026/08-Mandlebrot)
    * [Coordinating sets of jobs: A simple DAG](/dosar/ASP2026/09-SimpleDAG)
    * [A more complex DAG](/dosar/ASP2026/10-ComplexDAG)
@@ -32,15 +32,15 @@ We will be using OSG Training Pool for this set of sessions. Please visit <a hre
    
 ## Thursday Morning - Computational Infrastructures - Session 4
 
-   * Lecture 4 - [Slides](/dosar/ASP2026/Lecture4-ASP2026.pdf)
+   * Lecture 4 - <a href="https://osg-htc.org/dosar/ASP2026/Lecture4-ASP2026.pdf" target="_blank">Slides</a>
 <!--   * [Discipline specific tutorials](/dosar/ASP2026/13-DisciplineTutorials) -->
    * [Containers with Singularity](/dosar/ASP2026/14-Containers)
    
 ## Thursday Morning - Computational Infrastructures - Session 5
 
-   * [ATLAS Analysis Example Lecture](/dosar/ASP2026/Intro_Anal_Ex-2026.pdf)
+   * ATLAS Analysis Example Lecture - <a href="https://osg-htc.org/dosar/ASP2026/Intro_Anal_Ex-2026.pdf" target="_blank">Slides</a>
    * [ATLAS Analysis Example Exercise](/dosar/ASP2026/AnalysisExample)
-   * Computational Infrastructures Wrap Up - [Slides](/dosar/ASP2026/LectureCloseout_ASP2024_final.pdf)
+   * Computational Infrastructures Wrap Up - <a href="https://osg-htc.org/dosar/ASP2026/LectureCloseout_ASP2024_final.pdf" target="_blank">Slides</a>
    
 ## Contact information
 
