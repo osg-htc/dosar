@@ -76,7 +76,7 @@ As an example script to run, you can create the following shell script, named `j
     apptainer exec /cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-ubuntu-20.04\:latest cat /etc/lsb-release
 
 Don't forget to make it executable with `chmod +x job.sh`.
-This script will invoke the Ubuntu 20 container with apptainer and run the command `cat /etc/lsb-release`, which returns the OS version of the container. So you can see that it returns 20.04, compared to 22.04 of the training machine.
+This script will invoke the Ubuntu 20 container with apptainer and run the command `cat /etc/lsb-release`, which returns the OS version of the container. So you can see that it returns 20.04, compared to 24.04 of the training machine.
 
 This is just a very simple example. You can construct much more complex workloads or scripts to execute in apptainer.
 
@@ -157,7 +157,7 @@ If you do not want /cvmfs mounted in the container, please add
 
 ### Distributing Custom Images Via CVMFS
 
-In order to be able to efficiently distribute the container images to a large
+In order to be able to efficiently distribute the container images to a large number
 of distributed compute hosts, OSG has choosen to host the images under
 [CVMFS](https://cernvm.cern.ch/portal/filesystem). Any image publically available in
 Docker can be included for automatic syncing into the CVMFS repository. The
