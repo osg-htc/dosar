@@ -30,3 +30,6 @@ Can you write a submit file to run this job? This should be easy--the script is 
 ## Challenge
 Rewrite this script in Perl or Python (if you're comfortable with one of those languages). Does it still work for you?
 
+## Back to Exercises
+
+[Materials Page](/dosar/ASP2026/ASP2026_Materials/)
