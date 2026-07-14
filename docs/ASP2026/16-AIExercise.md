@@ -328,12 +328,12 @@ def ask_assistant(question):
 
 ## Further Reading
 
-- Anthropic Claude API: docs.anthropic.com https://platform.claude.com/docs/en/home
-- Google Gemini API: aistudio.google.com https://aistudio.google.com/prompts/new_chat
-- OpenRouter free models: openrouter.ai/models?q=free  https://openrouter.ai/models?q=free
-- ROOT documentation: root.cern/doc/master  https://root.cern/doc/master/
-- HTCondor documentation: htcondor.org/documentation  https://htcondor.org/htcondor/documentation/
-- WLCG: wlcg.web.cern.ch  https://wlcg.web.cern.ch/
+- Anthropic Claude API: <a href="https://platform.claude.com/docs/en/home" target="_blank">docs.anthropic.com</a>
+- Google Gemini API: <a href="https://aistudio.google.com/prompts/new_chat" target="_blank">aistudio.google.com </a>
+- OpenRouter free models: <a href="https://openrouter.ai/models?q=free" target="_blank">openrouter.ai/models?q=free</a>
+- ROOT documentation: <a href="https://root.cern/doc/master/" target="_blank">root.cern/doc/master</a>
+- HTCondor documentation: <a href="https://htcondor.org/htcondor/documentation/" target="_blank">htcondor.org/htcondor/documentation</a>
+- WLCG: <a href="https://wlcg.web.cern.ch/" target="_blank">wlcg.web.cern.ch</a>
 
 ---
 
