@@ -39,8 +39,6 @@
 
 | Time  | Description                                                         | Instructor       |
 |-------|---------------------------------------------------------------------|------------------|
-<!--| 09:30 | A Brief Introduction to Clouds and Containers                       | Horst Severini   |
-| 10:00 | Exercise - Using Containers on OSG and Discpline Specfic Tutorials  | All              |-->
 |  9:30 | ATLAS Analysis Example                                              | Pat Skubic       |
 | 10:15 | ATLAS Analysis Exercises                                            | All              |
 | 11:00 | Coffee Break                                                        |                  |
