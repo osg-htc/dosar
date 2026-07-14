@@ -730,7 +730,7 @@ queue
 apptainer exec /cvmfs/singularity.opensciencegrid.org/opensciencegrid/osgvo-ubuntu-20.04\:latest cat /etc/lsb-release
 </code></pre>
 <p>Don't forget to make it executable with <code>chmod +x job.sh</code>.
-This script will invoke the Ubuntu 20 container with apptainer and run the command <code>cat /etc/lsb-release</code>, which returns the OS version of the container. So you can see that it returns 20.04, compared to 22.04 of the training machine.</p>
+This script will invoke the Ubuntu 20 container with apptainer and run the command <code>cat /etc/lsb-release</code>, which returns the OS version of the container. So you can see that it returns 20.04, compared to 24.04 of the training machine.</p>
 <p>This is just a very simple example. You can construct much more complex workloads or scripts to execute in apptainer.</p>
 <p>The user support team maintains a set of images. These contain a basic set of
 tools and libraries. The images are are:</p>
@@ -825,7 +825,7 @@ RUN mkdir -p /cvmfs
 <p>If you do not want /cvmfs mounted in the container, please add 
 <em>+SingularityBindCVMFS = False</em> to your job submit file.</p>
 <h3 id="distributing-custom-images-via-cvmfs">Distributing Custom Images Via CVMFS</h3>
-<p>In order to be able to efficiently distribute the container images to a large
+<p>In order to be able to efficiently distribute the container images to a large number
 of distributed compute hosts, OSG has choosen to host the images under
 <a href="https://cernvm.cern.ch/portal/filesystem">CVMFS</a>. Any image publically available in
 Docker can be included for automatic syncing into the CVMFS repository. The
