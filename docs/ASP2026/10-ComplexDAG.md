@@ -264,3 +264,8 @@ $ rm goatbrot.err.*
 
    * Re-run your DAG. When jobs are running, try `condor_q -dag`. What does it do differently?
    * Challenge, if you have time: Make a bigger DAG by making more tiles in the same area. 
+
+## Back to Exercises
+
+[Materials Page](/dosar/ASP2026/ASP2026_Materials/)
+
