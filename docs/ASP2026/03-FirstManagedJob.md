@@ -298,3 +298,7 @@ If you have time and feel comfortable with the technical background, try these e
    * Make another scientific program (probably just modify simple.c) that takes its input from a file. Now submit 3 copies of this program where each input file is in a separate directory. Use the initialdir option [described in the manual](https://htcondor.readthedocs.io/en/v10_0/man-pages/condor_submit.html). This will let you specify a directory for the input to the program. You can run specify the initialdir with `$(Process)`. You can specify extra files to copy with `transfer_input_files`. Now you're really learning the basics of running something like a real scientific job!
    * Condor can send you email when a job finishes. How can you control this? 
    * You know that your job should never run for more than four hours. If it does, then the job should be killed because there is a problem. How can you tell Condor to do this for you? 
+
+## Back to Exercises
+
+[Materials Page](/dosar/ASP2026/ASP2026_Materials/)
