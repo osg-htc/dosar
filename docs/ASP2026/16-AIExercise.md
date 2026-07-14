@@ -160,7 +160,7 @@ The AI does not know your specific systematic uncertainties. Observe how it hand
 import ROOT
 
 # Open your ROOT file and get the histogram
-f = ROOT.TFile("zmass_combined.root", "READ")
+f = ROOT.TFile("histograms-z.root", "READ")
 h_mmumu = f.Get("zMass")
 h_mmumu.SetDirectory(0)  # Keep histogram in memory after file closes
 f.Close()
