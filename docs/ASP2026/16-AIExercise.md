@@ -71,7 +71,7 @@ The script requires only Python 3, which is already installed on your Scientific
 
 **Step 1 — Get the script**
 
-Download from the course materials area, or:
+Download the [asp_assistant.py](/dosar/ASP2026/asp_assistant.py) file. 
 
 ```bash
 wget https://asp.travelwith.kids/asp_assistant.py
