@@ -73,10 +73,6 @@ The script requires only Python 3, which is already installed on your Scientific
 
 Download the <a href="https://osg-htc.org/dosar/ASP2026/asp_assistant.py" download="asp_assistant.py">asp_assistant.py</a> file. 
 
-```bash
-wget https://asp.travelwith.kids/asp_assistant.py
-```
-
 **Step 2 — Set your class token**
 
 Open the script in a text editor:
