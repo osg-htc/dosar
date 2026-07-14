@@ -92,7 +92,7 @@ Replace `replace_me` with the token written on the whiteboard. Save and close.
 **Step 3 — Run it**
 
 ```bash
-python3 asp_assistant.py
+python -i asp_assistant.py
 ```
 
 ---
@@ -109,10 +109,10 @@ mass from my Z to mumu analysis. The range is 0 to 200 GeV. Please write
 PyROOT code to plot it with proper axis labels and a title.
 ```
 
-Copy the generated code into a new file called `plot_zmass.py` and run it:
+Copy the generated code into a new file called `plot_zmass.py` and run it in interactive mode:
 
 ```bash
-python3 plot_zmass.py
+python -i plot_zmass.py
 ```
 
 ### Step 2: Add a Gaussian fit
