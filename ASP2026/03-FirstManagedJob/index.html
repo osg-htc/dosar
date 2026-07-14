@@ -713,7 +713,7 @@ To save your file and exit nano, type: CTRL-x, y, return.</p>
 $ ls -lh simple
 -rwxrwxr-x 1 roy roy 595K Jun 20 11:12 simple
 </code></pre>
-<p>Finally, run the program and tell it to sleep for four seconds and calculate 10 * 2: </p>
+<p>Your permissions, username, and group may differ somewhat from the example. Finally, run the program and tell it to sleep for four seconds and calculate 10 * 2: </p>
 <pre><code>$ ./simple 4 10
 Thinking really hard for 4 seconds...
 We calculated: 20
@@ -748,9 +748,9 @@ Queue
 Submitting job(s).
 1 job(s) submitted to cluster 2056.
 </code></pre>
-<p>Now, watch your job run (insert your username in the command below instead of <code>YOUR_USER_ID</code>.  If you forgot your username use the <code>whoami</code> command.  Note that most of your output will be different than the example, the important column to watch is the <code>ST</code> column - the job state):</p>
-<pre><code># Note the job state of 'I' means the job is idle - not yet running
-$ condor_q YOUR_USER_ID -nobatch
+<p>Now, watch your job run (insert your username in the command below instead of <code>YOUR_USER_ID</code>.  If you forgot your username use the <code>whoami</code> command.  Note that most of your output will be different than the example, the important column to watch is the <code>ST</code> column - the job state). If you do not see your job listed, it may have already completed (see below):</p>
+<p>Note the job state of 'I' means the job is idle - not yet running</p>
+<pre><code>$ condor_q YOUR_USER_ID -nobatch
 
 -- Schedd: user-training.osgconnect.net : &lt;192.170.227.119:9618?... @ 07/19/17 03:41:08
  ID      OWNER            SUBMITTED     RUN_TIME ST PRI SIZE CMD
@@ -760,9 +760,9 @@ Total for query: 1 jobs; 0 completed, 0 removed, 1 idle, 0 running, 0 held, 0 su
 Total for all users: 1 jobs; 0 completed, 0 removed, 1 idle, 0 running, 0 held, 0 suspended
 
 1 jobs; 0 completed, 0 removed, 1 idle, 0 running, 0 held, 0 suspended
-
-# After some time your job will enter the 'R' state which means it is currently running
-$ condor_q YOUR_USER_ID -nobatch
+</code></pre>
+<p>After some time your job will enter the 'R' state which means it is currently running</p>
+<pre><code>$ condor_q YOUR_USER_ID -nobatch
 
 -- Schedd: user-training.osgconnect.net : &lt;192.170.227.119:9618?... @ 07/19/17 03:41:14
  ID      OWNER            SUBMITTED     RUN_TIME ST PRI SIZE CMD
@@ -772,9 +772,9 @@ Total for query: 1 jobs; 0 completed, 0 removed, 0 idle, 1 running, 0 held, 0 su
 Total for all users: 1 jobs; 0 completed, 0 removed, 0 idle, 1 running, 0 held, 0 suspended
 
 1 jobs; 0 completed, 0 removed, 1 idle, 0 running, 0 held, 0 suspended
-
-# When your job disappears from the queue that means it completed.
-$ condor_q YOUR_USER_ID -nobatch
+</code></pre>
+<p>When your job disappears from the queue that means it completed.</p>
+<pre><code>$ condor_q YOUR_USER_ID -nobatch
 
 -- Schedd: user-training.osgconnect.net : &lt;192.170.227.119:9618?... @ 07/19/17 03:41:21
  ID      OWNER            SUBMITTED     RUN_TIME ST PRI SIZE CMD
