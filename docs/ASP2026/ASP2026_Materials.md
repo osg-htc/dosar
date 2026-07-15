@@ -47,7 +47,7 @@ We will be using OSG Training Pool for this set of sessions. Please visit <a hre
    * [ATLAS Analysis with Vibe Coding](/dosar/ASP2026/16-AIExercise)
 
 ## Thursday Morning - Closeout   
-   * Computational Infrastructures Wrap Up - <a href="https://osg-htc.org/dosar/ASP2026/LectureCloseout_ASP2026_final.pdf" target="_blank">Slides</a>
+   * Computational Infrastructures Wrap Up - <a href="https://osg-htc.org/dosar/ASP2026/LectureCloseout_ASP2026_final-jy.pdf" target="_blank">Slides</a>
    
 ## Contact information
 
