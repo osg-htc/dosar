@@ -236,11 +236,13 @@ Free tier: 15 requests per minute, 1 million tokens per day. No credit card requ
 3. Click **Get API key** then **Create API key**
 4. Copy your key
 
-Update `asp_assistant.py` — replace the `ask_assistant` function:
+Update `asp_assistant.py` — replace the `Configuration` section with your Gemini API key and URL and move the `System prompt` to the `system_context` in the `ask_assistant` function which gets rewritten as:
 
 ```python
+# ── Configuration ──────────────────────────────────────────────────────────────
 GEMINI_API_KEY = "YOUR_KEY_HERE"
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
+# ──────────────────────────────────────────────────────────────────────────────
 
 def ask_assistant(question):
     system_context = """You are a PyROOT plotting assistant for physics students.
@@ -275,11 +277,13 @@ Free models available with any email address.
 3. Go to **Keys** then **Create Key**
 4. Use free models such as `meta-llama/llama-3.1-8b-instruct:free`
 
-Update `asp_assistant.py`:
+Update `asp_assistant.py` — replace the `Configuration` section with your OpenRouter API key and URL and move the `System prompt` to the `content` in `messages` in the `ask_assistant` function which gets rewritten as
 
 ```python
+# ── Configuration ──────────────────────────────────────────────────────────────
 OPENROUTER_API_KEY = "YOUR_KEY_HERE"
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
+# ──────────────────────────────────────────────────────────────────────────────
 
 def ask_assistant(question):
     payload = json.dumps({
