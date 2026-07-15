@@ -908,12 +908,12 @@ print(&quot;Plot saved to zmass_fit.pdf&quot;)
 <h3 id="openrouter">OpenRouter</h3>
 <p>Free models available with any email address.</p>
 <ol>
-<li>Go to <strong>openrouter.ai</strong></li>
+<li>Go to <a href="https://openrouter.ai/" target="_blank">openrouter.ai</a></li>
 <li>Sign up with any email — no credit card needed</li>
 <li>Go to <strong>Keys</strong> then <strong>Create Key</strong></li>
-<li>With a free account, you can let openrouter find a free model for your job <code>openrouter/auto</code>. If you give a credit card eventually, better to specify the model to avoid unexpectedly large charges.</li>
+<li>With a free account, you can let openrouter find a free model for your job with <code>openrouter/free</code> or choose one from the available free models documented here <a href="https://openrouter.ai/models?q=free" target="_blank">openrouter.ai/models?q=free</a>. Note: if you give a credit card eventually, it is better to specify the model you want to use to avoid unexpectedly large charges.</li>
 </ol>
-<p>Update <code>asp_assistant.py</code> — replace the <code>Configuration</code> section with your OpenRouter API key and URL and move the <code>System prompt</code> to the <code>content</code> in <code>messages</code> in the <code>ask_assistant</code>. You will also need to remove references to the <code>Class_Token</code>. In the example below, we made the prompt more generic to be generally helpful with PyROOT plotting. The modified assistant looks like:</p>
+<p>Update <code>asp_assistant.py</code> — replace the <code>Configuration</code> section with your OpenRouter API key and URL and move the <code>System prompt</code> to the <code>content</code> in <code>messages</code> in the <code>ask_assistant</code>. You will also need to remove references to the <code>CLASS_TOKEN</code>. In the example below, we made the prompt more generic to be generally helpful with PyROOT plotting. The modified assistant looks like:</p>
 <pre><code class="language-python">#!/usr/bin/env python3
 &quot;&quot;&quot;
 ================================================================================
@@ -946,7 +946,7 @@ OPENROUTER_URL = &quot;https://openrouter.ai/api/v1/chat/completions&quot;
 
 def ask_assistant(question):
     payload = json.dumps({
-        &quot;model&quot;: &quot;openrouter/auto&quot;,
+        &quot;model&quot;: &quot;openrouter/free&quot;,
         &quot;messages&quot;: [
             {
                 &quot;role&quot;: &quot;system&quot;,
@@ -1033,7 +1033,6 @@ if __name__ == &quot;__main__&quot;:
 <h2 id="further-reading">Further Reading</h2>
 <ul>
 <li>Anthropic Claude API: <a href="https://platform.claude.com/docs/en/home" target="_blank">docs.anthropic.com</a></li>
-<li>Google Gemini API: <a href="https://aistudio.google.com/prompts/new_chat" target="_blank">aistudio.google.com </a></li>
 <li>OpenRouter free models: <a href="https://openrouter.ai/models?q=free" target="_blank">openrouter.ai/models?q=free</a></li>
 <li>ROOT documentation: <a href="https://root.cern/doc/master/" target="_blank">root.cern/doc/master</a></li>
 <li>HTCondor documentation: <a href="https://htcondor.org/htcondor/documentation/" target="_blank">htcondor.org/htcondor/documentation</a></li>
