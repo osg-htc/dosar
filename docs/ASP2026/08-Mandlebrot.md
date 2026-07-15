@@ -12,8 +12,8 @@ Since your training VMs don't have the goatbrot executable needed for this exerc
 
 ```
 $ source /cvmfs/sft.cern.ch/lcg/views/setupViews.sh LCG_105a x86_64-ubuntu2204-gcc11-opt
-$ mkdir ~/bin
-$ cd ~/bin
+$ mkdir ~/work/bin
+$ cd ~/work/bin
 $ wget https://www.nhn.ou.edu/~hs/tmp/goatbrot
 $ chmod +x goatbrot
 $ cd -
