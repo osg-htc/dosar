@@ -26,7 +26,7 @@ You can generate the Mandlebrot set with two simple commands.
 1. Generate a PPM image of the Mandlebrot set:
 
 ```
-$ ~/bin/goatbrot -i 1000 -o tile_000000_000000.ppm -c 0,0 -w 3 -s 1000,1000
+$ ~/work/bin/goatbrot -i 1000 -o tile_000000_000000.ppm -c 0,0 -w 3 -s 1000,1000
 ```
 
 2. Convert it to a GIF image and write into your home directory:
@@ -58,10 +58,10 @@ The Mandlebrot set can take a while to create, particularly if you make the iter
    1. *Run goatbroat 4 times*: 
 
 ```
-$ ~/bin/goatbrot -i 1000 -o tile_000000_000000.ppm -c -0.75,0.75 -w 1.5 -s 500,500
-$ ~/bin/goatbrot -i 1000 -o tile_000000_000001.ppm -c 0.75,0.75 -w 1.5 -s 500,500
-$ ~/bin/goatbrot -i 1000 -o tile_000001_000000.ppm -c -0.75,-0.75 -w 1.5 -s 500,500
-$ ~/bin/goatbrot -i 1000 -o tile_000001_000001.ppm -c 0.75,-0.75 -w 1.5 -s 500,500
+$ ~/work/bin/goatbrot -i 1000 -o tile_000000_000000.ppm -c -0.75,0.75 -w 1.5 -s 500,500
+$ ~/work/bin/goatbrot -i 1000 -o tile_000000_000001.ppm -c 0.75,0.75 -w 1.5 -s 500,500
+$ ~/work/bin/goatbrot -i 1000 -o tile_000001_000000.ppm -c -0.75,-0.75 -w 1.5 -s 500,500
+$ ~/work/bin/goatbrot -i 1000 -o tile_000001_000001.ppm -c 0.75,-0.75 -w 1.5 -s 500,500
 ```
 
    2. *Stitch them together*: 
