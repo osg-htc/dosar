@@ -11,7 +11,7 @@ Yes, we can!
 First declare your variables in your submit file. Make one submit file for all of your goatbrot jobs. Here's what it looks like. Call it `goatbrot.sub`:
 
 ```
-executable              = /home/jovyan/bin/goatbrot
+executable              = /home/jovyan/work/bin/goatbrot
 arguments               = -i 100000 -c $(CENTERX),$(CENTERY) -w 1.5 -s 500,500 -o tile_$(TILEY)_$(TILEX).ppm
 log                     = goatbrot.log
 output                  = goatbrot.out.$(TILEY).$(TILEX)
