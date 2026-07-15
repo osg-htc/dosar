@@ -8,11 +8,11 @@ We will be using OSG Training Pool for this set of sessions. Please visit <a hre
    * Lecture 1 - <a href="https://osg-htc.org/dosar/ASP2026/Lecture1_ASP2026.pdf" target="_blank">Slides</a>
    * [Introduction](/dosar/ASP2026/01-Introduction)
    * [Our Job Manager (HTCondor)](/dosar/ASP2026/02-OurJobManager)
+   * [Your First Managed Job](/dosar/ASP2026/03-FirstManagedJob)
+   * [A few tips and tricks](/dosar/ASP2026/04-TipsandTricks)
    
 ## Wednesday Afternoon - Computational Infrastructures - Session 2
 
-   * [Your First Managed Job](/dosar/ASP2026/03-FirstManagedJob)
-   * [A few tips and tricks](/dosar/ASP2026/04-TipsandTricks)
    * Lecture 2 - <a href="https://osg-htc.org/dosar/ASP2026/Lecture2-ASP2026.pdf" target="_blank">Slides</a>
    * [A scripting job](/dosar/ASP2026/05-ScriptingJob)
    * [An R Job](/dosar/ASP2026/06-RJob)
