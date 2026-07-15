@@ -920,9 +920,11 @@ print(&quot;Plot saved to zmass_fit.pdf&quot;)
 <li>Click <strong>Get API key</strong> then <strong>Create API key</strong></li>
 <li>Copy your key</li>
 </ol>
-<p>Update <code>asp_assistant.py</code> — replace the <code>ask_assistant</code> function:</p>
-<pre><code class="language-python">GEMINI_API_KEY = &quot;YOUR_KEY_HERE&quot;
+<p>Update <code>asp_assistant.py</code> — replace the <code>Configuration</code> section with your Gemini API key and URL and move the <code>System prompt</code> to the <code>system_context</code> in the <code>ask_assistant</code> function which gets rewritten as:</p>
+<pre><code class="language-python"># ── Configuration ──────────────────────────────────────────────────────────────
+GEMINI_API_KEY = &quot;YOUR_KEY_HERE&quot;
 GEMINI_URL = &quot;https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent&quot;
+# ──────────────────────────────────────────────────────────────────────────────
 
 def ask_assistant(question):
     system_context = &quot;&quot;&quot;You are a PyROOT plotting assistant for physics students.
@@ -955,9 +957,11 @@ def ask_assistant(question):
 <li>Go to <strong>Keys</strong> then <strong>Create Key</strong></li>
 <li>Use free models such as <code>meta-llama/llama-3.1-8b-instruct:free</code></li>
 </ol>
-<p>Update <code>asp_assistant.py</code>:</p>
-<pre><code class="language-python">OPENROUTER_API_KEY = &quot;YOUR_KEY_HERE&quot;
+<p>Update <code>asp_assistant.py</code> — replace the <code>Configuration</code> section with your OpenRouter API key and URL and move the <code>System prompt</code> to the <code>content</code> in <code>messages</code> in the <code>ask_assistant</code> function which gets rewritten as</p>
+<pre><code class="language-python"># ── Configuration ──────────────────────────────────────────────────────────────
+OPENROUTER_API_KEY = &quot;YOUR_KEY_HERE&quot;
 OPENROUTER_URL = &quot;https://openrouter.ai/api/v1/chat/completions&quot;
+# ──────────────────────────────────────────────────────────────────────────────
 
 def ask_assistant(question):
     payload = json.dumps({
