@@ -92,7 +92,7 @@ Replace `replace_me` with the token written on the whiteboard. Save and close.
 **Step 3 — Run it**
 
 ```bash
-python -i asp_assistant.py
+python asp_assistant.py
 ```
 
 ---
