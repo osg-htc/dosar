@@ -227,67 +227,51 @@ print("Plot saved to zmass_fit.pdf")
 
 The class proxy expires after the school. Here is how to get your own free access:
 
-### Option 1: Google Gemini (Recommended)
-
-Free tier: 15 requests per minute, 1 million tokens per day. No credit card required.
-
-1. Go to **aistudio.google.com**
-2. Sign in with your Google account (free to create)
-3. Click **Get API key** then **Create API key**
-4. Copy your key
-
-Update `asp_assistant.py` — replace the `Configuration` section with your Gemini API key and URL and move the `System prompt` to the `system_context` in the `ask_assistant` function which gets rewritten as:
-
-```python
-# ── Configuration ──────────────────────────────────────────────────────────────
-GEMINI_API_KEY = "YOUR_KEY_HERE"
-GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
-# ──────────────────────────────────────────────────────────────────────────────
-
-def ask_assistant(question):
-    system_context = """You are a PyROOT plotting assistant for physics students.
-    Generate complete, runnable PyROOT code with explanations."""
-
-    payload = json.dumps({
-        "contents": [{
-            "parts": [{"text": system_context + "\n\nQuestion: " + question}]
-        }]
-    }).encode("utf-8")
-
-    url = f"{GEMINI_URL}?key={GEMINI_API_KEY}"
-    req = urllib.request.Request(
-        url,
-        data    = payload,
-        headers = {"Content-Type": "application/json"},
-        method  = "POST",
-    )
-
-    with urllib.request.urlopen(req, timeout=30) as response:
-        data = json.loads(response.read().decode("utf-8"))
-
-    return data["candidates"][0]["content"]["parts"][0]["text"]
-```
-
-### Option 2: OpenRouter (No Google account needed)
+### OpenRouter
 
 Free models available with any email address.
 
 1. Go to **openrouter.ai**
 2. Sign up with any email — no credit card needed
 3. Go to **Keys** then **Create Key**
-4. Use free models such as `meta-llama/llama-3.1-8b-instruct:free`
+4. With a free account, you can let openrouter find a free model for your job `openrouter/auto`. If you give a credit card eventually, better to specify the model to avoid unexpectedly large charges.
 
-Update `asp_assistant.py` — replace the `Configuration` section with your OpenRouter API key and URL and move the `System prompt` to the `content` in `messages` in the `ask_assistant` function which gets rewritten as
+Update `asp_assistant.py` — replace the `Configuration` section with your OpenRouter API key and URL and move the `System prompt` to the `content` in `messages` in the `ask_assistant`. You will also need to remove references to the `Class_Token`. In the example below, we made the prompt more generic to be generally helpful with PyROOT plotting. The modified assistant looks like:
 
 ```python
+#!/usr/bin/env python3
+"""
+================================================================================
+ASP AI Plotting Assistant
+African School of Physics — Kenya 2026
+
+This script connects to an AI assistant that helps you write PyROOT plotting
+code using plain English descriptions of what you want.
+
+BEFORE YOU START:
+  Replace "replace_me" below with the class token written on the whiteboard.
+
+Usage:
+    python3 asp_assistant.py
+
+Requirements:
+    Python 3 only — no extra packages needed.
+================================================================================
+"""
+
+import urllib.request
+import urllib.parse
+import json
+import sys
+
 # ── Configuration ──────────────────────────────────────────────────────────────
-OPENROUTER_API_KEY = "YOUR_KEY_HERE"
+OPENROUTER_API_KEY = "YOUR_API_KEY"
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 # ──────────────────────────────────────────────────────────────────────────────
 
 def ask_assistant(question):
     payload = json.dumps({
-        "model": "meta-llama/llama-3.1-8b-instruct:free",
+        "model": "openrouter/auto",
         "messages": [
             {
                 "role": "system",
@@ -311,6 +295,56 @@ def ask_assistant(question):
         data = json.loads(response.read().decode("utf-8"))
 
     return data["choices"][0]["message"]["content"]
+
+
+def print_banner():
+    print("=" * 70)
+    print("  ASP AI Plotting Assistant")
+    print("  African School of Physics — Kenya 2026")
+    print("=" * 70)
+    print()
+    print("  Describe your PyROOT plotting problem in plain English.")
+    print("  The AI will return complete, runnable PyROOT code.")
+    print()
+    print("  Example questions:")
+    print("  - 'Plot my TH1F histogram h_mee with axis labels and a title'")
+    print("  - 'Add a Gaussian fit to the Z peak around 91 GeV'")
+    print("  - 'Add the fit parameters and chi-squared to the legend'")
+    print("  - 'Change the histogram color to blue and add a grid'")
+    print()
+    print("  Type 'quit' to exit.")
+    print("=" * 70)
+    print()
+
+
+def main():
+    print_banner()
+
+    while True:
+        try:
+            question = input("Your question: ").strip()
+        except (KeyboardInterrupt, EOFError):
+            print("\n\nGoodbye!")
+            sys.exit(0)
+
+        if not question:
+            continue
+
+        if question.lower() in ("quit", "exit", "q", "bye"):
+            print("Goodbye!")
+            break
+
+        print("\nAsking AI assistant...\n")
+        answer = ask_assistant(question)
+
+        print("-" * 70)
+        print(answer)
+        print("-" * 70)
+        print()
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 ---
