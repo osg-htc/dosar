@@ -231,12 +231,12 @@ The class proxy expires after the school. Here is how to get your own free acces
 
 Free models available with any email address.
 
-1. Go to **openrouter.ai**
+1. Go to <a href="https://openrouter.ai/" target="_blank">openrouter.ai</a>
 2. Sign up with any email — no credit card needed
 3. Go to **Keys** then **Create Key**
-4. With a free account, you can let openrouter find a free model for your job `openrouter/auto`. If you give a credit card eventually, better to specify the model to avoid unexpectedly large charges.
+4. With a free account, you can let openrouter find a free model for your job with `openrouter/free` or choose one from the available free models documented here <a href="https://openrouter.ai/models?q=free" target="_blank">openrouter.ai/models?q=free</a>. Note: if you give a credit card eventually, it is better to specify the model you want to use to avoid unexpectedly large charges.
 
-Update `asp_assistant.py` — replace the `Configuration` section with your OpenRouter API key and URL and move the `System prompt` to the `content` in `messages` in the `ask_assistant`. You will also need to remove references to the `Class_Token`. In the example below, we made the prompt more generic to be generally helpful with PyROOT plotting. The modified assistant looks like:
+Update `asp_assistant.py` — replace the `Configuration` section with your OpenRouter API key and URL and move the `System prompt` to the `content` in `messages` in the `ask_assistant`. You will also need to remove references to the `CLASS_TOKEN`. In the example below, we made the prompt more generic to be generally helpful with PyROOT plotting. The modified assistant looks like:
 
 ```python
 #!/usr/bin/env python3
@@ -271,7 +271,7 @@ OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 def ask_assistant(question):
     payload = json.dumps({
-        "model": "openrouter/auto",
+        "model": "openrouter/free",
         "messages": [
             {
                 "role": "system",
@@ -361,7 +361,6 @@ if __name__ == "__main__":
 ## Further Reading
 
 - Anthropic Claude API: <a href="https://platform.claude.com/docs/en/home" target="_blank">docs.anthropic.com</a>
-- Google Gemini API: <a href="https://aistudio.google.com/prompts/new_chat" target="_blank">aistudio.google.com </a>
 - OpenRouter free models: <a href="https://openrouter.ai/models?q=free" target="_blank">openrouter.ai/models?q=free</a>
 - ROOT documentation: <a href="https://root.cern/doc/master/" target="_blank">root.cern/doc/master</a>
 - HTCondor documentation: <a href="https://htcondor.org/htcondor/documentation/" target="_blank">htcondor.org/htcondor/documentation</a>
