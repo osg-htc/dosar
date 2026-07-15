@@ -9,13 +9,13 @@ We'll run our `goatbrot` example. If you didn't read about it yet, [please do so
 
 You can create your five jobs. The goatbrot jobs very similar to each other, but they have slightly different parameters (arguments) and output files. 
 
-You have placed the goatbrot executable in your bin directory: `~/bin/goatbrot` .
-Condor does not deal well with `~/` as the home directory, so we will use the full path `/home/jovyan/bin/` instead in the submit scripts, which goes to the same directory.
+You have placed the goatbrot executable in your bin directory: `~/work/bin/goatbrot` .
+Condor does not deal well with `~/` as the home directory, so we will use the full path `/home/jovyan/work/bin/` instead in the submit scripts, which goes to the same directory.
 
 ### goatbrot1.sub
 
 ```
-executable              = /home/jovyan/bin/goatbrot
+executable              = /home/jovyan/work/bin/goatbrot
 arguments               = -i 100000 -c -0.75,0.75 -w 1.5 -s 500,500 -o tile_0_0.ppm
 log                     = goatbrot.log
 output                  = goatbrot.out.0.0
@@ -28,7 +28,7 @@ queue
 ### goatbrot2.sub
 
 ```
-executable              = /home/jovyan/bin/goatbrot
+executable              = /home/jovyan/work/bin/goatbrot
 arguments               = -i 100000 -c 0.75,0.75 -w 1.5 -s 500,500 -o tile_0_1.ppm
 log                     = goatbrot.log
 output                  = goatbrot.out.0.1
@@ -41,7 +41,7 @@ queue
 ### goatbrot3.sub
 
 ```
-executable              = /home/jovyan/bin/goatbrot
+executable              = /home/jovyan/work/bin/goatbrot
 arguments               = -i 100000 -c -0.75,-0.75 -w 1.5 -s 500,500 -o tile_1_0.ppm
 log                     = goatbrot.log
 output                  = goatbrot.out.1.0
@@ -54,7 +54,7 @@ queue
 ### goatbrot4.sub
 
 ```
-executable              = /home/jovyan/bin/goatbrot
+executable              = /home/jovyan/work/bin/goatbrot
 arguments               = -i 100000 -c 0.75,-0.75 -w 1.5 -s 500,500 -o tile_1_1.ppm
 log                     = goatbrot.log
 output                  = goatbrot.out.1.1
