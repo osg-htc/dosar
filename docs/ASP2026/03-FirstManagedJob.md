@@ -11,8 +11,8 @@ Before you can submit a job to Condor, you need a job. We will quickly write a s
 
 Let's create a directory to perform the condor tests. Execute the following two commands in your Linux shell:
 ```
-$ mkdir -p ~/condor-test
-$ cd ~/condor-test
+$ mkdir -p ~/work/condor-test
+$ cd ~/work/condor-test
 ```
 
 Next, create a file called simple.c using your favorite editor. Use your preferred text editor to create this C program. If you don't have one, use 'nano', as shown below.  The file will be in the condor-test directory. In that file, put the following text. Copy and paste is a good choice: 
