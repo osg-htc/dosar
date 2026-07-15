@@ -251,10 +251,10 @@ This script connects to an AI assistant that helps you write PyROOT plotting
 code using plain English descriptions of what you want.
 
 BEFORE YOU START:
-  Replace "replace_me" below with the class token written on the whiteboard.
+  Replace "YOUR_API_KEY" below with your own API key from OpenRouter.
 
 Usage:
-    python3 asp_assistant.py
+    python asp_assistant.py
 
 Requirements:
     Python 3 only — no extra packages needed.
