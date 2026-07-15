@@ -234,7 +234,9 @@ Free models available with any email address.
 1. Go to <a href="https://openrouter.ai/" target="_blank">openrouter.ai</a>
 2. Sign up with any email — no credit card needed
 3. Go to **Keys** then **Create Key**
-4. With a free account, you can let openrouter find a free model for your job with `openrouter/free` or choose one from the available free models documented here <a href="https://openrouter.ai/models?q=free" target="_blank">openrouter.ai/models?q=free</a>. Note: if you give a credit card eventually, it is better to specify the model you want to use to avoid unexpectedly large charges.
+4. With a free account, you can let OpenRouter find a free model for your job with `openrouter/free` or choose one from the available free models documented here <a href="https://openrouter.ai/models?q=free" target="_blank">openrouter.ai/models?q=free</a>. 
+
+**Note:** If you eventually get a paid account, it is better to specify the model you want to use to avoid unexpectedly large charges.
 
 Update `asp_assistant.py` — replace the `Configuration` section with your OpenRouter API key and URL and move the `System prompt` to the `content` in `messages` in the `ask_assistant`. You will also need to remove references to the `CLASS_TOKEN`. In the example below, we made the prompt more generic to be generally helpful with PyROOT plotting. The modified assistant looks like:
 
