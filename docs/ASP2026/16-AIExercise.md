@@ -21,7 +21,7 @@ The difference is scale and hardware, not architecture.
 
 ## Exercise Overview
 
-In this exercise you will use an AI assistant to help you write PyROOT plotting code for your Z→mumu analysis results. The AI acts as a knowledgeable coding collaborator — you describe what you want in plain English, and it generates complete, runnable PyROOT code with explanations.
+In this exercise you will use an AI assistant to help you write PyROOT plotting code for your Z→mumu analysis results. The AI acts as a knowledgeable coding collaborator — you describe what you want in plain English, and it generates complete, runnable PyROOT code with explanations. All work will be run on your local machine.
 
 **Learning objectives:**
 
