@@ -87,7 +87,7 @@ Find this line near the top:
 CLASS_TOKEN = "replace_me"
 ```
 
-Replace `replace_me` with the token written on the whiteboard. Save and close.
+Replace `replace_me` with the token written on the whiteboard. But only at the top, not other instances further down in the code. Save and close.
 
 **Step 3 — Run it**
 
