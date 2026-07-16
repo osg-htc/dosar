@@ -21,7 +21,7 @@ The difference is scale and hardware, not architecture.
 
 ## Exercise Overview
 
-In this exercise you will use an AI assistant to help you write PyROOT plotting code for your Z→mumu analysis results. The AI acts as a knowledgeable coding collaborator — you describe what you want in plain English, and it generates complete, runnable PyROOT code with explanations. All work will be run on your local machine.
+In this exercise you will use an AI assistant to help you write PyROOT plotting code for your Z→mumu analysis results. The AI acts as a knowledgeable coding collaborator — you describe what you want in plain English, and it generates complete, runnable PyROOT code with explanations. All work will be run on your local Ubuntu Desktop, not the JupyterLab Notebook in your browser.
 
 **Learning objectives:**
 
@@ -67,7 +67,7 @@ This is the same client-server pattern used in production AI systems everywhere.
 
 ## Setup
 
-The script requires only Python 3, which is already installed on your Scientific Linux VM. No additional packages are needed.
+The script requires only Python 3, which is already installed on your local Ubuntu Desktop. No additional packages are needed.
 
 **Step 1 — Get the script**
 
