@@ -114,11 +114,12 @@ See instructions for downloading mandle.gif in the Mandlebrot Session.
 Now open a different terminal window on your local desktop to view the files.
 
 
-
+<!--
 If condor submit was skipped, you can execute the script to run root interactively:
 ```
 ./run-root.sh
 ```
+-->
 
 You can then inspect the contents of `t00.root` and `t01.root` by running root in your current directory in the local terminal window:
 
